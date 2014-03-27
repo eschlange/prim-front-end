@@ -4,3 +4,43 @@
 
 @import "bootstrap";
 @import "bootstrap/theme";
+
+.home .row {
+  color: #666666;
+  transition: color 1s ease;
+  transition: padding 1s ease;
+}
+
+.home .row:hover {
+  color: #B20000;
+  padding-left: 10px;
+}
+
+.home .row a {
+  font-size: 18px;
+  padding: 15px 0px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
+  float: left;
+  color: #666666;
+}
+
+.home .row .glyphicon {
+  font-size: 18px;
+  padding: 15px 10px 0px 30px;
+  font-size: 18px;
+  line-height: 20px;
+  height: 50px;
+  float: left;
+}
+
+.home .row a:hover {
+  color: #B20000;
+  text-decoration: none;
+}
+
+.home .row a:active {
+  color: #B20000;
+  text-decoration: none;
+}

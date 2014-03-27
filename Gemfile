@@ -11,6 +11,7 @@ gem "devise"
 gem "rails_admin"
 gem "cancan"
 gem "font-awesome-sass"
+gem "simple_form"
 group :development, :test do
   gem "rspec-rails", "~> 3.0.0.beta2"
 end
