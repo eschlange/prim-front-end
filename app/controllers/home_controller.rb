@@ -6,6 +6,9 @@
 class HomeController < ApplicationController
   layout "application"
 
+  PAGE_NAME = "home"
+
   def index
+    current_page(PAGE_NAME)
   end
 end
