@@ -1,8 +1,32 @@
 <div class="navbar-default navbar-static-top">
+
+  <div class="modal fade" id="loginModal">
+
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>Sign In</h3>
+    </div>
+
+    <div class="modal-body">
+      <%= simple_form_for(:user, :url => user_session_path) do |f| %>
+          <div class="inputs">
+            <%= f.input :email, :required => false, :autofocus => true %>
+            <%= f.input :password, :required => false %>
+            <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+          </div>
+        </div>
+    <div class="modal-footer">
+       <%= f.button :submit, "sign in", :class => 'btn btn-primary' %>
+    <% end %>
+    </div>
+
+  </div>
+
+
   <div class="container">
 
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">MACs</a>
+      <a href="/" class="navbar-brand">MACs</a>
       <!--TODO Add variable for brand/site name.-->
 
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">

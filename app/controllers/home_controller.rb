@@ -11,4 +11,8 @@ class HomeController < ApplicationController
   def index
     current_page(PAGE_NAME)
   end
+
+  def reload_header
+    render :partial => "shared/header"
+  end
 end

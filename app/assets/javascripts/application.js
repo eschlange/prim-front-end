@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function reload_header() {
+  $('#header-navigation').load('home/reload_header');
+}
