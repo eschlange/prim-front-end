@@ -1,5 +1,3 @@
-
-
 gem "pg"
 gem "rails"
 gem "sass-rails"
