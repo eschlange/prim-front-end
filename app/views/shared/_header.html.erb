@@ -39,11 +39,18 @@
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
 
+        <li <%= "index" == @current_page ? "class=active" : "" %>><a href="/about/">about</a></li>
+        <li <%= "eligibility" == @current_page ? "class=active" : "" %>><a href="/eligibility">eligibility</a></li>
+        <li <%= "resources" == @current_page ? "class=active" : "" %>><a href="/resources">resources</a></li>
+        <li <%= "funding" == @current_page ? "class=active" : "" %>><a href="/funding">funding info</a></li>
+        <li <%= "contact" == @current_page ? "class=active" : "" %>><a href="/contact">contact us</a></li>
+
         <% if !user_signed_in? %>
             <%= render "shared/sign_up_navbar" %>
         <% else %>
             <%= render "shared/authorized_navbar" %>
         <% end %>
+
       </ul>
     </div>
 

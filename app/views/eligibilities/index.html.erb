@@ -1,0 +1,29 @@
+<h1>Listing eligibilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eligibilities.each do |eligibility| %>
+      <tr>
+        <td><%= eligibility.title %></td>
+        <td><%= eligibility.content %></td>
+        <td><%= link_to 'Show', eligibility %></td>
+        <td><%= link_to 'Edit', edit_eligibility_path(eligibility) %></td>
+        <td><%= link_to 'Destroy', eligibility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eligibility', new_eligibility_path %>

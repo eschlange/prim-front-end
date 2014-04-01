@@ -3,7 +3,7 @@ class AboutController < ApplicationController
 
   PAGE_NAME = "about"
 
-  def about
+  def index
     current_page(PAGE_NAME)
   end
 end
