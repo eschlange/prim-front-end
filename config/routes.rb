@@ -1,14 +1,20 @@
 Macs::Application.routes.draw do
-  resources :eligibilities
-  resources :resources
-  resources :fundings
-  resources :contact_us
+  resources :interventions
+  resources :sites do
+    get "pages/about"
+    get "pages/home"
+    get "pages/contact_us"
+    get "pages/eligibility"
+    get "pages/funding"
+    get "pages/resources"
+  end
 
   devise_for :users
-  root "home#index"
-  get "home/index"
+  root "homes#index"
+  get "homes/index"
   get "index/index"
   get "about", to: "about#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

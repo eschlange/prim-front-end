@@ -11,42 +11,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401205857) do
+ActiveRecord::Schema.define(version: 20140402171738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "abouts", ["site_id"], name: "index_abouts_on_site_id", using: :btree
 
   create_table "contact_us", force: true do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
+
+  add_index "contact_us", ["site_id"], name: "index_contact_us_on_site_id", using: :btree
 
   create_table "eligibilities", force: true do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
+
+  add_index "eligibilities", ["site_id"], name: "index_eligibilities_on_site_id", using: :btree
 
   create_table "fundings", force: true do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
+
+  add_index "fundings", ["site_id"], name: "index_fundings_on_site_id", using: :btree
+
+  create_table "homes", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "homes", ["site_id"], name: "index_homes_on_site_id", using: :btree
+
+  create_table "interventions", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interventions", ["site_id"], name: "index_interventions_on_site_id", using: :btree
 
   create_table "resources", force: true do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
+
+  add_index "resources", ["site_id"], name: "index_resources_on_site_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string "name"
     t.string "description"
+  end
+
+  create_table "sites", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -60,14 +109,15 @@ ActiveRecord::Schema.define(version: 20140401205857) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "role_id"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

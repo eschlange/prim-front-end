@@ -1,0 +1,31 @@
+<h1>Listing interventions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Site</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interventions.each do |intervention| %>
+      <tr>
+        <td><%= intervention.name %></td>
+        <td><%= intervention.description %></td>
+        <td><%= intervention.site %></td>
+        <td><%= link_to 'Show', intervention %></td>
+        <td><%= link_to 'Edit', edit_intervention_path(intervention) %></td>
+        <td><%= link_to 'Destroy', intervention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Intervention', new_intervention_path %>

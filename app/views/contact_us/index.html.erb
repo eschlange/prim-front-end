@@ -1,4 +1,4 @@
-<h1>Listing contact_us</h1>
+<h1>Listing Contact Us Pages</h1>
 
 <table>
   <thead>
@@ -12,13 +12,13 @@
   </thead>
 
   <tbody>
-    <% @contact_us.each do |contact_u| %>
+    <% @contact_us.each do |contact_us| %>
       <tr>
-        <td><%= contact_u.title %></td>
-        <td><%= contact_u.content %></td>
-        <td><%= link_to 'Show', contact_u %></td>
-        <td><%= link_to 'Edit', edit_contact_u_path(contact_u) %></td>
-        <td><%= link_to 'Destroy', contact_u, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact_us.title %></td>
+        <td><%= contact_us.content %></td>
+        <td><%= link_to 'Show', contact_us %></td>
+        <td><%= link_to 'Edit', edit_contact_u_path(contact_us) %></td>
+        <td><%= link_to 'Destroy', contact_us, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Contact u', new_contact_u_path %>
+<%= link_to 'New Contact Us Page', new_contact_us_path %>

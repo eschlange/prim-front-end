@@ -1,9 +1,9 @@
 class ContactUsController < ApplicationController
-  before_action :set_contact_u, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact_us, only: [:show, :edit, :update, :destroy]
 
   # GET /contact_us
   def index
-    @contact_us = ContactU.all
+    @contact_us = ContactUs.all
   end
 
   # GET /contact_us/1
@@ -12,7 +12,7 @@ class ContactUsController < ApplicationController
 
   # GET /contact_us/new
   def new
-    @contact_u = ContactU.new
+    @contact_us = ContactUs.new
   end
 
   # GET /contact_us/1/edit
@@ -21,10 +21,10 @@ class ContactUsController < ApplicationController
 
   # POST /contact_us
   def create
-    @contact_u = ContactU.new(contact_u_params)
+    @contact_us = ContactUs.new(contact_u_params)
 
-    if @contact_u.save
-      redirect_to @contact_u, notice: 'Contact u was successfully created.'
+    if @contact_ussave
+      redirect_to @contact_us, notice: 'Contact us was successfully created.'
     else
       render action: 'new'
     end
@@ -32,8 +32,8 @@ class ContactUsController < ApplicationController
 
   # PATCH/PUT /contact_us/1
   def update
-    if @contact_u.update(contact_u_params)
-      redirect_to @contact_u, notice: 'Contact u was successfully updated.'
+    if @contact_us.update(contact_us_params)
+      redirect_to @contact_us, notice: 'Contact us was successfully updated.'
     else
       render action: 'edit'
     end
@@ -41,18 +41,18 @@ class ContactUsController < ApplicationController
 
   # DELETE /contact_us/1
   def destroy
-    @contact_u.destroy
-    redirect_to contact_us_url, notice: 'Contact u was successfully destroyed.'
+    @contact_us.destroy
+    redirect_to contact_us_url, notice: 'Contact us was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_contact_u
-      @contact_u = ContactU.find(params[:id])
+    def set_contact_us
+      @contact_us = ContactUs.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
-    def contact_u_params
-      params.require(:contact_u).permit(:title, :content)
+    def contact_us_params
+      params.require(:contact_us).permit(:title, :content)
     end
 end

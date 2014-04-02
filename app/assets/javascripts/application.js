@@ -17,5 +17,5 @@
 //= require_tree .
 
 function reload_header() {
-  $('#header-navigation').load('home/reload_header');
+  $('#header-navigation').load('homes/reload_header');
 }
