@@ -8,7 +8,7 @@
     </div>
 
     <div class="modal-body">
-      <%= simple_form_for(:user, :url => user_session_path) do |f| %>
+      <%= simple_form_for(:user, :url => "/sites/1/users/sign_up") do |f| %>
           <div class="inputs">
             <%= f.input :email, :required => false, :autofocus => true %>
             <%= f.input :password, :required => false %>
@@ -25,7 +25,7 @@
   <div class="container">
 
     <div class="navbar-header">
-      <a href="/" class="navbar-brand">MACs</a>
+      <%= link_to 'MACs',        (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
       <!--TODO Add variable for brand/site name.-->
 
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
@@ -37,19 +37,17 @@
 
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
-
-        <li <%= "index" == @current_page ? "class=active" : "" %>><a href="/about/">about</a></li>
-        <li <%= "eligibility" == @current_page ? "class=active" : "" %>><a href="/eligibility">eligibility</a></li>
-        <li <%= "resources" == @current_page ? "class=active" : "" %>><a href="/resources">resources</a></li>
-        <li <%= "funding" == @current_page ? "class=active" : "" %>><a href="/funding">funding info</a></li>
-        <li <%= "contact" == @current_page ? "class=active" : "" %>><a href="/contact">contact us</a></li>
+        <li><%= link_to 'about',        (site_path(@site) + "/pages/about")         %></li>
+        <li><%= link_to 'eligibility',  (site_path(@site) + "/pages/eligibility")   %></li>
+        <li><%= link_to 'resources',    (site_path(@site) + "/pages/resources")     %></li>
+        <li><%= link_to 'funding',      (site_path(@site) + "/pages/funding")       %></li>
+        <li><%= link_to 'contact us',   (site_path(@site) + "/pages/contact_us")    %></li>
 
         <% if !user_signed_in? %>
             <%= render "shared/sign_up_navbar" %>
         <% else %>
             <%= render "shared/authorized_navbar" %>
         <% end %>
-
       </ul>
     </div>
 

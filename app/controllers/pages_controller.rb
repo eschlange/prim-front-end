@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   before_action :set_site
-
   def about
     @about = @site.about
   end
@@ -22,12 +21,6 @@ class PagesController < ApplicationController
   end
 
   def resources
-    @resources = @site.resources
-  end
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_site
-    @site = Site.find(params[:site_id])
+    @resources = @site.resource
   end
 end
