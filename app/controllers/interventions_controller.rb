@@ -1,3 +1,6 @@
+# Handles CRUD functionality for the interventions page of a site. This page
+# will likely be used only by content managers or admins.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
 

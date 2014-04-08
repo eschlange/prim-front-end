@@ -1,3 +1,5 @@
+# Handles CRUD functionality for the eligibility page of a site.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class EligibilitiesController < ApplicationController
   before_action :set_eligibility, only: [:show, :edit, :update, :destroy]
 

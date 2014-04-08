@@ -1,3 +1,5 @@
+# Handles CRUD functionality for sites management.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
 

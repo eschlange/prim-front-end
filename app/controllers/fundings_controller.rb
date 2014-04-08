@@ -1,3 +1,5 @@
+# Handles CRUD functionality for the funding page of a site.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class FundingsController < ApplicationController
   before_action :set_funding, only: [:show, :edit, :update, :destroy]
 

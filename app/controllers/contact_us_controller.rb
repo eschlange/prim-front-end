@@ -1,3 +1,5 @@
+# Handles CRUD functionality for the 'contact us' page of a site.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class ContactUsController < ApplicationController
   before_action :set_contact_us, only: [:show, :edit, :update, :destroy]
 

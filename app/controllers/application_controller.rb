@@ -1,3 +1,5 @@
+# Handles general controller logic and functions that are used by all child controllers.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class ApplicationController < ActionController::Base
   include UserHelper
 

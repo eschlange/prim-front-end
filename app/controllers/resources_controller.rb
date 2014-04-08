@@ -1,3 +1,5 @@
+# Handles CRUD functionality for the resources pages.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class ResourcesController < ApplicationController
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
