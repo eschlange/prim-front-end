@@ -49,6 +49,9 @@ class SitesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_site
       @site = Site.find(params[:id])
+      if @site.nil?
+        @site = Site.find(params[:site_id])
+      end
     end
 
     # Only allow a trusted parameter "white list" through.

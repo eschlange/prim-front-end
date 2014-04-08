@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
       <title>MACS</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,8 @@
     </head>
 
     <body>
-      <div id="header-navigation"><%= render partial: "shared/header" %></div>
+      <%= render partial: "shared/header" %></div>
       <%= yield %>
-      <%= render "shared/footer" %>
+      <%= render partial: "shared/footer" %>
     </body>
 </html>

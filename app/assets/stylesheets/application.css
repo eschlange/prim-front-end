@@ -8,7 +8,16 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *=
  *= require_self
+ *= require ../../../vendor/simplemap/stylesheets/font-awesome
+ *= require ../../../vendor/simplemap/stylesheets/font-awesome.min
+ *= require ../../../vendor/simplemap/stylesheets/styles
+ *= require ../../../vendor/simplemap/stylesheets/timeline
+ *= require ../../../vendor/simplemap/stylesheets/themes/image
+ *= require ../../../vendor/simplemap/stylesheets/themes/link
+ *= require ../../../vendor/simplemap/stylesheets/themes/pill
+ *= require ../../../vendor/simplemap/stylesheets/themes/tab
  *= require_tree .
  */
 
@@ -19,4 +28,74 @@
     overflow: hidden;
     border-radius: 15px;
     max-height: 50%;
+}
+
+.header.red-ribbon {
+    background-image: url(/assets/red_ribbon_crop.jpg);
+
+}
+
+.banner .header-description .title.red-ribbon-title {
+    color: #fff;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 400;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+    margin-top: 230px;
+}
+
+.container.banner {
+    height: 700px;
+}
+
+.btn-warning.banner-btn {
+    color: #fff;
+    background-image: linear-gradient(to bottom, #f00400 0%, #d10400 100%);
+    background-repeat: repeat-x;
+    border-color: #f00400;
+}
+
+.btn-warning.banner-btn:hover, .btn-warning.banner-btn:focus {
+    background-image: linear-gradient(to bottom, #ea0400 0%, #b90400 100%);
+    background-color: #b90400;
+    background-position: 0 -15px;
+}
+
+.btn-warning.banner-btn:active, .btn-warning.banner-btn.active {
+    background-color: #eb9316;
+    border-color: #e38d13;
+}
+
+.banner .app-store-button-wrapper.app-store-button-wrapper-custom {
+    margin: 245px 0 0;
+}
+
+.welcome.welcome-blip:before {
+    background: url(/assets/top-welcome-pattern.png);
+}
+.welcome.welcome-blip:after {
+    background: url(/assets/bottom-welcome-pattern.png);
+}
+
+.app-shots.app-shots-custom {
+    background: url(/assets/app-shots-pattern.png) repeat;
+}
+
+a#scrollUp {
+    width: 40px;
+    height: 50px;
+    right: 5px;
+    -webkit-box-shadow: 0 0 0 #a02622;
+    box-shadow: 0 0 0 #a02622;
+    border-radius: 3px;
+    border-color: #b92c28;
+    background-color: #d9534f;
+}
+
+a#scrollUp:hover {
+    background-color: #d9534f;
+}
+
+.registration-header {
+    color: #fff;
 }
