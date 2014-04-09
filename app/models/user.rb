@@ -16,15 +16,15 @@ class User < ActiveRecord::Base
   after_initialize :init
 
   def admin?
-    self.role.id == ADMIN_ID
+    role.id == ADMIN_ID
   end
 
-  def contentManager?
-    self.role.id == CONTENT_MANAGER_ID
+  def content_manager?
+    role.id == CONTENT_MANAGER_ID
   end
 
   def participant?
-    self.role.id == PARTICIPANT_ID
+    role.id == PARTICIPANT_ID
   end
 
   def init
@@ -36,13 +36,17 @@ class User < ActiveRecord::Base
   end
 
   def password_match?
-    self.errors[:password] << "can't be blank" if password.blank?
-    self.errors[:password_confirmation] << "can't be blank" if password_confirmation.blank?
-    self.errors[:password_confirmation] << "does not match password" if password != password_confirmation
+    errors[:password] <<
+      "can't be blank" if password.blank?
+    errors[:password_confirmation] <<
+      "can't be blank" if password_confirmation.blank?
+    errors[:password_confirmation] <<
+      "does not match password" if password != password_confirmation
     password == password_confirmation && !password.blank?
   end
 
   private
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :future_contact)
   end
