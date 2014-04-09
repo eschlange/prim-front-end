@@ -48,16 +48,19 @@ class SitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_site
-      @site = Site.find(params[:id])
-      if @site.nil?
-        @site = Site.find(params[:site_id])
-      end
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def site_params
-      params.require(:site).permit(:name, :description, :about_id, :home_id, :contact_us_id, :eligibility_id, :funding_id, :resource_id)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+    if @site.nil?
+      @site = Site.find(params[:site_id])
     end
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def site_params
+    params.require(:site).permit(:name, :description, :about_id,
+                                 :home_id, :contact_us_id, :eligibility_id,
+                                 :funding_id, :resource_id)
+  end
 end

@@ -48,13 +48,14 @@ class ContactUsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact_us
-      @contact_us = ContactUs.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def contact_us_params
-      params.require(:contact_us).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact_us
+    @contact_us = ContactUs.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def contact_us_params
+    params.require(:contact_us).permit(:title, :content)
+  end
 end

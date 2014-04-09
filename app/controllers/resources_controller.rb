@@ -48,13 +48,14 @@ class ResourcesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resource
-      @resource = Resource.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def resource_params
-      params.require(:resource).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_resource
+    @resource = Resource.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def resource_params
+    params.require(:resource).permit(:title, :content)
+  end
 end

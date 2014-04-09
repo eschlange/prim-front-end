@@ -27,7 +27,8 @@ class InterventionsController < ApplicationController
     @intervention = Intervention.new(intervention_params)
 
     if @intervention.save
-      redirect_to @intervention, notice: 'Intervention was successfully created.'
+      redirect_to @intervention,
+                  notice: 'Intervention was successfully created.'
     else
       render action: 'new'
     end
@@ -36,7 +37,8 @@ class InterventionsController < ApplicationController
   # PATCH/PUT /interventions/1
   def update
     if @intervention.update(intervention_params)
-      redirect_to @intervention, notice: 'Intervention was successfully updated.'
+      redirect_to @intervention,
+                  notice: 'Intervention was successfully updated.'
     else
       render action: 'edit'
     end
@@ -45,17 +47,19 @@ class InterventionsController < ApplicationController
   # DELETE /interventions/1
   def destroy
     @intervention.destroy
-    redirect_to interventions_url, notice: 'Intervention was successfully destroyed.'
+    redirect_to interventions_url,
+                notice: 'Intervention was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_intervention
-      @intervention = Intervention.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def intervention_params
-      params.require(:intervention).permit(:name, :description, :site_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_intervention
+    @intervention = Intervention.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def intervention_params
+    params.require(:intervention).permit(:name, :description, :site_id)
+  end
 end

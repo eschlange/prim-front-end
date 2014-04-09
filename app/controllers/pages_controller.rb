@@ -28,6 +28,7 @@ class PagesController < ApplicationController
   end
 
   private
+
   def set_current_page
     current_page("home")
   end

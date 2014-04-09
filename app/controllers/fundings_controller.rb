@@ -48,13 +48,14 @@ class FundingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_funding
-      @funding = Funding.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def funding_params
-      params.require(:funding).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_funding
+    @funding = Funding.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def funding_params
+    params.require(:funding).permit(:title, :content)
+  end
 end

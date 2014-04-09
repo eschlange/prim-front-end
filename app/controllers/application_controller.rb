@@ -1,4 +1,5 @@
-# Handles general controller logic and functions that are used by all child controllers.
+# Handles general controller logic and functions that
+# are used by all child controllers.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class ApplicationController < ActionController::Base
   include UserHelper
@@ -6,7 +7,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :set_site, :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_site, :configure_permitted_parameters,
+                if: :devise_controller?
 
   def current_page(page_name)
     @current_page = page_name
@@ -30,5 +32,4 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :id
   end
-
 end

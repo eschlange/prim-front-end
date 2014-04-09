@@ -10,7 +10,7 @@ class AboutController < ApplicationController
   end
 
   def reload_header
-    render :partial => "shared/header"
+    render partial: "shared/header"
   end
 
   # GET /abouts/1
@@ -53,6 +53,7 @@ class AboutController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_abouts
     @site = Site.find(params[:id])
@@ -67,5 +68,4 @@ class AboutController < ApplicationController
   def abouts_params
     params.require(:abouts).permit(:title, :content)
   end
-  
 end

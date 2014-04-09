@@ -1,7 +1,6 @@
 # Model for the users. The default devise user model has been modified.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class User < ActiveRecord::Base
-
   # Role ID constants
   ADMIN_ID = 1
   CONTENT_MANAGER_ID = 2
