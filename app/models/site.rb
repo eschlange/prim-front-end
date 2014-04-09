@@ -1,3 +1,5 @@
+# Model for sites.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class Site < ActiveRecord::Base
   has_one :about
   has_one :home

@@ -1,3 +1,5 @@
+# A CanCan configuration file that determines privileges based upon user role.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class Ability
   include CanCan::Ability
 

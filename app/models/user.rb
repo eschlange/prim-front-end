@@ -1,3 +1,5 @@
+# Model for the users. The default devise user model has been modified.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 class User < ActiveRecord::Base
 
   # Role ID constants
