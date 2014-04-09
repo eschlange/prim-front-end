@@ -26,7 +26,8 @@ class ContactUsController < ApplicationController
     @contact_us = ContactUs.new(contact_u_params)
 
     if @contact_ussave
-      redirect_to @contact_us, notice: 'Contact us was successfully created.'
+      redirect_to @contact_us,
+                  notice: 'Contact us was successfully created.'
     else
       render action: 'new'
     end
@@ -35,7 +36,8 @@ class ContactUsController < ApplicationController
   # PATCH/PUT /contact_us/1
   def update
     if @contact_us.update(contact_us_params)
-      redirect_to @contact_us, notice: 'Contact us was successfully updated.'
+      redirect_to @contact_us,
+                  notice: 'Contact us was successfully updated.'
     else
       render action: 'edit'
     end
@@ -44,7 +46,8 @@ class ContactUsController < ApplicationController
   # DELETE /contact_us/1
   def destroy
     @contact_us.destroy
-    redirect_to contact_us_url, notice: 'Contact us was successfully destroyed.'
+    redirect_to contact_us_url,
+                notice: 'Contact us was successfully destroyed.'
   end
 
   private

@@ -5,7 +5,7 @@ class ConfirmationsController < Devise::ConfirmationsController
   def show
     @original_token = params[:confirmation_token]
     digested_token = Devise.token_generator.digest(
-      self, :confirmation_token,params[:confirmation_token])
+      self, :confirmation_token, params[:confirmation_token])
     self.resource = resource_class.find_by_confirmation_token(
       digested_token) if params[:confirmation_token].present?
     super if resource.nil? || resource.confirmed?
