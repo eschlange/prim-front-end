@@ -10,14 +10,14 @@
  *
  *=
  *= require_self
- *= require ../../../vendor/simplemap/stylesheets/font-awesome
- *= require ../../../vendor/simplemap/stylesheets/font-awesome.min
- *= require ../../../vendor/simplemap/stylesheets/styles
- *= require ../../../vendor/simplemap/stylesheets/timeline
- *= require ../../../vendor/simplemap/stylesheets/themes/image
- *= require ../../../vendor/simplemap/stylesheets/themes/link
- *= require ../../../vendor/simplemap/stylesheets/themes/pill
- *= require ../../../vendor/simplemap/stylesheets/themes/tab
+ *= require font-awesome
+ *= require font-awesome.min
+ *= require styles
+ *= require timeline
+ *= require themes/image
+ *= require themes/link
+ *= require themes/pill
+ *= require themes/tab
  *= require_tree .
  */
 
