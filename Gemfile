@@ -1,5 +1,6 @@
+source 'https://rubygems.org'
 gem "pg"
-gem "rails"
+gem "rails", ">= 4.0.5"
 gem "sass-rails"
 gem "bootstrap-sass"
 gem "uglifier"
