@@ -11,6 +11,8 @@ gem "rails_admin"
 gem "cancan"
 gem "font-awesome-sass"
 gem "simple_form"
+gem "formtastic", "2.3.0.rc3"
+gem "thin"
 group :development, :test do
   gem "rspec-rails", "~> 3.0.0.beta2"
 end

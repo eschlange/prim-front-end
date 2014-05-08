@@ -16,7 +16,11 @@ class ApplicationController < ActionController::Base
 
   # Use callbacks to share common setup or constraints between actions.
   def set_site
-    @site = Site.find(params[:site_id])
+    ## if params[:site_id]
+    ##   @site = Site.find(params[:site_id])
+    ## else
+      @site = Site.find(1)
+    ## end
   end
 
   protected

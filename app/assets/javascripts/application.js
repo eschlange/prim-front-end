@@ -15,16 +15,16 @@
 //= require turbolinks
 //= require bootstrap
 
-//= require ../../../vendor/simplemap/javascripts/html5shiv
-//= require ../../../vendor/simplemap/javascripts/jquery.cbpFWSlider.min
-//= require ../../../vendor/simplemap/javascripts/jquery.fitvids
-//= require ../../../vendor/simplemap/javascripts/jquery
-//= require ../../../vendor/simplemap/javascripts/jquery.scrollUp.min
-//= require ../../../vendor/simplemap/javascripts/jquery.singlePageNav.min
-//= require ../../../vendor/simplemap/javascripts/modernizr.custom
-//= require ../../../vendor/simplemap/javascripts/respond.min
-//= require ../../../vendor/simplemap/javascripts/script
-//= require ../../../vendor/simplemap/javascripts/script-home
+//= require ../../../vendor/assets/simplemap/javascripts/html5shiv
+//= require ../../../vendor/assets/simplemap/javascripts/jquery.cbpFWSlider.min
+//= require ../../../vendor/assets/simplemap/javascripts/jquery.fitvids
+//= require ../../../vendor/assets/simplemap/javascripts/jquery
+//= require ../../../vendor/assets/simplemap/javascripts/jquery.scrollUp.min
+//= require ../../../vendor/assets/simplemap/javascripts/jquery.singlePageNav.min
+//= require ../../../vendor/assets/simplemap/javascripts/modernizr.custom
+//= require ../../../vendor/assets/simplemap/javascripts/respond.min
+//= require ../../../vendor/assets/simplemap/javascripts/script
+//= require ../../../vendor/assets/simplemap/javascripts/script-home
 
 //= require_tree .
 

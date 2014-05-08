@@ -9,7 +9,9 @@ Macs::Application.routes.draw do
     get "pages/resources"
   end
 
-  devise_for :users, :path => "sites/:site_id/users", :controllers => {:confirmations => "confirmations"}
+  devise_for :users,
+             :path => "sites/:site_id/users",
+             :controllers => {:confirmations => "confirmations", :registrations => "registrations"}
 
   devise_scope :user do
     put "/confirm" => "confirmations#confirm"
