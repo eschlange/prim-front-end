@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     ## if params[:site_id]
     ##   @site = Site.find(params[:site_id])
     ## else
-      @site = Site.find(1)
+    @site = Site.find(1)
     ## end
   end
 

@@ -5,22 +5,37 @@ class ConfirmationsController < Devise::ConfirmationsController
 
   def show
     @original_token = params[:confirmation_token]
-    digested_token = Devise.token_generator.digest(self, :confirmation_token, params[:confirmation_token])
-    self.resource = resource_class.find_by_confirmation_token(digested_token)
-    if params[:confirmation_token].present?
-      super if resource.nil? || resource.confirmed?
-    end
+    digested_token = Devise.token_generator.digest(self, :confirmation_token,params[:confirmation_token])
+    self.resource = resource_class.find_by_confirmation_token(digested_token) if params[:confirmation_token].present?
+    super if resource.nil? or resource.confirmed?
   end
 
   def confirm
-    self.resource = resource_class.find_by_confirmation_token(params[resource_name][:confirmation_token]) if params[resource_name][:confirmation_token].present?
-    if resource.update_attributes(params[resource_name].except(:confirmation_token)) && resource.password_match?
+    digested_token = Devise.token_generator.digest(self, :confirmation_token, params[resource_name][:confirmation_token])
+    self.resource = resource_class.find_by_confirmation_token(digested_token) if params[resource_name][:confirmation_token].present?
+    if !resource.nil? and resource.update_attributes(params[resource_name].except(:confirmation_token).permit(:email, :password, :password_confirmation)) && resource.password_match?
       self.resource = resource_class.confirm_by_token(params[resource_name][:confirmation_token])
       set_flash_message :notice, :confirmed
       sign_in_and_redirect(resource_name, resource)
     else
       render :action => "show"
     end
+  end
 
+  protected
+  def sign_in_and_redirect(resource_or_scope, *args)
+    options  = args.extract_options!
+    scope    = Devise::Mapping.find_scope!(resource_or_scope)
+    resource = args.last || resource_or_scope
+    sign_in(scope, resource, options)
+    redirect_to '/sites/1/pages/home'
+  end
+
+  def after_confirmation_path_for(resource)
+    '/sites/1/pages/home'
+  end
+
+  def after_resending_confirmation_instructions_path_for(resource)
+    '/sites/1/pages/home'
   end
 end
