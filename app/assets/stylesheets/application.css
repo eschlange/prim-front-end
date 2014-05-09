@@ -24,7 +24,7 @@
 .modal.custom {
     width:30%;
     margin:15% auto 0;
-    background: rgba(256, 256, 256, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     overflow: hidden;
     border-radius: 15px;
     max-height: 50%;
