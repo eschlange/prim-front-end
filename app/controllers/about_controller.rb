@@ -54,16 +54,6 @@ class AboutController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_abouts
-    @site = Site.find(params[:id])
-    if @site.nil?
-      @abouts = About.find(params[:id])
-    else
-      @abouts = @site.about
-    end
-  end
-
   # Only allow a trusted parameter "white list" through.
   def abouts_params
     params.require(:abouts).permit(:title, :content)

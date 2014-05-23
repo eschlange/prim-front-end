@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<% if @site.nil?
+        @site = Site.find(1)
+   end
+%>
 <html lang="en">
     <head>
       <title>MACS</title>

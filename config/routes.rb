@@ -17,7 +17,7 @@ Macs::Application.routes.draw do
     put "/confirm" => "confirmations#confirm"
   end
 
-  root "homes#index"
+  root "pages#home"
   get "homes/index"
   get "index/index"
   get "about", to: "about#index"
