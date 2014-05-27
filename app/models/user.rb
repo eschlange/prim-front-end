@@ -47,6 +47,6 @@ class User < ActiveRecord::Base
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :future_contact)
+    params.require(:user).permit(:first_name, :last_name, :phone, :email, :future_contact)
   end
 end
