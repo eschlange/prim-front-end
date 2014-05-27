@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
   // activate carousels
-  $('#mobile-carousel').carousel();
+  // $('#mobile-carousel').carousel();
 
   // Single page nav init
   $('.single-page-nav').singlePageNav({
@@ -9,10 +9,10 @@ $(document).ready(function() {
   });
 
 	// Full width slider
-	$('#cbp-fwslider').cbpFWSlider();
+	// $('#cbp-fwslider').cbpFWSlider();
 
 	// init fitvids plugin
-  $(".video").fitVids();
+  // $(".video").fitVids();
 
   // Plans border color changer
   $('.plan').mouseenter( function () {
