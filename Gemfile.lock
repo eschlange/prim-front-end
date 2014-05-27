@@ -84,6 +84,9 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.0.3.1)
       sass (~> 3.2)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     haml (4.0.5)
@@ -235,6 +238,7 @@ DEPENDENCIES
   devise
   exception_notification
   font-awesome-sass
+  font-awesome-sass-rails
   formtastic (= 2.3.0.rc3)
   jquery-rails
   pg

@@ -26,6 +26,7 @@ module Macs
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/stylesheets"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/javascripts"
+    config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/fonts"
   end
 
 end

@@ -52,14 +52,14 @@
 }
 
 .welcome.welcome-blip:before {
-  background: image-url('top-welcome-pattern.png');
+  background: image_url('top-welcome-pattern.png');
 }
 .welcome.welcome-blip:after {
-  background: image-url('bottom-welcome-pattern.png');
+  background: image_url('bottom-welcome-pattern.png');
 }
 
 .app-shots.app-shots-custom {
-  background: image-url('app-shots-pattern.png') repeat;
+  background: image_url('app-shots-pattern.png') repeat;
 }
 
 a#scrollUp {
