@@ -30,6 +30,8 @@ group :development do
   gem "debugger"
 end
 
+gem "best_in_place"
+
 group :test do
   gem "capybara"
 end

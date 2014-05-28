@@ -2,7 +2,6 @@
   <div class="container">
     <h2>Welcome</h2>
     <!--<h2 class="title"><%= @home.title %></h2>-->
-    <!--<p><%= @home.content %></p>-->
     <p>Macs is an ongoing prospective study of the natural and treated histories of HIV-1 infection in homosexual and bisexual men conducted by sites located in:<br/> Baltimore, Chicago, Pittsburgh and Los Angeles.</p>
   </div> <!-- /.container -->
 </section> <!-- /.description  -->
@@ -30,6 +29,15 @@
 <section id="about" class="steps text-center">
   <div class="container text-left">
     <h3 class="title">About MACs</h3>
+
+    <%= best_in_place @about, :content, :type => :textarea %>
+    <script>
+        $(document).ready(function() {
+            /* Activating Best In Place */
+            jQuery(".best_in_place").best_in_place();
+        });
+    </script>
+
     <p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York. Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number 2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
     <p>The initial recruitment in 1984-85 was carried out before we had a laboratory test to determine who was a risk of developing AIDS.  HIV had been suggested as the cause of the immunodeficiency in 1983 by investigators at the Pasteur Institute in Paris but this was not  confirmed until the spring of 1984ot by investigators in San Francisco and the NIH in the spring of 1984. However, a blood test to determine who was infected did not become available until the spring of 1985. When the original group of MSM who had joined the MACS underwent  testing it was discovered that approximately 40 percent of the cohort was infected.</p>
     <p>This allowed the MACS to address two important issues. First, we could determine the behaviors, clinical findings and laboratory results which were associated with progression from HIV infection to AIDS. Secondly among the uninfected men, the behaviors that led to HIV infection and the early signs and symptoms of this viral infection could be elucidated. To date 712 uninfected men at entry into the MACS acquired HIV infection during the study, 333 developed AIDS and 82.9% of these men have died.</p>

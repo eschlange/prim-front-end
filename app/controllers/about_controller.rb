@@ -39,10 +39,16 @@ class AboutController < ApplicationController
 
   # PATCH/PUT /abouts/1
   def update
-    if @abouts.update(abouts_params)
-      redirect_to @abouts, notice: 'Contact us was successfully updated.'
-    else
-      render action: 'edit'
+    @about = About.find params[:id]
+
+    respond_to do |format|
+      if @about.update_attributes(params[:about])
+        format.html { redirect_to(@about, :notice => 'About page was successfully updated.') }
+        format.json { respond_with_bip(@about) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@about) }
+      end
     end
   end
 
