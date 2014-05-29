@@ -9,8 +9,6 @@ class PagesController < ApplicationController
 
   def home
     @home = @site.home
-    @about = @site.about
-    @eligibility = @site.eligibility
   end
 
   def contact_us

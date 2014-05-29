@@ -28,23 +28,8 @@
 
 <section id="about" class="steps text-center">
   <div class="container text-left">
-    <h3 class="title">About MACs</h3>
-
-    <%= best_in_place @about, :content, :type => :textarea %>
-    <script>
-        $(document).ready(function() {
-            /* Activating Best In Place */
-            jQuery(".best_in_place").best_in_place();
-        });
-    </script>
-
-    <p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York. Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number 2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
-    <p>The initial recruitment in 1984-85 was carried out before we had a laboratory test to determine who was a risk of developing AIDS.  HIV had been suggested as the cause of the immunodeficiency in 1983 by investigators at the Pasteur Institute in Paris but this was not  confirmed until the spring of 1984ot by investigators in San Francisco and the NIH in the spring of 1984. However, a blood test to determine who was infected did not become available until the spring of 1985. When the original group of MSM who had joined the MACS underwent  testing it was discovered that approximately 40 percent of the cohort was infected.</p>
-    <p>This allowed the MACS to address two important issues. First, we could determine the behaviors, clinical findings and laboratory results which were associated with progression from HIV infection to AIDS. Secondly among the uninfected men, the behaviors that led to HIV infection and the early signs and symptoms of this viral infection could be elucidated. To date 712 uninfected men at entry into the MACS acquired HIV infection during the study, 333 developed AIDS and 82.9% of these men have died.</p>
-    <p>Early in the course of the study it became apparent that dementia was a major problem for men who developed advanced HIV infection and AIDS. MACS investigators organized a working group of neurologists to investigate this problem. The most important early finding was that severe central nervous system (brain and spinal cord) problems were seen only in persons with AIDS and that there was no reason for HIV infected men without AIDS to be restricted in their work. This finding became the basis of World Health Organization recommendation which was widely accepted advising that persons with HIV infection need not be restricted in their activities.</p>
-    <p>During the period of the 1980s the death rate among the infected MACS participants was very high. As of the fall of 2013, close to 90 percent of men who entered the MACS with HIV infection have died. The MACS investigators were among the first to demonstrated that the T-Helper cell count below 200/mm3 were associated with a high rate of  pneumocystis pneumonia (PCP) and helper cell counts below 100/mm3 put individuals at risk for cytomegalovirus  retinitis, atypical mycobacterial infections, and infection of the brain with the parasite Toxoplasma gondii. Giving antibiotics to prevent some of these opportunistic infections helped but the early agents available to treat the HIV infection did not prevent progression to AIDS or death.</p>
-    <p>An early observation of MACS investigators was that the progression of newly acquired HIV infections to AIDS differed from individual to individual. Determinants of this heterogeneity included age at the time of infection and host genetics. The genetic makeup of an individual determines their immune response to HIV which in turn controls the rate of viral replication. Lower levels of replication result in slower progression of untreated HIV infection. Host genetics also determines susceptibility to HIV infection. The MACS contributed to the discovery of an uncommon mutation which protects people with this mutation from the usual form of HIV which is transmitted sexually.</p>
-    <p>With the availability of effective antiretroviral therapy in late 1995 progression to AIDS and death decreased dramatically in men on therapy. Close to 80% of participants in the MACS taking drugs have suppressed HIV replication and the median T-helper cell count is near 600/mm3. Stopping drug treatment results in progression of HIV infection and disease. With this greatly improved survival of infected participants the MACS has focused upon the health status of men who were living longer. To accomplish this investigators have been recruited into working groups with interest in diseases of the heart, lungs, kidneys, liver and metabolic diseases such as diabetes. The behavioral working group has continued to study behaviors to determine why men fail to adhere to treatment. Recreational drugs and alcohol use have been shown to be associated with poor adherence. Drug use also is associated with a marked increase in the risk of acquiring HIV infection. The neurology working group continues to investigate brain function among aging HIV infected men and the Aging working group is attempting  to determine whether or not HIV infected men age more rapidly than ininfected men.</p>
+    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.about, :title, :path => about_path(@site.about.id), :sanitize => false, :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %></h3>
+    <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.about, :content, :type => :textarea, :path => about_path(@site.about.id), :sanitize => false, :display_with => lambda { |aboutContent| (aboutContent).html_safe } %>
   </div>
 </section>
 
@@ -52,7 +37,7 @@
 
 <section id="pricing" class="pricing">
   <div class="container text-left">
-    <h3 class="title">Why MACS Really, Really Appreciates the Contribution of HIV negative Men</h3>
+    <h3 class="title">What </h3>
     <p>The Multicenter AIDS Cohort Study is the longest running study of HIV infection and disease among MSM with and without HIV infection.  We often are asked “but if this is a study of HIV, why do you want men without HIV to participate?”  It’s a fair question.  If we want to study the virus and how the virus causes disease we should look at people who actually have the virus.  But that only works if we know exactly what we are looking for and how it relates to the virus.  And often we don’t know that.</p>
     <p>The MACS is an incredibly unique study because of the HIV negative men who participate.  MSM are not the same as all other men; they may be more fit than other men, they may drink more, they  may have more stress or mental health issues related to stigma or they  may see  doctors more for preventative care.  While there are other studies that study MSM with HIV, there are no other studies that can compare HIV negative MSM with HIV infected MSM.   By completing the same tests as the HIV positive men, HIV negative men allow us to make the right comparisons.   HIV negative MSM are not infected and changes to their health may be more gradual and due to age, diseases of aging or other infections.  Any man’s health can improve or worsen for all sorts of reasons.</p>
     <p>Following the uninfected men will enable the MACS investigators to know that a change we see in men with HIV is due to their infection.  If we can’t compare the health of men with HIV to similar men without HIV we have no way of knowing.</p>
@@ -295,45 +280,13 @@
 
 <section id="contact" class="subscribe text-left">
   <div class="container">
-    <h3 class="title">MACs Contact Information</h3>
-    <table class="table">
-      <tbody>
-      <tr>
-        <th><p class="subtitle">PRINCIPAL INVESTIGATOR</p></th>
-        <td><p class="subtitle">Steven Wolinsky, MD<br/>
-          Division of Infectious Diseases, Feinberg School of Medicine<br/>
-          645 N Michigan Ave, Suite 900<br/>
-          Chicago, IL 60666<br/>
-          312-695-2372 <br/>
-          Fax 312-695-5088<br/>
-          s-galvin@northwestern.edu<br/>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <th><p class="subtitle">SUB-INVESTIGATORS</p></th>
-        <td><p class="subtitle">Shannon Galvin, MD<br/>
-          John Phair, MD<br/>
-          Frank Palella, MD<br/>
-          Sudhir Penugonda, MD<br/>
-          Northwestern University<br/>
-        </p></td>
-      </tr>
-      <tr>
-        <th><p class="subtitle">PARTICIPATING SITES</p></th>
-        <td><p class="subtitle">Northwestern University<br/>
-          645 N Michigan Ave, Suite 900<br/>
-          Chicago, IL 60666<br/>
-          312-695-2372<br/>
-          Fax 312-695-5088<br/></p>
-        </td>
-      </tr>
-      <tr>
-        <th><p class="subtitle">STATISTICIAN</p></th>
-        <td><p class="subtitle">Susheel Reddy, MPH</p></td>
-      </tr>
-      </tbody>
-    </table>
-
+    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.contact_us, :title, :path => contact_u_path(@site.contact_us.id), :sanitize => false, :display_with => lambda { |contactTitle| (contactTitle).html_safe } %></h3>
+    <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.contact_us, :content, :type => :textarea, :path => contact_u_path(@site.contact_us.id), :sanitize => false, :display_with => lambda { |contactUsContent| (contactUsContent).html_safe } %>
   </div>
 </section>
+
+<script>
+    $(document).ready(function() {
+        jQuery(".best_in_place").best_in_place();
+    });
+</script>

@@ -9,6 +9,13 @@ Macs::Application.routes.draw do
     get "pages/resources"
   end
 
+  resources :about
+  resources :homes
+  resources :contact_us
+  resources :eligibilities
+  resources :fundings
+  resources :resources
+
   devise_for :users,
              :path => "sites/:site_id/users",
              :controllers => {:confirmations => "confirmations", :registrations => "registrations"}

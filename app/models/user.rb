@@ -27,7 +27,9 @@ class User < ActiveRecord::Base
   end
 
   def init
-    self.role_id = PARTICIPANT_ID
+    if self.role_id.nil?
+      self.role_id = PARTICIPANT_ID
+    end
   end
 
   def password_required?

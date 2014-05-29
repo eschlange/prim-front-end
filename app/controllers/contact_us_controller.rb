@@ -23,9 +23,9 @@ class ContactUsController < ApplicationController
 
   # POST /contact_us
   def create
-    @contact_us = ContactUs.new(contact_u_params)
+    @contact_us = ContactUs.new(contact_us_params)
 
-    if @contact_ussave
+    if @contact_us.save
       redirect_to @contact_us,
                   notice: 'Contact us was successfully created.'
     else
@@ -35,11 +35,16 @@ class ContactUsController < ApplicationController
 
   # PATCH/PUT /contact_us/1
   def update
-    if @contact_us.update(contact_us_params)
-      redirect_to @contact_us,
-                  notice: 'Contact us was successfully updated.'
-    else
-      render action: 'edit'
+    @contact_us = ContactUs.find params[:id]
+
+    respond_to do |format|
+      if @contact_us.update_attributes(contact_us_params)
+        format.html { redirect_to(@contact_us, :notice => 'About page was successfully updated.') }
+        format.json { respond_with_bip @contact_us }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip @contact_us }
+      end
     end
   end
 

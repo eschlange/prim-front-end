@@ -1,2 +1,2 @@
-<li><%= link_to "update information", edit_user_registration_path %></li>
-<li><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
+<li><%= link_to "update information", edit_user_registration_path(:site_id => @site.id) %></li>
+<li><%= link_to "sign out", destroy_user_session_path(:site_id => @site.id), :method => :delete %></li>

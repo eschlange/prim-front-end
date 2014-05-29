@@ -42,12 +42,12 @@ class AboutController < ApplicationController
     @about = About.find params[:id]
 
     respond_to do |format|
-      if @about.update_attributes(params[:about])
+      if @about.update_attributes(abouts_params)
         format.html { redirect_to(@about, :notice => 'About page was successfully updated.') }
-        format.json { respond_with_bip(@about) }
+        format.json { respond_with_bip @about }
       else
         format.html { render :action => "edit" }
-        format.json { respond_with_bip(@about) }
+        format.json { respond_with_bip @about }
       end
     end
   end
@@ -62,6 +62,6 @@ class AboutController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def abouts_params
-    params.require(:abouts).permit(:title, :content)
+    params.require(:about).permit(:title, :content)
   end
 end
