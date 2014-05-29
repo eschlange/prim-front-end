@@ -35,11 +35,16 @@ class EligibilitiesController < ApplicationController
 
   # PATCH/PUT /eligibilities/1
   def update
-    if @eligibility.update(eligibility_params)
-      redirect_to @eligibility,
-                  notice: 'Eligibility was successfully updated.'
-    else
-      render action: 'edit'
+    @eligibility = Eligibility.find params[:id]
+
+    respond_to do |format|
+      if @eligibility.update_attributes(eligibility_params)
+        format.html { redirect_to(@eligibility, :notice => 'About page was successfully updated.') }
+        format.json { respond_with_bip @eligibility }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip @eligibility }
+      end
     end
   end
 

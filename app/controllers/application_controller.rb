@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     else
       @site = Site.find(1)
     end
+    if @site.intervention.nil?
+      @site.intervention = Intervention.new
+      @site.intervention.name = "intervention name"
+      @site.intervention.content = "intervention content"
+    end
   end
 
   protected

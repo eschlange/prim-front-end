@@ -7,4 +7,5 @@ class Site < ActiveRecord::Base
   has_one :eligibility
   has_one :funding
   has_one :resource
+  has_one :intervention
 end

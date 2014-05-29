@@ -53,6 +53,6 @@ class SitesController < ApplicationController
   def site_params
     params.require(:site).permit(:name, :description, :about_id,
                                  :home_id, :contact_us_id, :eligibility_id,
-                                 :funding_id, :resource_id)
+                                 :funding_id, :resource_id, :intervention_id)
   end
 end
