@@ -2,7 +2,7 @@ class CreateResources < ActiveRecord::Migration
   def change
     create_table :resources do |t|
       t.string :title
-      t.text :content
+      t.string :content
 
       t.timestamps
     end

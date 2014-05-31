@@ -2,7 +2,7 @@ class CreateFundings < ActiveRecord::Migration
   def change
     create_table :fundings do |t|
       t.string :title
-      t.text :content
+      t.string :content
 
       t.timestamps
     end
