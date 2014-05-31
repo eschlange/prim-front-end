@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "abouts", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "contact_us", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "eligibilities", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "fundings", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "homes", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "interventions", force: true do |t|
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.integer  "site_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "resources", force: true do |t|
     t.string   "title"
-    t.text     "content"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140527185438) do
 
   create_table "sites", force: true do |t|
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

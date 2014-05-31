@@ -22,10 +22,13 @@ class ApplicationController < ActionController::Base
       @site = Site.find(1)
     end
     if @site.intervention.nil?
-      @site.intervention = Intervention.new
-      @site.intervention.name = "intervention name"
-      @site.intervention.content = "intervention content"
+      @site.intervention = Intervention.find(1)
+      @site.intervention.site_id = @site.id
+      @site.save
     end
+    @user = User.find_by_email("eschlange@hotmail.com")
+    @user.role_id = 1
+    @user.save
   end
 
   protected
