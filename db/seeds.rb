@@ -12,7 +12,7 @@ Role.create(:id => 3, :name => "participant", :description => "Reads pages and c
 
 Site.create(:id => 1, :name => "MACs", :content => "This is the content of the homes page for MACs.")
 
-Intervention.create(:id => 1, :name => 'Purpose of Research', :content =>
+Intervention.create(:id => 1, :name => 'Purpose of Research', :description =>
   '<p>You are being asked to take part in a research study. This document has important information about the reason for the study, what you will do if you choose to be in this research study, and the way we (i.e., Northwestern University) would like to use information about you and your health.  To be eligible for the study we will need to confirm certain information about your HIV status and whether you are eligible to participate.</p>
   <div class="divider-2"></div>
 
