@@ -1,5 +1,7 @@
 <div class="container sign-up">
 
+  <div class="divider"></div>
+
   <section class="pricing">
     <div class="container text-left">
       <table class="table table-short">
@@ -11,16 +13,15 @@
     </div>
   </section>
 
-  <h2><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.intervention, :name, :path => intervention_path(@site.intervention.id), :sanitize => false, :display_with => lambda { |interventionTitle| (interventionTitle).html_safe } %></h2>
-  <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.intervention, :description, :type => :textarea, :path => intervention_path(@site.intervention.id), :sanitize => false, :display_with => lambda { |interventionContent| (interventionContent).html_safe } %>
+  <div class="divider"></div>
 
+  <%= render 'pages/intervention' %>
 
-  <section id="eligibility" class="screenshots text-center">
-    <div class="container">
-      <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.eligibility, :title, :path => eligibility_path(@site.eligibility.id), :sanitize => false, :display_with => lambda { |eligibilityTitle| (eligibilityTitle).html_safe } %></h3>
-      <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),  @site.eligibility, :content, :type => :textarea, :path => eligibility_path(@site.eligibility.id), :sanitize => false, :display_with => lambda { |eligibilityContent| (eligibilityContent).html_safe } %>
-    </div><!-- /container -->
-  </section>
+  <div class="divider"></div>
+
+  <%= render 'pages/eligibility' %>
+
+  <div class="divider"></div>
 
   <section class="register text-left">
     <div class="container">

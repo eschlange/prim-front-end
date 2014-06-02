@@ -21,9 +21,6 @@ class ApplicationController < ActionController::Base
     else
       @site = Site.find(1)
     end
-    @user = User.find_by_email("eric.schlange@northwestern.edu")
-    @user.role_id = 1
-    @user.save
   end
 
   protected

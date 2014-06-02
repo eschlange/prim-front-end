@@ -1,0 +1,18 @@
+<section id="resources" class="testimonials text-center">
+  <div class="container text-left">
+    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),
+                                           @site.funding, :title,
+                                           :path => funding_path(@site.funding.id),
+                                           :sanitize => false,
+                                           :display_with => lambda { |fundingTitle| (fundingTitle).html_safe } %>
+    </h3>
+
+    <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),
+                         @site.funding, :content,
+                         :type => :textarea,
+                         :path => funding_path(@site.funding.id),
+                         :sanitize => false,
+                         :display_with => lambda { |fundingContent| (fundingContent).html_safe },
+                         :html_attrs => { :style => 'width:100%;' }%>
+  </div><!-- /container -->
+</section>
