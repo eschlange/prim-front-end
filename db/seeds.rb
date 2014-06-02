@@ -17,7 +17,7 @@ Intervention.create(:id => 1, :name => 'Purpose of Research', :description =>
   <div class="divider-2"></div>
 
   <h3>What is the reason for doing this study?</h3>
-  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different the virus is to persons with long standing HIV and other persons with recent HIV.  We hope to look at your body’s immune responses to HIV. You are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
+  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different the virus is to persons with long standing HIV and other persons with recent HIV.  We hope to look at your body\'s immune responses to HIV. You are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
   <div class="divider-2"></div>
 
   <h3>What you will do if you choose to be in this study?</h3>
@@ -125,18 +125,18 @@ Funding.create(:title => "MACs Funding", :content => "Description goes here for 
 Resource.create(:title => "MACs Publications and Resources", :content => "Description goes here for the MACs resource page.", :site_id => 1)
 
 Eligibility.create(:title => 'Eligibility Criteria', :content =>
-  '<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
-      <div class="row">
-        <div class="col-sm-5">
-          <p class="subtitle"> Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
-        </div>
-        <div class="col-sm-2">
-          <h3 class="title">OR</h3>
-        </div>
-        <div class="col-sm-5">
-          <p class="subtitle">Documented negative HIV ab test in past year.</p>
-        </div>
+'<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
+    <div class="row">
+      <div class="col-sm-5">
+        <p class="subtitle"> Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
       </div>
-      <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
+      <div class="col-sm-2">
+        <h3 class="title">OR</h3>
+      </div>
+      <div class="col-sm-5">
+        <p class="subtitle">Documented negative HIV ab test in past year.</p>
+      </div>
+    </div>
+    <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
                    :site_id => 1)
 User.create(:first_name => "Eric", :last_name => "Schlange", :email => "eric.schlange@northwestern.edu", :role_id => 1, :encrypted_password => User.new.send(:password_digest, 'secrets!'))
