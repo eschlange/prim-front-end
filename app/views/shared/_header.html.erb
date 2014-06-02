@@ -110,18 +110,25 @@
   <% if 'home' == @current_page %>
   <div class="container banner">
     <div class="row">
-      <div class="col-sm-9">
-        <div class="header-description">
-          <h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br>the first and largest study specifically created to examine the natural history of AIDS. </h1>
-        </div><!-- /header-description -->
-      </div><!-- /col-sm-9-->
-      <div class="col-sm-3">
-        <div class="app-store-button-wrapper app-store-button-wrapper-custom">
-          <a class="btn btn-warning btn-large apple-version banner-btn" href="/sites/1/users/sign_up">Enroll Here</a>
-        </div>
-      </div>
+      <% if current_user.nil? %>
+          <div class="col-sm-9">
+            <div class="header-description">
+              <h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br>the first and largest study specifically created to examine the natural history of AIDS. </h1>
+            </div><!-- /header-description -->
+          </div><!-- /col-sm-9-->
+          <div class="col-sm-3">
+            <div class="app-store-button-wrapper app-store-button-wrapper-custom">
+              <a class="btn btn-warning btn-large apple-version banner-btn" href="/sites/1/users/sign_up">Enroll Here</a>
+            </div>
+          </div>
+      <% else %>
+          <div class="header-description">
+            <h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br>the first and largest study specifically created to examine the natural history of AIDS. </h1>
+          </div><!-- /header-description -->
+      <% end %>
     </div><!-- /row -->
   </div><!-- /container -->
+
   <% end %>
 
   <% if 'devise/registrations' == params[:controller] %>

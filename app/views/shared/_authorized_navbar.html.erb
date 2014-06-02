@@ -1,4 +1,4 @@
-<li><%= link_to "update information", edit_user_registration_path(:site_id => @site.id) %></li>
+<li><a href="#" onclick="window.location = '/sites/1/users/edit#header'" style="cursor: pointer;">update information</a></li>
 <% if current_user.role_id != 3 %>
 <%= '<li><a href="#" onclick="window.location = \'/sites/1/users/sign_up\'" style="cursor: pointer;">edit enrollment</a></li>'.html_safe %>
 <% end %>
