@@ -15,15 +15,15 @@ class User < ActiveRecord::Base
   after_initialize :init
 
   def admin?
-    role.id == ADMIN_ID
+    ADMIN_ID == self.role_id
   end
 
   def content_manager?
-    role.id == CONTENT_MANAGER_ID
+    CONTENT_MANAGER_ID == self.role_id
   end
 
   def participant?
-    role.id == PARTICIPANT_ID
+    PARTICIPANT_ID == self.role_id
   end
 
   def init
