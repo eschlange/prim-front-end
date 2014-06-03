@@ -15,6 +15,7 @@ gem "formtastic", "2.3.0.rc3"
 gem "thin"
 gem "font-awesome-sass-rails"
 gem "best_in_place", github: 'aaronchi/best_in_place'
+gem "to_csv-rails", '~> 0.1.5'
 
 # email exceptions
 gem "exception_notification"

@@ -8,6 +8,7 @@ Macs::Application.routes.draw do
     get "pages/funding"
     get "pages/resources"
   end
+  resources :users, only: [:edit, :update]
 
   resources :about
   resources :homes
@@ -26,6 +27,7 @@ Macs::Application.routes.draw do
   end
 
   root "pages#home"
+  get "user_admin", to: "user_admin#index"
   get "homes/index"
   get "index/index"
   get "about", to: "about#index"

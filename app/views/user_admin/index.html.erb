@@ -1,0 +1,45 @@
+<section id="about" class="steps text-center">
+  <div class="container text-left user-admin">
+
+    <table class="table table-striped table-hover">
+      <tbody>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Consent Date</th>
+          <th class="text-center">Future Contact</th>
+          <th>Role</th>
+        </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.created_at %></td>
+            <td class="text-center"><% if user.future_contact?  %>
+                  <span class="glyphicon glyphicon-check" style="color:green"></span>
+                <% else %>
+                  <span class="glyphicon glyphicon-minus-sign" style="color:red"></span>
+                <% end %>
+            </td>
+            <td><%= @roles[user.role_id].name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-danger btn-lg btn-user-export">
+      <%= link_to 'Export to CSV', user_admin_path(:format => :csv)%>
+    </button>
+
+  </div>
+</section>
+
+<script>
+    $(document).ready(function() {
+        jQuery(".best_in_place").best_in_place();
+    });
+</script>

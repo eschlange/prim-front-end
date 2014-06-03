@@ -1,5 +1,6 @@
 <li><a href="#" onclick="window.location = '/sites/1/users/edit#header'" style="cursor: pointer;">update information</a></li>
 <% if current_user.role_id != 3 %>
-<%= '<li><a href="#" onclick="window.location = \'/sites/1/users/sign_up\'" style="cursor: pointer;">edit enrollment</a></li>'.html_safe %>
+    <li><a href="#" onclick="window.location = '/sites/1/users/sign_up'" style="cursor: pointer;">edit enrollment</a></li>
+    <li><a href="#" onclick="window.location = '/user_admin'" style="cursor: pointer;">user admin</a></li>
 <% end %>
 <li><%= link_to "sign out", destroy_user_session_path(:site_id => @site.id), :method => :delete %></li>

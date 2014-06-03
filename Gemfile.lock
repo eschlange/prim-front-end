@@ -216,6 +216,7 @@ GEM
     thread_safe (0.3.3)
     tilt (1.4.1)
     tins (1.1.0)
+    to_csv-rails (0.1.5)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -257,5 +258,6 @@ DEPENDENCIES
   sass-rails
   simple_form
   thin
+  to_csv-rails (~> 0.1.5)
   turbolinks
   uglifier
