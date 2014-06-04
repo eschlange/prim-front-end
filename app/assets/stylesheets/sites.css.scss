@@ -106,7 +106,7 @@
 }
 
 #loginModal {
-  background: rgba(255, 69, 69, .95);
+  background-color: #3ac29c;
   color: #fff;
 }
 
@@ -119,4 +119,30 @@
 
 .banner .col-sm-3 .app-store-button-wrapper {
   -webkit-box-shadow: 1px 1px 45px 1px rgba(255, 255, 255, 0.34);
+}
+
+#header .modal-header {
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+#header .register {
+  padding-bottom: 0px;
+}
+
+#header .modal-footer {
+  border-top: none;
+  border-radius: 5px;
+}
+
+#header #loginModal {
+  padding: 0px;
+}
+
+#header .modal-body .controls input {
+  color: #000000;
+}
+
+#header .modal.custom {
+  max-height: 400px;
 }

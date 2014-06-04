@@ -1,23 +1,25 @@
 <header id="header" class="header red-ribbon">
 
-    <div class="modal custom fade" id="loginModal">
-      <div class="modal-header">
-        <button class="close" data-dismiss="modal">×</button>
-        <h3>Sign In</h3>
+    <section class="modal custom fade" id="loginModal">
+      <div class="register">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">×</button>
+            <h3>Sign In</h3>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(:user, :url => "/sites/1/users/sign_in", :method => 'post') do |f| %>
+            <div class="inputs">
+              <%= f.input :email, :required => false, :autofocus => true %>
+              <%= f.input :password, :required => false %>
+              <%= f.input :remember_me, :as => :boolean,  :label => false, :inline_label => true if devise_mapping.rememberable? %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= f.button :submit, "sign in", :class => 'btn btn-danger' %>
+          <% end %>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for(:user, :url => "/sites/1/users/sign_in", :method => 'post') do |f| %>
-        <div class="inputs">
-          <%= f.input :email, :required => false, :autofocus => true %>
-          <%= f.input :password, :required => false %>
-          <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-        </div>
       </div>
-      <div class="modal-footer">
-        <%= f.button :submit, "sign in", :class => 'btn btn-primary' %>
-      <% end %>
-      </div>
-    </div>
+    </section>
 
   <!-- Modal Danger -->
   <div class="modal fade modal-hmcf modal-danger" id="modalDanger" tabindex="-1" role="dialog" aria-labelledby="modalDangerLabel" aria-hidden="true">
