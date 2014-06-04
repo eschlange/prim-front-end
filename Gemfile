@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 gem "pg"
 gem "rails", ">= 4.0.5"
-gem "sass-rails"
 gem "bootstrap-sass"
 gem "uglifier"
 gem "jquery-rails"
@@ -11,7 +10,6 @@ gem "rails_admin"
 gem "cancan"
 gem "font-awesome-sass"
 gem "simple_form"
-gem "formtastic", "2.3.0.rc3"
 gem "thin"
 gem "font-awesome-sass-rails"
 gem "best_in_place", github: 'aaronchi/best_in_place'

@@ -95,8 +95,6 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
-    formtastic (2.3.0.rc3)
-      actionpack (>= 3.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -249,13 +247,11 @@ DEPENDENCIES
   exception_notification
   font-awesome-sass
   font-awesome-sass-rails
-  formtastic (= 2.3.0.rc3)
   jquery-rails
   pg
   rails (>= 4.0.5)
   rails_admin
   rspec-rails (~> 3.0.0.beta2)
-  sass-rails
   simple_form
   thin
   to_csv-rails (~> 0.1.5)
