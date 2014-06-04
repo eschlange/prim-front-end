@@ -77,6 +77,7 @@
       </div><!-- /.container -->
     </nav>
 
+  <% if "pages" == params[:controller] %>
     <!-- Homepage navabr - it shows up on scroll -->
     <nav class="navbar navbar-default navbar-scroll navbar-fixed-top hidden" data-top-offset="500" role="navigation">
       <div class="container">
@@ -106,6 +107,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
+  <% end %>
 
   <% if 'home' == @current_page %>
   <div class="container banner">

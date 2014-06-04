@@ -123,7 +123,7 @@ if (typeof Object.create !== 'function') {
             var scrollPos = this.$window.scrollTop();
             var currentSection = this.getCurrentSection(scrollPos);
             this.setActiveLink(currentSection);
-        },        
+        },
         
         getCoords: function($elem) {
             return {
@@ -138,23 +138,23 @@ if (typeof Object.create !== 'function') {
                 this.$links.removeClass(this.options.currentClass);
                 $activeLink.addClass(this.options.currentClass);
             }
-        },        
+        },
         
         getCurrentSection: function(scrollPos) {
             var i, hash, coords, section;
-            
+
             for (i = 0; i < this.$links.length; i++) {
                 hash = this.$links[i].hash;
-                
+
                 if ($(hash).length) {
                     coords = this.getCoords($(hash));
-                    
+
                     if (scrollPos >= coords.top - this.options.threshold) {
                         section = hash;
                     }
                 }
             }
-            
+
             // The current section or the first link
             return section || this.$links[0].hash;
         }

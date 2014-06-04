@@ -25,8 +25,8 @@ $(document).ready(function() {
 // Homepage navbar shows on scroll
 $( window ).scroll(function() {
   var windowTop    = $( window ).scrollTop();
-      navbar       = $( '.navbar-scroll' ); 
-      navbarOffset = navbar.data('topOffset'); 
+      navbar       = $( '.navbar-scroll' );
+      navbarOffset = navbar.data('topOffset');
   if ( windowTop > navbarOffset ) {
     navbar.removeClass('hidden');
   } else {

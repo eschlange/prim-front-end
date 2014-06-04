@@ -2,7 +2,7 @@
 
   <div class="divider"></div>
 
-  <section class="pricing">
+  <section class="intervention">
     <div class="container text-left">
       <table class="table table-short">
         <tr><td>Digital Consent Form and HIPAA Authorization for Research</td></tr>
@@ -15,7 +15,11 @@
 
   <div class="divider"></div>
 
-  <%= render 'pages/intervention' %>
+  <section class="intervention-long">
+    <div class="container text-left">
+        <%= render 'pages/intervention' %>
+    </div>
+  </section>
 
   <div class="divider"></div>
 
@@ -39,8 +43,8 @@
             <%= f.input :future_contact , :as => :radio_buttons, collection: [['I do not agree that someone may contact me in the future, after my participation in this study is over, to ask me to be in more research.', false]], label:"" , :disabled => true %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", :class => "btn btn-default" %>
+          <div class="form-actions" style="padding-top: 20px">
+            <%= f.button :submit, "Sign up", :class => "btn btn-danger" %>
           </div>
       <% end %>
     </div>
@@ -52,6 +56,7 @@
 
 <script>
     $(document).ready(function() {
-        jQuery(".best_in_place").best_in_place();
+        // jQuery(".best_in_place").best_in_place();
+        window.scrollTo(0,0);
     });
 </script>
