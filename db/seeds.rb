@@ -328,4 +328,3 @@ Eligibility.create(:title => 'Eligibility Criteria', :content =>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
  :site_id => 1)
 User.create(:first_name => "Eric", :last_name => "Schlange", :email => "eric.schlange@northwestern.edu", :role_id => 1, :encrypted_password => User.new.send(:password_digest, 'secrets!'))
-User.create(:first_name => "Sarah", :last_name => "Galvin", :email => "s-galvin@northwestern.edu", :role_id => 1, :encrypted_password => User.new.send(:password_digest, 'secrets!'))

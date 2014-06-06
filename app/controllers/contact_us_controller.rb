@@ -42,7 +42,7 @@ class ContactUsController < ApplicationController
         format.html { redirect_to(@contact_us, :notice => 'About page was successfully updated.') }
         format.json { respond_with_bip @contact_us }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.json { respond_with_bip @contact_us }
       end
     end

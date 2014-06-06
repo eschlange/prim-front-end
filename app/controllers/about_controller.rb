@@ -46,7 +46,7 @@ class AboutController < ApplicationController
         format.html { redirect_to(@about, :notice => 'About page was successfully updated.') }
         format.json { respond_with_bip @about }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.json { respond_with_bip @about }
       end
     end

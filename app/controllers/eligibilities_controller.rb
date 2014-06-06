@@ -42,7 +42,7 @@ class EligibilitiesController < ApplicationController
         format.html { redirect_to(@eligibility, :notice => 'About page was successfully updated.') }
         format.json { respond_with_bip @eligibility }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.json { respond_with_bip @eligibility }
       end
     end

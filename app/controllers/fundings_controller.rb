@@ -34,10 +34,16 @@ class FundingsController < ApplicationController
 
   # PATCH/PUT /fundings/1
   def update
-    if @funding.update(funding_params)
-      redirect_to @funding, notice: 'Funding was successfully updated.'
-    else
-      render action: 'edit'
+    @funding = Funding.find params[:id]
+
+    respond_to do |format|
+      if @funding.update_attributes(funding_params)
+        format.html { redirect_to(@funding, :notice => 'funding page was successfully updated.') }
+        format.json { respond_with_bip @funding }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip @funding }
+      end
     end
   end
 

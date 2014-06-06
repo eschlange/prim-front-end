@@ -34,10 +34,16 @@ class ResourcesController < ApplicationController
 
   # PATCH/PUT /resources/1
   def update
-    if @resource.update(resource_params)
-      redirect_to @resource, notice: 'Resource was successfully updated.'
-    else
-      render action: 'edit'
+    @resource = Resource.find params[:id]
+
+    respond_to do |format|
+      if @resource.update_attributes(resource_params)
+        format.html { redirect_to(@resource, :notice => 'Resource page was successfully updated.') }
+        format.json { respond_with_bip @resource }
+      else
+        format.html { render :action => 'edit' }
+        format.json { respond_with_bip @resource }
+      end
     end
   end
 

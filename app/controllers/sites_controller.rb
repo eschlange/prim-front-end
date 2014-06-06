@@ -34,10 +34,16 @@ class SitesController < ApplicationController
 
   # PATCH/PUT /sites/1
   def update
-    if @site.update(site_params)
-      redirect_to @site, notice: 'Site was successfully updated.'
-    else
-      render action: 'edit'
+    @site = Site.find params[:id]
+
+    respond_to do |format|
+      if @site.update_attributes(site_params)
+        format.html { redirect_to(@site, :notice => 'site page was successfully updated.') }
+        format.json { respond_with_bip @site }
+      else
+        format.html { render :action => 'edit' }
+        format.json { respond_with_bip @site }
+      end
     end
   end
 
@@ -51,7 +57,7 @@ class SitesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def site_params
-    params.require(:site).permit(:name, :description, :about_id,
+    params.require(:site).permit(:name, :content, :about_id,
                                  :home_id, :contact_us_id, :eligibility_id,
                                  :funding_id, :resource_id, :intervention_id)
   end

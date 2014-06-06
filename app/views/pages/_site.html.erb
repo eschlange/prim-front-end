@@ -1,2 +1,9 @@
-<h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br />
-  the first and largest study specifically created to examine the natural history of AIDS.</h1>
+<h1 class="title red-ribbon-title">
+  <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),
+                       @site, :content,
+                       :type => :textarea,
+                       :path => site_path(@site.id),
+                       :sanitize => false,
+                       :display_with => lambda { |siteContent| (siteContent).html_safe },
+                       :html_attrs => { :style => 'width:100%;' }%>
+</h1>
