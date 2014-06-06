@@ -117,7 +117,7 @@
       <% if current_user.nil? %>
           <div class="col-sm-9">
             <div class="header-description">
-              <h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br>the first and largest study specifically created to examine the natural history of AIDS. </h1>
+              <%= render 'pages/site' %>
             </div><!-- /header-description -->
           </div><!-- /col-sm-9-->
           <div class="col-sm-3">
@@ -127,7 +127,7 @@
           </div>
       <% else %>
           <div class="header-description">
-            <h1 class="title red-ribbon-title">MACs : Multicenter AIDS Cohort Study Program<br>the first and largest study specifically created to examine the natural history of AIDS. </h1>
+            <%= render 'pages/site' %>
           </div><!-- /header-description -->
       <% end %>
     </div><!-- /row -->
