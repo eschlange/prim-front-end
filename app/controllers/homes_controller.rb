@@ -2,16 +2,16 @@
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class HomesController < ApplicationController
   before_action :set_homes, only: [:show, :edit, :update, :destroy]
-  layout "application"
+  layout 'application'
 
-  PAGE_NAME = "home"
+  PAGE_NAME = 'home'
 
   def index
     current_page(PAGE_NAME)
   end
 
   def reload_header
-    render partial: "shared/header"
+    render partial: 'shared/header'
   end
 
   # GET /homes/1

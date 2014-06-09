@@ -30,6 +30,6 @@ class PagesController < ApplicationController
   private
 
   def set_current_page
-    current_page("home")
+    current_page('home')
   end
 end

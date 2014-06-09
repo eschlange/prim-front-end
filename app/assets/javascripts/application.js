@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require jquery.form.min
 
 //= require ../../../vendor/assets/simplemap/javascripts/html5shiv
 //= require ../../../vendor/assets/simplemap/javascripts/jquery.cbpFWSlider.min

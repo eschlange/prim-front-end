@@ -8,4 +8,5 @@ class Site < ActiveRecord::Base
   has_one :funding
   has_one :resource
   has_one :intervention
+  has_many :site_images
 end

@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
     else
       @site = Site.find(1)
     end
+
   end
 
   rescue_from CanCan::AccessDenied do |exception|

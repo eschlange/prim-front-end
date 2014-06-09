@@ -7,6 +7,7 @@ Macs::Application.routes.draw do
     get "pages/eligibility"
     get "pages/funding"
     get "pages/resources"
+    resources :site_images, param: :position
   end
   resources :users, only: [:edit, :update]
 

@@ -1,3 +1,17 @@
+<% @image_to_use = retrieve_site_image_by_position(@site.id, 'picture_1') %>
+<%= @image_to_use.image.url %>
+<div id="image_view">
+    <%= image_tag @image_to_use.image.url(:medium) %>
+</div>
+<%= form_for [@site, @image_to_use], :html => { :multipart => true } do |form| %>
+    <%= form.hidden_field :position %>
+    <%= form.hidden_field :site_id %>
+    <%= form.file_field :image %>
+    <%= form.submit %>
+<% end %>
+
+
+
 <%= render 'pages/home_section' %>
 
 <section id="app-shots" class="app-shots app-shots-custom text-center">

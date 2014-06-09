@@ -18,6 +18,8 @@ gem "to_csv-rails", '~> 0.1.5'
 # email exceptions
 gem "exception_notification"
 
+gem "paperclip", "~> 4.1"
+
 group :development, :test do
   gem "rspec-rails", "~> 3.0.0.beta2"
 end
