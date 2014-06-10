@@ -10,20 +10,21 @@
     </div>
 
     <%= form_for [@site, retrieve_site_image_by_position(@site.id, position)], :html => { :multipart => true } do |form| %>
-        <%= form.hidden_field :position, value: position %>
-        <%= form.hidden_field :site_id %>
+      <%= form.hidden_field :position, value: position %>
+      <%= form.hidden_field :site_id %>
 
-        <div class="input-group">
-          <span class="input-group-btn">
-            <span class="btn  btn-danger btn-file">
-              Choose Image
-              <%= form.file_field :image, class: 'image_input' %>
-            </span>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <span class="btn  btn-danger btn-file">
+            Choose Image
+            <%= form.file_field :image, class: 'image_input' %>
           </span>
-          <input type="text" class="form-control" readonly="">
-        </div>
+        </span>
+        <input type="text" class="form-control" readonly="">
+      </div>
+  </div>
   <div class="modal-footer">
-        <button class='btn btn-danger pull-left' onclick="$(#new_site_image).submit()" %>Save Image</button>
+        <button class='btn btn-danger pull-left' onclick="$('.edit_site_image').submit()">Save Image</button>
         <button class="btn btn-warning pull-right" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
   <% end %>
