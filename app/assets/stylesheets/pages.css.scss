@@ -121,3 +121,50 @@ a#scrollUp:hover {
 section#eligibility h3.title input, section#contact h3.title input {
   color: #000;
 }
+
+.modal.custom.image-upload-div {
+  padding-bottom: 30px;
+  max-height: 50%;
+  background: rgba(255,255,255,0.90);
+}
+
+.modal.custom.image-upload-div #image_view {
+  text-align: center;
+  width: 100%;
+}
+
+.modal.custom.image-upload-div #image_view img{
+  max-height: 60%;
+  max-width: 60%;
+  margin-bottom: 20px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+#focusedInput:focus {
+  background: red;
+}

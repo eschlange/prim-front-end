@@ -19,3 +19,6 @@
 # Ignore all IDE specific files.
 .idea
 .idea/*
+
+# Ignore all paperclip files.
+/public/system/**

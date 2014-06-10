@@ -10,7 +10,6 @@ Macs::Application.routes.draw do
     resources :site_images, param: :position
   end
   resources :users, only: [:edit, :update]
-
   resources :about
   resources :homes
   resources :contact_us
@@ -32,5 +31,5 @@ Macs::Application.routes.draw do
   get "homes/index"
   get "index/index"
   get "about", to: "about#index"
-
+  get "site_image/update" => 'pages#image_update', :as => :site_image_update
 end
