@@ -22,6 +22,7 @@ gem "paperclip", "~> 4.1"
 
 group :development, :test do
   gem "rspec-rails", "~> 3.0.0.beta2"
+  gem "factory_girl_rails"
 end
 
 group :development do
@@ -32,5 +33,8 @@ group :development do
 end
 
 group :test do
+  gem "faker"
   gem "capybara"
+  gem "guard-rspec"
+  gem "launchy"
 end

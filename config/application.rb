@@ -29,6 +29,16 @@ module Macs
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/stylesheets"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/javascripts"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/fonts"
-  end
 
+    config.generators do |generator|
+      generator.test_framework :rspec,
+                               :fixtures => true,
+                               :view_specs => false,
+                               :helper_specs => false,
+                               :routing_specs => false,
+                               :controller_specs => true,
+                               :request_specs => true
+      generator.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+  end
 end
