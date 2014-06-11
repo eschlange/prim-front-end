@@ -1,3 +1,6 @@
+# A concern for specific role-related logic, used to
+# simplify usage of user roles.
+# @author Eric Schlange <eric.schlange@northwestern.edu>
 module Role
   extend ActiveSupport::Concern
 
@@ -25,15 +28,10 @@ module Role
 
   def role_name
     case role_identifier
-      when 1
-        'super_user'
-      when 2
-        'admin'
-      when 3
-        'content_manager'
-      when 4
-        'participant'
+    when 1 then 'super_user'
+    when 2 then 'admin'
+    when 3 then 'content_manager'
+    when 4 then 'participant'
     end
   end
-
 end

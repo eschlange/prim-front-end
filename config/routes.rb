@@ -20,7 +20,7 @@ Macs::Application.routes.draw do
 
   devise_for :users,
              :path => "sites/:site_id/users",
-             :controllers => {:confirmations => "confirmations", :registrations => "registrations"}
+             :controllers => { confirmations: "confirmations", registrations: "registrations" }
 
   devise_scope :user do
     put "/confirm" => "confirmations#confirm"

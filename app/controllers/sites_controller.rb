@@ -38,10 +38,10 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.update_attributes(site_params)
-        format.html { redirect_to(@site, :notice => 'site page was successfully updated.') }
+        format.html { redirect_to(@site, notice: 'site page was successfully updated.') }
         format.json { respond_with_bip @site }
       else
-        format.html { render :action => 'edit' }
+        format.html { render action: 'edit' }
         format.json { respond_with_bip @site }
       end
     end

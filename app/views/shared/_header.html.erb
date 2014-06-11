@@ -111,7 +111,7 @@
     </nav>
   <% end %>
 
-  <% if 'home' == @current_page %>
+  <% if "pages" == params[:controller] %>
   <div class="container banner">
     <div class="row">
       <% if current_user.nil? %>
@@ -132,7 +132,6 @@
       <% end %>
     </div><!-- /row -->
   </div><!-- /container -->
-
   <% end %>
 
   <% if 'devise/registrations' == params[:controller] %>

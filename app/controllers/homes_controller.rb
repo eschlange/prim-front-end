@@ -44,10 +44,10 @@ class HomesController < ApplicationController
 
     respond_to do |format|
       if @home.update_attributes(homes_params)
-        format.html { redirect_to(@home, :notice => 'home page was successfully updated.') }
+        format.html { redirect_to(@home, notice: 'home page was successfully updated.') }
         format.json { respond_with_bip @home }
       else
-        format.html { render :action => 'edit' }
+        format.html { render action: 'edit' }
         format.json { respond_with_bip @home }
       end
     end

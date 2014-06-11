@@ -10,10 +10,6 @@ class ApplicationController < ActionController::Base
   before_action :set_site, :configure_permitted_parameters,
                 if: :devise_controller?
 
-  def current_page(page_name)
-    @current_page = page_name
-  end
-
   # Use callbacks to share common setup or constraints between actions.
   def set_site
     if params[:site_id]
@@ -21,11 +17,10 @@ class ApplicationController < ActionController::Base
     else
       @site = Site.find(1)
     end
-
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => true
+    render file: "#{Rails.root}/public/403.html", status: 403, layout: true, exception: exception
   end
 
   protected

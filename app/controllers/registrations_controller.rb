@@ -10,6 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
   # Helper for use in before_filters where no authentication is required.
   #
   # Example:
@@ -26,9 +27,12 @@ class RegistrationsController < Devise::RegistrationsController
                       warden.authenticated?(resource_name)
                     end
 
-    if authenticated && resource = warden.user(resource_name) && (current_user.nil? or current_user.role.is_a)
-      flash[:alert] = I18n.t("devise.failure.already_authenticated")
-      redirect_to after_sign_in_path_for(resource)
+    redirect_if_already_signed_in_and_not_content_manager(authenticated)
+  end
+
+  def redirect_if_already_signed_in_and_not_content_manager(authenticated)
+    if authenticated && (current_user.nil? || !current_user.at_least_a_content_manager?)
+      render file: "#{Rails.root}/public/403.html", status: 403, layout: true
     end
   end
 end

@@ -1,7 +1,11 @@
+# Author::  Eric Schlange (mailto:eric.schlange@northwestern.edu)
+# License:: GPLv2
+
+# SiteImagesController handles requests to update or create new viewable images.
 class SiteImagesController < ApplicationController
   before_action :set_site
 
-  protect_from_forgery :except => :create
+  protect_from_forgery except: :create
 
   def show
   end
@@ -11,7 +15,7 @@ class SiteImagesController < ApplicationController
 
   def create
     respond_to do |format|
-      @site_image = SiteImage.new (site_image_params)
+      @site_image = SiteImage.new(site_image_params)
       @site_image.save
       format.html { redirect_to '/sites/' + @site.id.to_s + '/pages/home', notice: 'Image was successfully updated.' }
       format.js
@@ -34,6 +38,7 @@ class SiteImagesController < ApplicationController
   end
 
   private
+
   def site_image_params
     params.require(:site_image).permit(:image, :position, :site_id)
   end

@@ -39,10 +39,10 @@ class ContactUsController < ApplicationController
 
     respond_to do |format|
       if @contact_us.update_attributes(contact_us_params)
-        format.html { redirect_to(@contact_us, :notice => 'About page was successfully updated.') }
+        format.html { redirect_to(@contact_us, notice: 'About page was successfully updated.') }
         format.json { respond_with_bip @contact_us }
       else
-        format.html { render :action => 'edit' }
+        format.html { render action: 'edit' }
         format.json { respond_with_bip @contact_us }
       end
     end

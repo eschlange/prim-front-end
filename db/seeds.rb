@@ -9,7 +9,10 @@
 Site.create(:id => 1, :name => 'MACs', :content => 'MACs : Multicenter AIDS Cohort Study Program<br />
   the first and largest study specifically created to examine the natural history of AIDS.')
 
-Intervention.create(:id => 1, :name => 'Purpose of Research', :description =>
+Intervention.create(
+:id => 1,
+:name => 'Purpose of Research',
+:description =>
   '<p>You are being asked to take part in a research study. This document has important information about the reason for the study, what you will do if you choose to be in this research study, and the way we (i.e., Northwestern University) would like to use information about you and your health.  To be eligible for the study we will need to confirm certain information about your HIV status and whether you are eligible to participate.</p>
   <div class="divider-2"></div>
 
@@ -68,12 +71,14 @@ Intervention.create(:id => 1, :name => 'Purpose of Research', :description =>
   <div class="divider"></div>',
 :site_id => 1)
 
-Home.create(:title => 'Welcome', :content =>
-  '<p>Macs is an ongoing prospective study of the natural and treated histories of HIV-1 infection in homosexual and bisexual men conducted by sites located in:<br/> Baltimore, Chicago, Pittsburgh and Los Angeles.</p>',
-            :site_id => 1)
+Home.create(
+:title => 'Welcome',
+:content => '<p>Macs is an ongoing prospective study of the natural and treated histories of HIV-1 infection in homosexual and bisexual men conducted by sites located in:<br/> Baltimore, Chicago, Pittsburgh and Los Angeles.</p>',
+:site_id => 1)
 
-About.create(:title => 'About MACs', :content =>
-'<p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York. Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number 2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
+About.create(
+:title => 'About MACs',
+:content => '<p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York. Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number 2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
 <p>The initial recruitment in 1984-85 was carried out before we had a laboratory test to determine who was a risk of developing AIDS.  HIV had been suggested as the cause of the immunodeficiency in 1983 by investigators at the Pasteur Institute in Paris but this was not  confirmed until the spring of 1984ot by investigators in San Francisco and the NIH in the spring of 1984. However, a blood test to determine who was infected did not become available until the spring of 1985. When the original group of MSM who had joined the MACS underwent  testing it was discovered that approximately 40 percent of the cohort was infected.</p>
 <p>This allowed the MACS to address two important issues. First, we could determine the behaviors, clinical findings and laboratory results which were associated with progression from HIV infection to AIDS. Secondly among the uninfected men, the behaviors that led to HIV infection and the early signs and symptoms of this viral infection could be elucidated. To date 712 uninfected men at entry into the MACS acquired HIV infection during the study, 333 developed AIDS and 82.9% of these men have died.</p>
 <p>Early in the course of the study it became apparent that dementia was a major problem for men who developed advanced HIV infection and AIDS. MACS investigators organized a working group of neurologists to investigate this problem. The most important early finding was that severe central nervous system (brain and spinal cord) problems were seen only in persons with AIDS and that there was no reason for HIV infected men without AIDS to be restricted in their work. This finding became the basis of World Health Organization recommendation which was widely accepted advising that persons with HIV infection need not be restricted in their activities.</p>
@@ -101,8 +106,9 @@ About.create(:title => 'About MACs', :content =>
 </section>',
 :site_id => 1)
 
-ContactUs.create(:title => 'Contact Us', :content =>
-  '<table class="table">
+ContactUs.create(
+:title => 'Contact Us',
+:content => '<table class="table">
 <tbody>
 <tr>
   <th><p class="subtitle">PRINCIPAL INVESTIGATOR</p></th>
@@ -145,7 +151,9 @@ ContactUs.create(:title => 'Contact Us', :content =>
 </tbody>
 </table>',
 :site_id => 1)
-Funding.create(:title => 'Funding for MACs is provided by:', :content =>
+Funding.create(
+:title => 'Funding for MACs is provided by:',
+:content =>
   '<table class="table">
       <tbody>
         <tr><th>FUNDING AGENCY</th><td>National Institutes of Health </td></tr>
@@ -153,11 +161,11 @@ Funding.create(:title => 'Funding for MACs is provided by:', :content =>
         <tr><td></td><td>Multicenter AIDS Cohort Study (MACS)</td></tr>
       </tbody>
   </table>',
-               :site_id => 1)
+:site_id => 1)
 
-Resource.create(:title => 'Resources', :content => 
-'
-<h2>Publications for 2009</h2>
+Resource.create(
+:title => 'Resources',
+:content =>  '<h2>Publications for 2009</h2>
 <ol>
   <li>An P, Johnson R, Phair J, Kirk GD, Yu XF, Donfield S, Buchbinder S, Goedert JJ, Winkler CA. APOBEC3B deletion and risk of HIV-1 acquisition. J Infect Dis. 2009; 200(7): 1054-8. PMCID: PMC3690486</li>
   <li>Becker JT, Kingsley L, Mullen J, Cohen B, Martin E, Miller EN, Ragin A, Sacktor N, Selnes OA, Visscher BR. Vascular risk factors, HIV serostatus, and cognitive dysfunction in gay and bisexual men. Neurology. 2009; 73(16): 1292-9. PMCID: PMC2764414</li>
@@ -307,9 +315,9 @@ Resource.create(:title => 'Resources', :content =>
 </ol>',
 :site_id => 1)
 
-Eligibility.create(:title => 'Eligibility Criteria', :content =>
-'
-<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
+Eligibility.create(
+:title => 'Eligibility Criteria',
+:content => '<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
 <div class="row">
   <div class="col-sm-5">
     <p class="subtitle"> Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
@@ -322,6 +330,10 @@ Eligibility.create(:title => 'Eligibility Criteria', :content =>
   </div>
 </div>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
- :site_id => 1)
+:site_id => 1)
 
-User.create!(:first_name => 'Eric', :last_name => 'Schlange', :email => 'eric.schlange@northwestern.edu', :role_identifier => 1)
+User.create!(
+:first_name => 'Eric',
+:last_name => 'Schlange',
+:email => 'eric.schlange@northwestern.edu',
+:role_identifier => 1)

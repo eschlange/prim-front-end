@@ -2,7 +2,7 @@
 # These views are primarily for static, persisted content.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class PagesController < ApplicationController
-  before_action :set_site, :set_current_page
+  before_action :set_site
   def about
     @about = @site.about
   end
@@ -25,11 +25,5 @@ class PagesController < ApplicationController
 
   def resources
     @resources = @site.resource
-  end
-
-  private
-
-  def set_current_page
-    current_page('home')
   end
 end

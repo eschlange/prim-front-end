@@ -9,7 +9,7 @@
       <%= image_tag retrieve_site_image_by_position(@site.id, position).image.url(:medium) %>
     </div>
 
-    <%= form_for [@site, retrieve_site_image_by_position(@site.id, position)], :html => { :multipart => true } do |form| %>
+    <%= form_for [@site, retrieve_site_image_by_position(@site.id, position)], :html => { multipart: true } do |form| %>
       <%= form.hidden_field :position, value: position %>
       <%= form.hidden_field :site_id %>
 

@@ -43,10 +43,10 @@ class AboutController < ApplicationController
 
     respond_to do |format|
       if @about.update_attributes(abouts_params)
-        format.html { redirect_to(@about, :notice => 'About page was successfully updated.') }
+        format.html { redirect_to(@about, notice: 'About page was successfully updated.') }
         format.json { respond_with_bip @about }
       else
-        format.html { render :action => 'edit' }
+        format.html { render action: 'edit' }
         format.json { respond_with_bip @about }
       end
     end

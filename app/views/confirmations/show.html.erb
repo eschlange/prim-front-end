@@ -8,9 +8,9 @@
             <h3>You're almost done! Now create a password to securely access your account.</h3>
             <%= devise_error_messages! %>
             <div class="form-inputs">
-                <%= form.input :password, :input_html => {:autofocus => true} %>
+                <%= form.input :password, :input_html => { autofocus: true } %>
                 <%= form.input :password_confirmation %>
-                <%= form.input :confirmation_token, :as => :hidden, :input_html => { :value => @original_token} %>
+                <%= form.input :confirmation_token, :as => :hidden, :input_html => { value: @original_token } %>
             </div>
             <%= form.button :submit, "Confirm Account", :class => "btn btn-default" %>
         <% end %>
