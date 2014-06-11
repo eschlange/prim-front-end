@@ -1,13 +1,13 @@
 <section id="resources" class="testimonials text-center">
   <div class="container text-left">
-    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.role_id == 1),
+    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
                                            @site.funding, :title,
                                            :path => funding_path(@site.funding.id),
                                            :sanitize => false,
                                            :display_with => lambda { |fundingTitle| (fundingTitle).html_safe } %>
     </h3>
 
-    <%= best_in_place_if (user_signed_in? and current_user.role_id == 1),
+    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
                          @site.funding, :content,
                          :type => :textarea,
                          :path => funding_path(@site.funding.id),

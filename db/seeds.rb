@@ -6,10 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Role.create(:id => 1, :name => "admin", :description => "Full access user.")
-Role.create(:id => 2, :name => "content manager", :description => "Creates and edits pages and creates participants.")
-Role.create(:id => 3, :name => "participant", :description => "Reads pages and can edit personal user information.")
-
 Site.create(:id => 1, :name => 'MACs', :content => 'MACs : Multicenter AIDS Cohort Study Program<br />
   the first and largest study specifically created to examine the natural history of AIDS.')
 
@@ -220,7 +216,7 @@ Resource.create(:title => 'Resources', :content =>
   <li>Farrow MA, Kim EY, Wolinsky SM, Sheehy AM. NFAT and IRF proteins regulate transcription of the anti-HIV gene, APOBEC3G. J Biol Chem. 2011; 286(4): 2567-77. PMCID: PMC3024752</li>
   <li>Gingo MR, Lucht L, Daly KR, Djawe K, Palella FJ, Abraham AG, Bream JH, Witt MD, Kingsley LA, Norris KA, Walzer PD, Morris A. Serologic responses to pneumocystis proteins in HIV patients with and without Pneumocystis jirovecii pneumonia. J Acquir Immune Defic Syndr. 2011; 57(3): 190-6. PMCID: PMC3150634</li>
   <li>Greene JM, Wiseman RW, Lank SM, Bimber BN, Karl JA, Burwitz BJ, Lhost JJ, Hawkins OE, Kunstman KJ, Broman KW, Wolinsky SM, Hildebrand WH, O\'Connor DH. Differential MHC class I expression in distinct leukocyte subsets. BMC Immunol. 2011; 12: 39. PMCID: PMC3155488</li>
-  <li>Howe CJ, Cole SR, Chmiel JS, Munoz A. Limitation of inverse probability-of-censoring weights in estimating survival in the presence of strong selection bias. Am J Epidemiol. 2011; 173(5): 569-77. PMCID: PMC3105434</li>
+  <li>Howe CJ, Cole SR, Chmiel JS, Munoz A. Limitation of inversRole.create(:id => 1, :name => "admin", :description => "Full access user.")e probability-of-censoring weights in estimating survival in the presence of strong selection bias. Am J Epidemiol. 2011; 173(5): 569-77. PMCID: PMC3105434</li>
   <li>Howe CJ, Cole SR, Ostrow DG, Mehta SH, Kirk GD. A prospective study of alcohol consumption and HIV acquisition among injection drug users. AIDS. 2011; 25(2): 221-8. PMCID: PMC3006640</li>
   <li>Julg B, Moodley ES, Qi Y, Ramduth D, Reddy S, Mncube Z, Gao X, Goulder PJ, Detels R, Ndung\'u T, Walker BD, Carrington M. Possession of HLA class II DRB1*1303 associates with reduced viral loads in chronic HIV-1 clade C and B infection. J Infect Dis. 2011; 203(6): 803-9. PMCID: PMC3071131</li>
   <li>Kulkarni S, Savan R, Qi Y, Gao X, Yuki Y, Bass SE, Martin MP, Hunt P, Deeks SG, Telenti A, Pereyra F, Goldstein D, Wolinsky S, Walker B, Young HA, Carrington M. Differential microRNA regulation of HLA-C expression and its association with HIV control. Nature. 2011; 472(7344): 495-8. PMCID: PMC3084326</li>
@@ -327,4 +323,5 @@ Eligibility.create(:title => 'Eligibility Criteria', :content =>
 </div>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
  :site_id => 1)
-User.create(:first_name => "Eric", :last_name => "Schlange", :email => "eric.schlange@northwestern.edu", :role_id => 1, :encrypted_password => User.new.send(:password_digest, 'secrets!'))
+
+User.create!(:first_name => 'Eric', :last_name => 'Schlange', :email => 'eric.schlange@northwestern.edu', :role_identifier => 1)

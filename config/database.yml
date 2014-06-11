@@ -51,6 +51,7 @@ test:
   pool: 5
   username: macs
   password:
+  host: localhost
 
 production:
   adapter: postgresql

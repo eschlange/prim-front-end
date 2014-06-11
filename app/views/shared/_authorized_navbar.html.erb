@@ -1,5 +1,5 @@
 <li><a href="#" onclick="window.location = '/sites/1/users/edit#header'" style="cursor: pointer;">update information</a></li>
-<% if current_user.role_id != 3 %>
+<% if current_user.at_least_a_content_manager? %>
     <li><a href="#" onclick="window.location = '/sites/1/users/sign_up'" style="cursor: pointer;">edit enrollment</a></li>
     <li><a href="#" onclick="window.location = '/user_admin'" style="cursor: pointer;">user admin</a></li>
 <% end %>

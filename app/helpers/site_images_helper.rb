@@ -5,7 +5,7 @@ module SiteImagesHelper
   end
 
   def render_site_image_edit_link (site_id, position)
-    if !current_user.nil? and (current_user.role_id == 1 or current_user.role_id == 2)
+    if current_user and (current_user.at_least_a_content_manager?)
 
       link_to image_tag(retrieve_site_image_by_position(site_id, position).image.url, :class => 'img-responsive'),
         site_image_update_path(@site, :position => position),

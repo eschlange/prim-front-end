@@ -26,7 +26,7 @@ class RegistrationsController < Devise::RegistrationsController
                       warden.authenticated?(resource_name)
                     end
 
-    if authenticated && resource = warden.user(resource_name) && (current_user.nil? or current_user.role_id == 3)
+    if authenticated && resource = warden.user(resource_name) && (current_user.nil? or current_user.role.is_a)
       flash[:alert] = I18n.t("devise.failure.already_authenticated")
       redirect_to after_sign_in_path_for(resource)
     end

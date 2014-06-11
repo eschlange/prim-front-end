@@ -12,7 +12,7 @@ module UserHelper
                             :password,
                             :password_confirmation,
                             :current_password,
-                            :role_id,
+                            :role_identifier,
                             :future_contact)
     end
 
@@ -23,7 +23,7 @@ module UserHelper
                             :password,
                             :password_confirmation,
                             :current_password,
-                            :role_id,
+                            :role_identifier,
                             :future_contact)
     end
   end

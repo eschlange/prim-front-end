@@ -5,6 +5,7 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
+require 'rails/all'
 require 'csv'
 # require "rails/test_unit/railtie"
 
