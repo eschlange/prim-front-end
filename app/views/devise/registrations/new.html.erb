@@ -1,31 +1,6 @@
 <div id="sign-up" class="container sign-up">
 
-  <div class="divider"></div>
-
-  <section class="intervention">
-    <div class="container text-left">
-      <table class="table table-short">
-        <tr><td>Digital Consent Form and HIPAA Authorization for Research</td></tr>
-        <tr><td>PROTOCOL TITLE</td><td>Evaluation of newly infected HIV subjects-Chicago, MACS substudy</td></tr>
-        <tr><td>PRINCIPAL INVESTIGATOR</td><td>Steven Wolinksy, MD</td></tr>
-        <tr><td>SUPPORTED BY</td><td>National Institutes of Health (NIH)</td></tr>
-      </table>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section class="intervention-long">
-    <div class="container text-left">
-        <%= render 'pages/intervention' %>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <%= render 'pages/eligibility' %>
-
-  <div class="divider"></div>
+  <%= render 'pages/consent' %>
 
   <section class="register text-left">
     <div class="container">
@@ -35,6 +10,7 @@
 
           <div class="form-inputs">
             <%= f.error_notification %>
+            <%= hidden_field_tag 'site_id', @site.id %>
             <%= f.input :first_name, :required => true, :autofocus => true %>
             <%= f.input :last_name, :required => true %>
             <%= f.input :phone, :required => false %>

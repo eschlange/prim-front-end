@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611154024) do
+ActiveRecord::Schema.define(version: 20140613165259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20140611154024) do
   end
 
   add_index "abouts", ["site_id"], name: "index_abouts_on_site_id", using: :btree
+
+  create_table "consents", force: true do |t|
+    t.text     "header"
+    t.text     "body"
+    t.text     "footer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "site_id"
+  end
+
+  add_index "consents", ["site_id"], name: "index_consents_on_site_id", using: :btree
 
   create_table "contact_us", force: true do |t|
     t.string   "title"
@@ -113,6 +124,20 @@ ActiveRecord::Schema.define(version: 20140611154024) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_consents", force: true do |t|
+    t.integer  "site_id"
+    t.string   "irb_acceptance_image_url"
+    t.text     "consent_header"
+    t.text     "consent_body"
+    t.text     "consent_footer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "user_consents", ["site_id"], name: "index_user_consents_on_site_id", using: :btree
+  add_index "user_consents", ["user_id"], name: "index_user_consents_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false

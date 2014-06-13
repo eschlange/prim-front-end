@@ -47,12 +47,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # DELETE /resources/1
-  def destroy
-    @resource.destroy
-    redirect_to resources_url, notice: 'Resource was successfully destroyed.'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

@@ -52,12 +52,6 @@ class AboutController < ApplicationController
     end
   end
 
-  # DELETE /abouts/1
-  def destroy
-    @abouts.destroy
-    redirect_to abouts_url, notice: 'Contact us was successfully destroyed.'
-  end
-
   private
 
   # Only allow a trusted parameter "white list" through.

@@ -47,12 +47,6 @@ class SitesController < ApplicationController
     end
   end
 
-  # DELETE /sites/1
-  def destroy
-    @site.destroy
-    redirect_to sites_url, notice: 'Site was successfully destroyed.'
-  end
-
   private
 
   # Only allow a trusted parameter "white list" through.

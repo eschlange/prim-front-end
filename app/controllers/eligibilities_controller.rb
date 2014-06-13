@@ -48,13 +48,6 @@ class EligibilitiesController < ApplicationController
     end
   end
 
-  # DELETE /eligibilities/1
-  def destroy
-    @eligibility.destroy
-    redirect_to eligibilities_url,
-                notice: 'Eligibility was successfully destroyed.'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

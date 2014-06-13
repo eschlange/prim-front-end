@@ -3,6 +3,8 @@
 class User < ActiveRecord::Base
   include Role
 
+  has_many :user_consents
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -32,6 +34,7 @@ class User < ActiveRecord::Base
       :phone,
       :email,
       :future_contact,
-      :role_identifier)
+      :role_identifier,
+      :site_id)
   end
 end

@@ -47,12 +47,6 @@ class FundingsController < ApplicationController
     end
   end
 
-  # DELETE /fundings/1
-  def destroy
-    @funding.destroy
-    redirect_to fundings_url, notice: 'Funding was successfully destroyed.'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

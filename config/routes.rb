@@ -17,6 +17,7 @@ Macs::Application.routes.draw do
   resources :fundings
   resources :resources
   resources :intervention
+  resources :consent
 
   devise_for :users,
              :path => "sites/:site_id/users",

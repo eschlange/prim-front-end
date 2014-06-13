@@ -48,13 +48,6 @@ class ContactUsController < ApplicationController
     end
   end
 
-  # DELETE /contact_us/1
-  def destroy
-    @contact_us.destroy
-    redirect_to contact_us_url,
-                notice: 'Contact us was successfully destroyed.'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.

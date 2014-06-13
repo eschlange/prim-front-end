@@ -49,13 +49,6 @@ class InterventionsController < ApplicationController
     end
   end
 
-  # DELETE /interventions/1
-  def destroy
-    @intervention.destroy
-    redirect_to interventions_url,
-                notice: 'Intervention was successfully destroyed.'
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
