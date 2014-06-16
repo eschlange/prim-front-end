@@ -15,9 +15,11 @@ class IrbAcceptanceImagesController < ApplicationController
 
   def create
     respond_to do |format|
-      @irb_acceptance_image = IrbAcceptanceImage.new(irb_acceptance_image_params)
-      @irb_acceptance_image.save
-      format.html { redirect_to '/sites/' + @site.id.to_s + '/pages/home', notice: 'Image was successfully updated.' }
+      irb_acceptance_image = IrbAcceptanceImage.new(irb_acceptance_image_params)
+      irb_acceptance_image.image_file_name = Time.now.strftime('%Y_%m_%d_%H%M%S') + irb_acceptance_image.image_file_name
+      irb_acceptance_image.save
+
+      format.html { redirect_to :back }
       format.js
       format.json { head :no_content }
     end
@@ -28,10 +30,11 @@ class IrbAcceptanceImagesController < ApplicationController
 
   def update
     respond_to do |format|
-      @site_image = IrbAcceptanceImage.where(site_id: params[:irb_acceptance_id], position: params[:irb_acceptance_image][:position]).first
-      @site_image.image = params[:irb_acceptance_image][:image]
-      @site_image.save
-      format.html { redirect_to '/sites/' + @site.id.to_s + '/pages/home', notice: 'Image was successfully updated.' }
+      irb_acceptance_image = IrbAcceptanceImage.where(consent_id: params[:irb_acceptance_image][:consent_id]).first
+      irb_acceptance_image.image = params[:irb_acceptance_image][:image]
+      irb_acceptance_image.image_file_name = Time.now.strftime('%Y_%m_%d_%H%M%S') + irb_acceptance_image.image_file_name
+      irb_acceptance_image.save
+      format.html { redirect_to :back }
       format.js
       format.json { head :no_content }
     end
@@ -40,6 +43,6 @@ class IrbAcceptanceImagesController < ApplicationController
   private
 
   def irb_acceptance_image_params
-    params.require(:irb_acceptance_image).permit(:image, :position, :site_id)
+    params.require(:irb_acceptance_image).permit(:image, :position, :site_id, :consent_id)
   end
 end

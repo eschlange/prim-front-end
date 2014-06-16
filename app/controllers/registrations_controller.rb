@@ -23,14 +23,15 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def createConsentRecord(resource)
-    @consent = Consent.where(site_id: params[:site_id]).first
-    @consentRecord = UserConsent.new(
+    consent = Consent.where(site_id: params[:site_id]).first
+    consentRecord = UserConsent.new(
         user_id: resource.id,
-        site_id: params[:site_id],
-        consent_header: @consent.header,
-        consent_body: @consent.body,
-        consent_footer: @consent.footer)
-    @consentRecord.save
+        site_id: consent.site.id,
+        consent_header: consent.header,
+        consent_body: consent.body,
+        consent_footer: consent.footer,
+        irb_acceptance_image_url: consent.irb_acceptance_images.first.image.url)
+    consentRecord.save
   end
 
   def predefinedUserCreation(resource)

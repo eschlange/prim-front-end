@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613165259) do
+ActiveRecord::Schema.define(version: 20140613205531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 20140613165259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
+    t.integer  "irb_acceptance_image_id"
   end
 
+  add_index "consents", ["irb_acceptance_image_id"], name: "index_consents_on_irb_acceptance_image_id", using: :btree
   add_index "consents", ["site_id"], name: "index_consents_on_site_id", using: :btree
 
   create_table "contact_us", force: true do |t|
@@ -86,6 +88,18 @@ ActiveRecord::Schema.define(version: 20140613165259) do
   end
 
   add_index "interventions", ["site_id"], name: "index_interventions_on_site_id", using: :btree
+
+  create_table "irb_acceptance_images", force: true do |t|
+    t.integer  "consent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "irb_acceptance_images", ["consent_id"], name: "index_irb_acceptance_images_on_consent_id", using: :btree
 
   create_table "resources", force: true do |t|
     t.string   "title"

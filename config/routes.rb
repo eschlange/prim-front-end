@@ -8,6 +8,7 @@ Macs::Application.routes.draw do
     get "pages/funding"
     get "pages/resources"
     resources :site_images, param: :position
+    resources :irb_acceptance_images
   end
   resources :users, only: [:edit, :update]
   resources :about
@@ -33,4 +34,5 @@ Macs::Application.routes.draw do
   get "index/index"
   get "about", to: "about#index"
   get "site_image/update" => 'pages#image_update', :as => :site_image_update
+  get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', :as => :irb_acceptance_image_update
 end
