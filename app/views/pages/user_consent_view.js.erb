@@ -1,0 +1,3 @@
+$("#user-consent-modal-window").html("<%= escape_javascript(render partial: 'shared/user_consent_view', :locals => {user_id: params[:user_id], site_id: params[:site_id]}) %>");
+$('.form-inputs :input').prop("disabled", true);
+$('.btn-consent').attr('disabled',true);

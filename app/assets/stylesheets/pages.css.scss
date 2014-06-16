@@ -11,6 +11,15 @@
   max-height: 50%;
 }
 
+.modal.custom.large-modal {
+  margin:15% auto 0;
+  background: rgba(255, 255, 255, 0.90);
+  border-radius: 15px;
+  max-height: 80%;
+  width: 80%;
+  overflow: auto;
+}
+
 .header.red-ribbon {
   background-image: image-url('red_ribbon_crop.jpg');
 

@@ -35,4 +35,5 @@ Macs::Application.routes.draw do
   get "about", to: "about#index"
   get "site_image/update" => 'pages#image_update', :as => :site_image_update
   get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', :as => :irb_acceptance_image_update
+  get "user_consent/show" => 'pages#user_consent_view', :as => :user_consent_view
 end

@@ -11,9 +11,11 @@ class UserAdminController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv
-      filename = "participants-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
-      send_admin_csv(filename)
+      format.csv do
+        filename = "participants-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
+        send_admin_csv(filename)
+      end
+
     end
   end
 

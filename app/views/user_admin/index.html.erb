@@ -11,6 +11,7 @@
           <th>Consent Date</th>
           <th class="text-center">Future Contact</th>
           <th>Role</th>
+          <th>Consent Version</th>
         </tr>
         <% @users.each do |user| %>
           <tr>
@@ -26,10 +27,15 @@
                 <% end %>
             </td>
             <td><%= user.role_identifier %></td>
+            <td>
+              <%= render_user_consent_view(@site.id, user.id) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <section class="modal fade custom large-modal" id="user-consent-modal-window" role="dialog"  aria-labelledby="userConsentModal" aria-hidden="true" ></section>
 
     <button type="button" class="btn btn-danger btn-lg btn-user-export">
       <%= link_to 'Export to CSV', user_admin_path(:format => :csv)%>
