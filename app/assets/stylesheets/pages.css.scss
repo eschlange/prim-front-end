@@ -2,24 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.modal.custom {
-  width:30%;
-  margin:15% auto 0;
-  background: rgba(255, 255, 255, 0.75);
-  overflow: hidden;
-  border-radius: 15px;
-  max-height: 50%;
-}
-
-.modal.custom.large-modal {
-  margin:15% auto 0;
-  background: rgba(255, 255, 255, 0.90);
-  border-radius: 15px;
-  max-height: 80%;
-  width: 80%;
-  overflow: auto;
-}
-
 .header.red-ribbon {
   background-image: image-url('red_ribbon_crop.jpg');
 
