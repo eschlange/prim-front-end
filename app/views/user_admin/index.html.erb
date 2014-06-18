@@ -26,9 +26,13 @@
                   <span class="glyphicon glyphicon-minus-sign" style="color:red"></span>
                 <% end %>
             </td>
-            <td><%= user.role_identifier %></td>
-            <td>
-              <%= render_user_consent_view(@site.id, user.id) %>
+            <td><%= user.role_name %></td>
+            <td class="text-center">
+              <% if !user.at_least_a_content_manager? %>
+                <%= render_user_consent_view(@site.id, user.id) %>
+              <% else %>
+                ---
+              <% end %>
             </td>
           </tr>
         <% end %>
