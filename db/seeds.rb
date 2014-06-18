@@ -13,33 +13,51 @@ Intervention.create(
 :id => 1,
 :name => 'Purpose of Research',
 :description =>
-  '<p>You are being asked to take part in a research study. This document has important information about the reason for the study, what you will do if you choose to be in this research study, and the way we (i.e., Northwestern University) would like to use information about you and your health.  To be eligible for the study we will need to confirm certain information about your HIV status and whether you are eligible to participate.</p>
+  '<p>You are being asked to take part in a research study. This document has important information about the reason for the study, what you will
+      do if you choose to be in this research study, and the way we (i.e., Northwestern University) would like to use information about you and
+      your health.  To be eligible for the study we will need to confirm certain information about your HIV status and whether you are eligible to
+      participate.</p>
   <div class="divider-2"></div>
 
   <h3>What is the reason for doing this study?</h3>
-  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different the virus is to persons with long standing HIV and other persons with recent HIV.  We hope to look at your body\'s immune responses to HIV. You are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
+  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who
+     have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more
+     than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different
+     the virus is to persons with long standing HIV and other persons with recent HIV.  We hope to look at your body\'s immune responses to HIV. You
+     are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
   <div class="divider-2"></div>
 
   <h3>What you will do if you choose to be in this study?</h3>
-  <p>In order to determine whether you are eligible for the study, we will initially ask you to complete a brief series of questions about your health and HIV status. These will include questions about when you think you might have contracted HIV. The questions will take about five minutes.</p>
-  <p>As part of the eligibility process, we ask your permission for a study personnel to contact you to arrange a time to meet at our clinic at Northwestern Hospital. If you are determined to be eligible, a study personnel will contact you via the method that selected.  They will arrange for you to come to our clinic.  There you will learn more about the MACS study and recent HIV substudy and can decide then whether you want to participate.</p>
+  <p>In order to determine whether you are eligible for the study, we will initially ask you to complete a brief series of questions about your
+     health and HIV status. These will include questions about when you think you might have contracted HIV. The questions will take about five
+     minutes.</p>
+  <p>As part of the eligibility process, we ask your permission for a study personnel to contact you to arrange a time to meet at our clinic at
+     Northwestern Hospital. If you are determined to be eligible, a study personnel will contact you via the method that selected.  They will
+     arrange for you to come to our clinic.  There you will learn more about the MACS study and recent HIV substudy and can decide then whether
+     you want to participate.</p>
   <div class="divider-2"></div>
 
   <h3>What are some of the risks and discomforts that may happen to people who are in this study?</h3>
-  <p>The risks from completing the self-report measures and interviews are minimal, but it is possible that you may experience emotional discomfort or increased anxiety as a result of answering questions about your HIV infection, especially if this is a new diagnosis for you.  You have the option of stopping at any time</p>
+  <p>The risks from completing the self-report measures and interviews are minimal, but it is possible that you may experience emotional discomfort
+     or increased anxiety as a result of answering questions about your HIV infection, especially if this is a new diagnosis for you.  You have the
+     option of stopping at any time</p>
   <div class="divider-2"></div>
 
   <h3>What are some of the benefits that are likely to come from my being in this study?</h3>
   <p>The possible benefits to you from the MACS and recent HIV study if you are determined to be eligible include:</p>
   <ul>
-<li>You will have laboratory tests that measure the effect of HIV on your body.  Some of these tests may be useful to help you and your doctor decide upon and monitor your HIV medications.</li>
+<li>You will have laboratory tests that measure the effect of HIV on your body.  Some of these tests may be useful to help you and your doctor decide
+    upon and monitor your HIV medications.</li>
 <li>Otherwise there are no other direct benefits to you from the study as the study will not provide HIV medications.</li>
 <li>By being in this study, you may help people at risk for or who contract HIV infection in the future.</li>
   </ul>
   <div class="divider-2"></div>
 
   <h3>Are there any financial costs to being in this study?</h3>
-  <p>There will be no costs to you for being in this study. If you are selected to participate in the full MACS study , you will receive $40 plus $10 transportation costs for each study visit, plus you may receive up to $100.00 if you additional study procedures such as removal of lymph nodes for study.  Payment will be at the completion of the study visits. You will not receive any compensation for filling out these screening questions or if you are found NOT to be eligible for the study.</p>
+  <p>There will be no costs to you for being in this study. If you are selected to participate in the full MACS study , you will receive $40 plus $10
+     transportation costs for each study visit, plus you may receive up to $100.00 if you additional study procedures such as removal of lymph nodes for
+     study.  Payment will be at the completion of the study visits. You will not receive any compensation for filling out these screening questions or if
+    you are found NOT to be eligible for the study.</p>
   <div class="divider-2"></div>
 
   <h3>If I have questions or concerns about this research study, whom can I call?</h3>
@@ -47,14 +65,19 @@ Intervention.create(
   <div class="divider-2"></div>
 
   <h3>What are my rights as a research subject?</h3>
-  <p>If you choose to be in this study, you have the right to be treated with respect, including respect for your decision whether or not you wish to continue or stop being in the study.  You are free to choose to stop being in the study at any time.</p>
-  <p>Choosing not to be in this study or to stop being in this study will not result in any penalty to you or loss of benefit to which you are entitled.  Specifically, your choice not to be in this study will not negatively affect your right to any present or future medical treatment.</p>
-  <p>If you want to speak with someone who is not directly involved in this research, or have questions about your rights as a research subject, please contact the Northwestern University Institutional Review Board (IRB) Office. You can call them at 312-503-9338.</p>
+  <p>If you choose to be in this study, you have the right to be treated with respect, including respect for your decision whether or not you wish to
+     continue or stop being in the study.  You are free to choose to stop being in the study at any time.</p>
+  <p>Choosing not to be in this study or to stop being in this study will not result in any penalty to you or loss of benefit to which you are entitled.
+     Specifically, your choice not to be in this study will not negatively affect your right to any present or future medical treatment.</p>
+  <p>If you want to speak with someone who is not directly involved in this research, or have questions about your rights as a research subject, please
+     contact the Northwestern University Institutional Review Board (IRB) Office. You can call them at 312-503-9338.</p>
   <div class="divider-2"></div>
 
   <h3>What about my confidentiality and privacy rights?</h3>
   <p>We are committed to respect your privacy and to keep your personal information confidential.</p>
-  <p>When choosing to take part in this study, you may be asked to give permission for MACS investigators to obtain your personal health information from your medical records. Such records include your name, address, phone number or social security number. Your health information we may collect and use for this research includes:</p>
+  <p>When choosing to take part in this study, you may be asked to give permission for MACS investigators to obtain your personal health information from
+     your medical records. Such records include your name, address, phone number or social security number. Your health information we may collect and use
+     for this research includes:</p>
   <ul>
 <li>all information in a medical record</li>
 <li>results of physical examinations</li>
@@ -64,9 +87,13 @@ Intervention.create(
 <li>records about study medication or drugs</li>
 <li>records about study devices</li>
   </ul>
-  <p>In a separate consent, you will also be asked to give permission let MACS investigators contact your primary care providers to provide information about you.</p>
-  <p>Please note that any research information shared with people outside of Northwestern University will not contain your name, address, telephone or social security number or any other direct personal identifier unless disclosure of the direct identifier is required by law [except that such information may be viewed by the Study sponsor at the Principal Investigators office]</p>
-  <p>Authorized members of Northwestern University workforce, however, may need to see your information, such as administrative staff members from the Office of Research, and members of the Institutional review Board (a committee which is responsible for the ethical oversight of the study)</p>
+  <p>In a separate consent, you will also be asked to give permission let MACS investigators contact your primary care providers to provide information
+    about you.</p>
+  <p>Please note that any research information shared with people outside of Northwestern University will not contain your name, address, telephone or
+     social security number or any other direct personal identifier unless disclosure of the direct identifier is required by law [except that such
+     information may be viewed by the Study sponsor at the Principal Investigators office]</p>
+  <p>Authorized members of Northwestern University workforce, however, may need to see your information, such as administrative staff members from the
+     Office of Research, and members of the Institutional review Board (a committee which is responsible for the ethical oversight of the study)</p>
 
   <div class="divider"></div>',
 :site_id => 1)
@@ -78,22 +105,66 @@ Home.create(
 
 About.create(
 :title => 'About MACs',
-:content => '<p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York. Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number 2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
-<p>The initial recruitment in 1984-85 was carried out before we had a laboratory test to determine who was a risk of developing AIDS.  HIV had been suggested as the cause of the immunodeficiency in 1983 by investigators at the Pasteur Institute in Paris but this was not  confirmed until the spring of 1984ot by investigators in San Francisco and the NIH in the spring of 1984. However, a blood test to determine who was infected did not become available until the spring of 1985. When the original group of MSM who had joined the MACS underwent  testing it was discovered that approximately 40 percent of the cohort was infected.</p>
-<p>This allowed the MACS to address two important issues. First, we could determine the behaviors, clinical findings and laboratory results which were associated with progression from HIV infection to AIDS. Secondly among the uninfected men, the behaviors that led to HIV infection and the early signs and symptoms of this viral infection could be elucidated. To date 712 uninfected men at entry into the MACS acquired HIV infection during the study, 333 developed AIDS and 82.9% of these men have died.</p>
-<p>Early in the course of the study it became apparent that dementia was a major problem for men who developed advanced HIV infection and AIDS. MACS investigators organized a working group of neurologists to investigate this problem. The most important early finding was that severe central nervous system (brain and spinal cord) problems were seen only in persons with AIDS and that there was no reason for HIV infected men without AIDS to be restricted in their work. This finding became the basis of World Health Organization recommendation which was widely accepted advising that persons with HIV infection need not be restricted in their activities.</p>
-<p>During the period of the 1980s the death rate among the infected MACS participants was very high. As of the fall of 2013, close to 90 percent of men who entered the MACS with HIV infection have died. The MACS investigators were among the first to demonstrated that the T-Helper cell count below 200/mm3 were associated with a high rate of  pneumocystis pneumonia (PCP) and helper cell counts below 100/mm3 put individuals at risk for cytomegalovirus  retinitis, atypical mycobacterial infections, and infection of the brain with the parasite Toxoplasma gondii. Giving antibiotics to prevent some of these opportunistic infections helped but the early agents available to treat the HIV infection did not prevent progression to AIDS or death.</p>
-<p>An early observation of MACS investigators was that the progression of newly acquired HIV infections to AIDS differed from individual to individual. Determinants of this heterogeneity included age at the time of infection and host genetics. The genetic makeup of an individual determines their immune response to HIV which in turn controls the rate of viral replication. Lower levels of replication result in slower progression of untreated HIV infection. Host genetics also determines susceptibility to HIV infection. The MACS contributed to the discovery of an uncommon mutation which protects people with this mutation from the usual form of HIV which is transmitted sexually.</p>
-<p>With the availability of effective antiretroviral therapy in late 1995 progression to AIDS and death decreased dramatically in men on therapy. Close to 80% of participants in the MACS taking drugs have suppressed HIV replication and the median T-helper cell count is near 600/mm3. Stopping drug treatment results in progression of HIV infection and disease. With this greatly improved survival of infected participants the MACS has focused upon the health status of men who were living longer. To accomplish this investigators have been recruited into working groups with interest in diseases of the heart, lungs, kidneys, liver and metabolic diseases such as diabetes. The behavioral working group has continued to study behaviors to determine why men fail to adhere to treatment. Recreational drugs and alcohol use have been shown to be associated with poor adherence. Drug use also is associated with a marked increase in the risk of acquiring HIV infection. The neurology working group continues to investigate brain function among aging HIV infected men and the Aging working group is attempting  to determine whether or not HIV infected men age more rapidly than in infected men.</p>
+:content => '
+  <p>In the fall of 1983, a group of investigators met at the National Institutes of Health  (NIH ) to design a prospective epidemiologic
+     study of the newly recognized immunodeficiency syndrome  in men who had sex with men (MSM) in Los Angeles, San Francisco and New York.
+     Upon completion of designing the protocol, recruitment of MSM began in April of 1984 into the investigation which was named The Multicenter
+     AIDS Cohort Study or MACS. The first wave of participant recruitment was completed by March 31, 1985. Since then three  more periods of enrollment
+     have been opened; the first in 1987 to increase the participation of African-American (AA) MSM in the study and the second in 2001 to again increase
+     participation by AA and Hispanic MSM.  Currently, recruitment of MSM, with recent HIV infection, to replace recent losses caused by death and
+     dropouts has been initiated. As of October 2013, 7087 men have volunteered and participated in the MACS. The currently active participants number
+     2340; 35 % are non white and half of all participants are older than 55 years of age.  In Chicago 1387 men have enrolled into the study.</p>
+  <p>The initial recruitment in 1984-85 was carried out before we had a laboratory test to determine who was a risk of developing AIDS.  HIV had been
+     suggested as the cause of the immunodeficiency in 1983 by investigators at the Pasteur Institute in Paris but this was not  confirmed until the
+     spring of 1984ot by investigators in San Francisco and the NIH in the spring of 1984. However, a blood test to determine who was infected did not
+     become available until the spring of 1985. When the original group of MSM who had joined the MACS underwent  testing it was discovered that
+     approximately 40 percent of the cohort was infected.</p>
+  <p>This allowed the MACS to address two important issues. First, we could determine the behaviors, clinical findings and laboratory results which were
+     associated with progression from HIV infection to AIDS. Secondly among the uninfected men, the behaviors that led to HIV infection and the early
+     signs and symptoms of this viral infection could be elucidated. To date 712 uninfected men at entry into the MACS acquired HIV infection during
+     the study, 333 developed AIDS and 82.9% of these men have died.</p>
+  <p>Early in the course of the study it became apparent that dementia was a major problem for men who developed advanced HIV infection and AIDS.
+     MACS investigators organized a working group of neurologists to investigate this problem. The most important early finding was that severe central
+     nervous system (brain and spinal cord) problems were seen only in persons with AIDS and that there was no reason for HIV infected men without AIDS
+     to be restricted in their work. This finding became the basis of World Health Organization recommendation which was widely accepted advising that
+     persons with HIV infection need not be restricted in their activities.</p>
+  <p>During the period of the 1980s the death rate among the infected MACS participants was very high. As of the fall of 2013, close to 90 percent of men
+     who entered the MACS with HIV infection have died. The MACS investigators were among the first to demonstrated that the T-Helper cell count below
+     200/mm3 were associated with a high rate of  pneumocystis pneumonia (PCP) and helper cell counts below 100/mm3 put individuals at risk for
+     cytomegalovirus  retinitis, atypical mycobacterial infections, and infection of the brain with the parasite Toxoplasma gondii. Giving antibiotics
+     to prevent some of these opportunistic infections helped but the early agents available to treat the HIV infection did not prevent progression to AIDS
+     or death.</p>
+  <p>An early observation of MACS investigators was that the progression of newly acquired HIV infections to AIDS differed from individual to individual.
+     Determinants of this heterogeneity included age at the time of infection and host genetics. The genetic makeup of an individual determines their
+     immune response to HIV which in turn controls the rate of viral replication. Lower levels of replication result in slower progression of untreated
+     HIV infection. Host genetics also determines susceptibility to HIV infection. The MACS contributed to the discovery of an uncommon mutation which
+     protects people with this mutation from the usual form of HIV which is transmitted sexually.</p>
+  <p>With the availability of effective antiretroviral therapy in late 1995 progression to AIDS and death decreased dramatically in men on therapy. Close
+     to 80% of participants in the MACS taking drugs have suppressed HIV replication and the median T-helper cell count is near 600/mm3. Stopping drug
+     treatment results in progression of HIV infection and disease. With this greatly improved survival of infected participants the MACS has focused upon
+     the health status of men who were living longer. To accomplish this investigators have been recruited into working groups with interest in diseases
+     of the heart, lungs, kidneys, liver and metabolic diseases such as diabetes. The behavioral working group has continued to study behaviors to determine
+     why men fail to adhere to treatment. Recreational drugs and alcohol use have been shown to be associated with poor adherence. Drug use also is
+     associated with a marked increase in the risk of acquiring HIV infection. The neurology working group continues to investigate brain function among
+     aging HIV infected men and the Aging working group is attempting  to determine whether or not HIV infected men age more rapidly than in infected men.</p>
 
 <div class="divider"></div>
 
 <section id="pricing" class="pricing">
   <div class="container text-left">
     <h3 class="title">What </h3>
-    <p>The Multicenter AIDS Cohort Study is the longest running study of HIV infection and disease among MSM with and without HIV infection.  We often are asked "but if this is a study of HIV, why do you want men without HIV to participate?"  It\'s a fair question.  If we want to study the virus and how the virus causes disease we should look at people who actually have the virus.  But that only works if we know exactly what we are looking for and how it relates to the virus.  And often we don\'t know that.</p>
-    <p>The MACS is an incredibly unique study because of the HIV negative men who participate.  MSM are not the same as all other men; they may be more fit than other men, they may drink more, they  may have more stress or mental health issues related to stigma or they  may see  doctors more for preventative care.  While there are other studies that study MSM with HIV, there are no other studies that can compare HIV negative MSM with HIV infected MSM.   By completing the same tests as the HIV positive men, HIV negative men allow us to make the right comparisons.   HIV negative MSM are not infected and changes to their health may be more gradual and due to age, diseases of aging or other infections.  Any man\'s health can improve or worsen for all sorts of reasons.</p>
-    <p>Following the uninfected men will enable the MACS investigators to know that a change we see in men with HIV is due to their infection.  If we can\'t compare the health of men with HIV to similar men without HIV we have no way of knowing.</p>
+    <p>The Multicenter AIDS Cohort Study is the longest running study of HIV infection and disease among MSM with and without HIV infection.  We often
+       are asked "but if this is a study of HIV, why do you want men without HIV to participate?"  It\'s a fair question.  If we want to study the virus
+       and how the virus causes disease we should look at people who actually have the virus.  But that only works if we know exactly what we are looking
+       for and how it relates to the virus.  And often we don\'t know that.</p>
+    <p>The MACS is an incredibly unique study because of the HIV negative men who participate.  MSM are not the same as all other men; they may be more
+       fit than other men, they may drink more, they  may have more stress or mental health issues related to stigma or they  may see  doctors more for
+      preventative care.  While there are other studies that study MSM with HIV, there are no other studies that can compare HIV negative MSM with HIV
+      infected MSM. By completing the same tests as the HIV positive men, HIV negative men allow us to make the right comparisons.   HIV negative MSM are
+      not infected and changes to their health may be more gradual and due to age, diseases of aging or other infections. Any man\'s health can improve or
+      worsen for all sorts of reasons.</p>
+    <p>Following the uninfected men will enable the MACS investigators to know that a change we see in men with HIV is due to their infection.  If we can\'t
+       compare the health of men with HIV to similar men without HIV we have no way of knowing.</p>
     <p>In the last decade we have come a
       long way in treating HIV. Now we have men aging with the virus and a whole host of diseases that we never thought we would have to face
       are being seen. For instance, MACS studies have shown that some changes in brain function are due to aging, NOT HIV.  If we hadn\'t been able
@@ -117,9 +188,9 @@ ContactUs.create(
     Division of Infectious Diseases, Feinberg School of Medicine<br/>
     645 N Michigan Ave, Suite 900<br/>
     Chicago, IL 60666<br/>
-    312-695-2372 <br/>
+    312-908-MACS <br/>
     Fax 312-695-5088<br/>
-    s-galvin@northwestern.edu<br/>
+    macs@northwestern.edu<br/>
     </p>
   </td>
 </tr>
@@ -140,7 +211,7 @@ ContactUs.create(
     <p class="subtitle">Northwestern University<br/>
     645 N Michigan Ave, Suite 900<br/>
     Chicago, IL 60666<br/>
-    312-695-2372<br/>
+    312-908-MACS <br/>
     Fax 312-695-5088<br/></p>
   </td>
 </tr>
@@ -277,7 +348,8 @@ Resource.create(
   <li>Herrick AL, Lim SH, Plankey MW, Chmiel JS, Guadamuz TE, Kao U, Shoptaw S, Carrico A, Ostrow D, Stall R. Adversity and syndemic production among men participating in the multicenter AIDS cohort study: a life-course approach. Am J Public Health. 2013; 103(1): 79-85. NIHMSID: NIHMS483256</li>
   <li>Herrick AL, Stall R, Chmiel JS, Guadamuz TE, Penniman T, Shoptaw S, Ostrow D, Plankey MW. It gets better: resolution of internalized homophobia over time and associations with positive health outcomes among MSM. AIDS Behav. 2013; 17(4): 1423-30. NIHMSID: NIHMS432621</li>
   <li>Hussain SK, Zhu W, Chang SC, Breen EC, Vendrame E, Magpantay L, Widney D, Conn D, Sehl M, Jacobson LP, Bream JH, Wolinsky S, Rinaldo CR, Ambinder RF, Detels R, Zhang ZF, Martinez-Maza O. Serum levels of the chemokine CXCL13, genetic variation in CXCL13 and its receptor CXCR5, and HIV-associated non-hodgkin B-cell lymphoma risk. Cancer Epidemiol Biomarkers Prev. 2013; 22(2): 295-307. NIHMSID: NIHMS428477</li>
-  <li>Lane J, McLaren PJ, Dorrell L, Shianna KV, Stemke A, Pelak K, Moore S, Oldenburg J, Alvarez-Roman MT, Angelillo-Scherrer A, Boehlen F, Bolton-Maggs PH, Brand B, Brown D, Chiang E, Cid-Haro AR, Clotet B, Collins P, Colombo S, Dalmau J, Fogarty P, Giangrande P, Gringeri A, Iyer R, Katsarou O, Kempton C, Kuriakose P, Lin J, Makris M, Manco-Johnson M, Tsakiris DA, Martinez-Picado J, Mauser-Bunschoten E, Neff A, Oka S, Oyesiku L, Parra R, Peter-Salonen K, Powell J, Recht M, Shapiro A, Stine K, Talks K, Telenti A, Wilde J, Yee TT, Wolinsky SM, Martinson J, Hussain SK, Bream JH, Jacobson LP, Carrington M, Goedert JJ, Haynes BF, McMichael AJ, Goldstein DB, Fellay J. A genome-wide association study of resistance to HIV infection in highly exposed uninfected individuals with hemophilia A. Hum Mol Genet. 2013; 22(9): 1903-10. PMCID: PMC3613165</li>
+  <li>Lane J, McLaren PJ, Dorrell L, Shianna KV, Stemke A, Pelak K, Moore S, Oldenburg J, Alvarez-Roman MT, Angelillo-Scherrer A, Boehlen F, Bolton-Maggs PH, Brand B, Brown D, Chiang E, Cid-Haro AR, Clotet B, Collins P, Colombo S, Dalmau J, Fogarty P, Giangrande P, Gringeri A, Iyer R, Katsarou O, Kempton C, Kuriakose P, Lin J, Makris M, Manco-Johnson M, Tsakiris DA, Martinez-Picado J, Mauser-Bunschoten E, Neff A, Oka S, Oyesiku L, Parra R, Peter-Salonen K, Powell J, Recht M, Shapiro A, Stine K,
+      Talks K, Telenti A, Wilde J, Yee TT, Wolinsky SM, Martinson J, Hussain SK, Bream JH, Jacobson LP, Carrington M, Goedert JJ, Haynes BF, McMichael AJ, Goldstein DB, Fellay J. A genome-wide association study of resistance to HIV infection in highly exposed uninfected individuals with hemophilia A. Hum Mol Genet. 2013; 22(9): 1903-10. PMCID: PMC3613165</li>
   <li>Nicholaou MJ, Martinson JJ, Abraham AG, Brown TT, Hussain SK, Wolinsky SM, Kingsley LA. HAART-associated dyslipidemia varies by biogeographical ancestry in the multicenter AIDS cohort study. AIDS Res Hum Retroviruses. 2013; 29(6): 871-9. PMCID: PMC3653392</li>
   <li>Vo QT, Cox C, Li X, Jacobson LP, McKaig R, Sacktor N, Selnes OA, Martin E, Becker JT, Miller EN. Neuropsychological test performance before and after HIV-1 seroconversion: the Multicenter AIDS Cohort Study. J Neurovirol. 2013; 19(1): 24-31. PMCID: PMC3568242</li>
   <li>Wada N, Jacobson LP, Cohen M, French A, Phair J, Munoz A. Cause-specific life expectancies after 35 years of age for human immunodeficiency syndrome-infected and human immunodeficiency syndrome-negative individuals followed simultaneously in long-term cohort studies, 1984-2008. Am J Epidemiol. 2013; 177(2): 116-25. PMCID: PMC3590031</li>
@@ -308,11 +380,24 @@ Resource.create(
   <li>Ng D, Jacobson LP, Brown TT, Palella FJ Jr, Martinson JJ, Bolan R, Miller ER, Schwartz GJ, Abraham AG, Estrella MM.  HIV antiretroviral therapy, metabolic and cardiovascular health are associated with glomerular hyperfiltration in the Multicenter AIDS Cohort Study.</li>
   <li>Ostrow DG, Schneider JA, Michaels S, Friedman SR, Cornwell B, Lindsay K, Berona J, Plankey MW, Jacobson L. Self-reported PEP/PrEP use among African-American MSM associated with Reduced levels of risk-taking among HIV-seropositive men: Why do HIV-positive Black MSM report high rates of post- and pre-exposure prophylaxis (PEP and PrEP) use?</li>
   <li>Seaberg EC, Witt MD, Jacobson LP, Detels R, Rinaldo CR, Young S, Phair JP, Thio CL.  Differential effects on hepatitis C virus (HCV) prevalence and spontaneous clearance by mode of transmission among men who have sex with men (MSM).</li>
-  <li>Slama L, Li X, Brown T, Jacobson LP, Pialoux G, Macatangay B, Bolan R, Phair J, Palella FJ Jr. for the Multicenter AIDS Cohort Study.  Changes in the duration of first HAART during 1996-2009: Factors associated with regimen switching in the Multicenter AIDS Cohort Study.</li> <li>Surkan PJ, Shah N, Jacobson LP, Silvestre A, Gorbach P, Shoptaw S, Teplin L, Plankey M.  Unsafe sexual behavior among homosexual men in the era of highly active antiretroviral therapy.</li>
+  <li>Slama L, Li X, Brown T, Jacobson LP, Pialoux G, Macatangay B, Bolan R, Phair J, Palella FJ Jr. for the Multicenter AIDS Cohort Study.  Changes in the duration of first HAART during 1996-2009: Factors associated with regimen switching in the Multicenter AIDS Cohort Study.</li>
+  <li>Surkan PJ, Shah N, Jacobson LP, Silvestre A, Gorbach P, Shoptaw S, Teplin L, Plankey M.  Unsafe sexual behavior among homosexual men in the era of highly active antiretroviral therapy.</li>
   <li>Thapa DR, Tran W-C,  D\'Souza D,  Bream JH,  Achenbach CJ, Ayyavoo V,  Detels R, Martinez-Maza O.  Serum microRNAs in HIV-infected individuals as pre-diagnosis biomarkers for AIDS-related non-Hodgkin lymphomas (AIDS-NHL).</li>
   <li>Wada N, Jacobson LP, Cohen M, French A, Phair J, Munoz A.  Cause-specific mortality among HIV-infected individuals, by CD4 cell count at HAART initiation, compared to HIV-uninfected individuals.</li>
   <li>Wright MJ, Miller EN, Reinhard MJ, Cottingham ME, Cox C, Reynolds S, Martin EM, Becker JT, Selnes OA, Manly J. The role of education level and quality in neuropsychological test performances of ethnic minorities.</li>
-</ol>',
+</ol>
+
+<h3>Other Links</h3>
+<ul>
+  <li><a href="https://actgnetwork.org/trials_open_enrollment">AIDS Clinical Trials Group</a></li>
+  <li><a href="http://www.cdc.gov/hiv/>CDC HIV Page</a></li>
+  <li><a href="http://www.cityofchicago.org/city/en/depts/cdph/provdrs/sti_hiv_aids/svcs/get_yourself_evaluatedforstihivaids.html">CDPH Testing Sites</a></li>
+  <li><a href="http://www.nmh.org/nm/infectious-disease-overview">NU ID Center Page</a></li>
+  <li><a href="http://www.nmh.org/nm/infectious-disease--clinical-trials">ID Clinical Trials</a></li>
+  <li><a href="http://www.impactprogram.org">Impact Program</a></li>
+  <li><a href="https://actgnetwork.org/clinical-trials/about-trial-process">About Clinical Trials</a></li>
+</ul>
+',
 :site_id => 1)
 
 Eligibility.create(
@@ -320,11 +405,11 @@ Eligibility.create(
 :content => '<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
 <div class="row">
   <div class="col-sm-5">
-    <p class="subtitle"> Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
+    <p class="subtitle">Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
   </div>
-<div class="col-sm-2">
-  <h3 class="title">OR</h3>
-</div>
+  <div class="col-sm-2">
+    <h3 class="title">OR</h3>
+  </div>
   <div class="col-sm-5">
     <p class="subtitle">Documented negative HIV ab test in past year.</p>
   </div>
@@ -352,7 +437,8 @@ Consent.create!(
   <div class="divider-2"></div>
 
   <h3>What is the reason for doing this study?</h3>
-  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different the virus is to persons with long standing HIV and other persons with recent HIV.  We hope to look at your body\'s immune responses to HIV. You are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
+  <p>The purpose of this study is to understand more about recent HIV infection among men in the Multicenter AIDS Cohort Study (MACS).  Persons who have recent HIV may have differences in the HIV virus and the bodies immune response to HIV as compared to persons who have had HIV for more than one year.  They may also have different responses to HIV medications.  We hope to look at your HIV virus and see how similar or different the virus is to
+    persons with long standing HIV and other persons with recent HIV.  We hope to look at your body\'s immune responses to HIV. You are being asked to see if you can participate in the study because your doctor feels you have contracted HIV within the past year.</p>
   <div class="divider-2"></div>
 
   <h3>What you will do if you choose to be in this study?</h3>
