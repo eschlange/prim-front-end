@@ -12,5 +12,4 @@ class UserConsentController < ApplicationController
     end
   end
 
-  params.permit(:user_id, :site_id)
 end
