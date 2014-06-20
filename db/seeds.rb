@@ -236,7 +236,27 @@ Funding.create(
 
 Resource.create(
 :title => 'Resources',
-:content =>  '<h2>Publications for 2009</h2>
+:content =>  '
+<div id="accordion">
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseZero">Other Links <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseZero" class="panel-collapse collapse">
+<ul>
+  <li><a href="https://actgnetwork.org/trials_open_enrollment">AIDS Clinical Trials Group</a></li>
+  <li><a href="http://www.cdc.gov/hiv/>CDC HIV Page</a></li>
+  <li><a href="http://www.cityofchicago.org/city/en/depts/cdph/provdrs/sti_hiv_aids/svcs/get_yourself_evaluatedforstihivaids.html">CDPH Testing Sites</a></li>
+  <li><a href="http://www.nmh.org/nm/infectious-disease-overview">NU ID Center Page</a></li>
+  <li><a href="http://www.nmh.org/nm/infectious-disease--clinical-trials">ID Clinical Trials</a></li>
+  <li><a href="http://www.impactprogram.org">Impact Program</a></li>
+  <li><a href="https://actgnetwork.org/clinical-trials/about-trial-process">About Clinical Trials</a></li>
+</ul>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Publications for 2009 <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseOne" class="panel-collapse collapse">
 <ol>
   <li>An P, Johnson R, Phair J, Kirk GD, Yu XF, Donfield S, Buchbinder S, Goedert JJ, Winkler CA. APOBEC3B deletion and risk of HIV-1 acquisition. J Infect Dis. 2009; 200(7): 1054-8. PMCID: PMC3690486</li>
   <li>Becker JT, Kingsley L, Mullen J, Cohen B, Martin E, Miller EN, Ragin A, Sacktor N, Selnes OA, Visscher BR. Vascular risk factors, HIV serostatus, and cognitive dysfunction in gay and bisexual men. Neurology. 2009; 73(16): 1292-9. PMCID: PMC2764414</li>
@@ -261,7 +281,12 @@ Resource.create(
   <li>Trachtenberg E, Bhattacharya T, Ladner M, Phair J, Erlich H, Wolinsky S. The HLA-B/-C haplotype block contains major determinants for host control of HIV. Genes Immun. 2009; 10(8): 673-7. PMCID: PMC2873233</li>
   <li>Walzer PD, Djawe K, Levin L, Daly KR, Koch J, Kingsley L, Witt M, Golub ET, Bream JH, Taiwo B, Morris A. Long-term serologic responses to the Pneumocystis jirovecii major surface glycoprotein in HIV-positive individuals with and without P. jirovecii infection. J Infect Dis. 2009; 199(9): 1335-44. PMCID: PMC2714884</li>
 </ol>
-<h2>Publications for 2010</h2>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Publications for 2010 <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseTwo" class="panel-collapse collapse">
 <ol>
   <li>Bachmann LH, Johnson RE, Cheng H, Markowitz L, Papp JR, Palella FJ, Jr., Hook EW, 3rd. Nucleic acid amplification tests for diagnosis of Neisseria gonorrhoeae and Chlamydia trachomatis rectal infections. J Clin Microbiol. 2010; 48(5): 1827-32. PMCID: PMC2863861</li>
   <li>Chinn LW, Tang M, Kessing BD, Lautenberger JA, Troyer JL, Malasky MJ, McIntosh C, Kirk GD, Wolinsky SM, Buchbinder SP, Gomperts ED, Goedert JJ, O\'Brien SJ. Genetic associations of variants in genes encoding HIV-dependency factors required for HIV-1 infection. J Infect Dis. 2010; 202(12): 1836-45. PMCID: PMC3107555</li>
@@ -286,7 +311,13 @@ Resource.create(
   <li>Shiels MS, Cole SR, Chmiel JS, Margolick J, Martinson J, Zhang ZF, Jacobson LP. A comparison of ad hoc methods to account for non-cancer AIDS and deaths as competing risks when estimating the effect of HAART on incident cancer AIDS among HIV-infected men. J Clin Epidemiol. 2010; 63(4): 459-67. PMCID: PMC2837111</li>
   <li>Westreich D, Cole SR, Tien PC, Chmiel JS, Kingsley L, Funk MJ, Anastos K, Jacobson LP. Time scale and adjusted survival curves for marginal structural cox models. Am J Epidemiol. 2010; 171(6): 691-700. PMCID: PMC2877453</li>
 </ol>
-<h2>Publications for 2011</h2>
+</div>
+
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Publications for 2011 <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseThree" class="panel-collapse collapse">
 <ol>
   <li>An P, Li R, Wang JM, Yoshimura T, Takahashi M, Samudralal R, O\'Brien SJ, Phair J, Goedert JJ, Kirk GD, Troyer JL, Sezgin E, Buchbinder SP, Donfield S, Nelson GW, Winkler CA. Role of exonic variation in chemokine receptor genes on AIDS: CCRL2 F167Y association with pneumocystis pneumonia. PLoS Genet. 2011; 7(10): e1002328. PMCID: PMC3203199</li>
   <li>Becker JT, Sanders J, Madsen SK, Ragin A, Kingsley L, Maruca V, Cohen B, Goodkin K, Martin E, Miller EN, Sacktor N, Alger JR, Barker PB, Saharan P, Carmichael OT, Thompson PM. Subcortical brain atrophy persists even in HAART-regulated HIV disease. Brain Imaging Behav. 2011; 5(2): 77-85. PMCID: PMC3082694</li>
@@ -314,7 +345,12 @@ Resource.create(
   <li>Tsao JC, Stein JA, Ostrow D, Stall RD, Plankey MW. The mediating role of pain in substance use and depressive symptoms among Multicenter AIDS Cohort Study (MACS) participants. Pain. 2011; 152(12): 2757-64. PMCID: PMC3215839</li>
   <li>Vassileva J, Georgiev S, Martin E, Gonzalez R, Segala L. Psychopathic heroin addicts are not uniformly impaired across neurocognitive domains of impulsivity. Drug Alcohol Depend. 2011; 114(2-3): 194-200. PMCID: PMC3062675</li>
 </ol>
-<h2>Publications for 2012</h2>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Publications for 2012 <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseFour" class="panel-collapse collapse">
 <ol>
   <li>Abraham AG, Palella FJ, Li X, Estrella MM, Kingsley LA, Witt MD, Jacobson LP. The impact of impaired kidney function and HIV infection on the risk of anemia. AIDS Res Hum Retroviruses. 2012; 28(12): 1666-71. PMCID: PMC3505063</li>
   <li>Beachler DC, Weber KM, Margolick JB, Strickler HD, Cranston RD, Burk RD, Wiley DJ, Minkoff H, Reddy S, Stammer EE, Gillison ML, D\'Souza G. Risk factors for oral HPV infection among a high prevalence population of HIV-positive and at-risk HIV-negative adults. Cancer Epidemiol Biomarkers Prev. 2012; 21(1): 122-33. PMCID: PMC3280125</li>
@@ -339,7 +375,12 @@ Resource.create(
   <li>Thomas R, Thio CL, Apps R, Qi Y, Gao X, Marti D, Stein JL, Soderberg KA, Moody MA, Goedert JJ, Kirk GD, Hoots WK, Wolinsky S, Carrington M. A novel variant marking HLA-DP expression levels predicts recovery from hepatitis B virus infection. J Virol. 2012; 86(12): 6979-85. PMCID: PMC3393572</li>
   <li>Westreich D, Cole SR, Young JG, Palella F, Tien PC, Kingsley L, Gange SJ, Hernan MA. The parametric g-formula to estimate the effect of highly active antiretroviral therapy on incident AIDS or death. Stat Med. 2012; 31(18): 2000-9. PMCID: PMC3641816</li>
 </ol>
-<h2>Publications for 2013</h2>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Publications for 2013 <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseFive" class="panel-collapse collapse">
 <ol>
   <li>Apps R, Qi Y, Carlson JM, Chen H, Gao X, Thomas R, Yuki Y, Del Prete GQ, Goulder P, Brumme ZL, Brumme CJ, John M, Mallal S, Nelson G, Bosch R, Heckerman D, Stein JL, Soderberg KA, Moody MA, Denny TN, Zeng X, Fang J, Moffett A, Lifson JD, Goedert JJ, Buchbinder S, Kirk GD, Fellay J, McLaren P, Deeks SG, Pereyra F, Walker B, Michael NL, Weintrob A, Wolinsky S, Liao W, Carrington M. Influence of HLA-C expression level on HIV control. Science. 2013; 340(6128): 87-91. NIHMSID: NIHMS484348</li>
   <li>Aziz N, Margolick JB, Detels R, Rinaldo CR, Phair J, Jamieson BD, Butch AW. Value of a quality assessment program in optimizing cryopreservation of peripheral blood mononuclear cells in a multicenter study. Clin Vaccine Immunol. 2013; 20(4): 590-5. PMCID: PMC3623420</li>
@@ -355,7 +396,12 @@ Resource.create(
   <li>Wada N, Jacobson LP, Cohen M, French A, Phair J, Munoz A. Cause-specific life expectancies after 35 years of age for human immunodeficiency syndrome-infected and human immunodeficiency syndrome-negative individuals followed simultaneously in long-term cohort studies, 1984-2008. Am J Epidemiol. 2013; 177(2): 116-25. PMCID: PMC3590031</li>
   <li>Witt MD, Seaberg EC, Darilay A, Young S, Badri S, Rinaldo CR, Jacobson LP, Detels R, Thio CL. Incident hepatitis C virus infection in men who have sex with men: a prospective cohort analysis, 1984-2011. Clin Infect Dis. 2013; 57(1): 77-84. PMCID: PMC3669529</li>
 </ol>
-<h3>In Press</h3>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">In Press <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseSix" class="panel-collapse collapse">
 <ol>
   <li>Abraham AG, Li X, Jacobson LP, Estrella MM, Evans RW, Witt MD, Phair J.  Antiretroviral therapy-induced changes in plasma lipids and the risk of kidney dysfunction in HIV-infected men.  AIDS Res Hum Retroviruses 2013 PMCID:  PMC Journal - In Process</li>
   <li>Althoff KN, Jacobson LP, Cranston RD, Detels R, Phair JP, Li X, Margolick JB for the Multicenter AIDS Cohort Study.  Age, comorbidities and AIDS predict the frailty phenotype in men who have sex with men.  J Gerontol A Biol Sci Med Sci 2013.  PMCID: PMC Journal - In Process</li>
@@ -365,7 +411,12 @@ Resource.create(
   <li>Mata MM, Iwema JR, Dell S, Neems LC, Jamieson BD, Phair JP, Cohen MH, Anastos K, Baum LL.  Comparison of antibodies that mediate HIV-1 gp120 ADCC in asymptomatic HIV-1 positive men and women.  AIDS Res Hum Retroviruses 2013 PMCID: PMC Journal - In Process</li>
   <li>Sander PM, Cole SR, Stall RD, Jacobson LP, Eron JJ, Napravnik S, Gaynes BN, Johnson-Hill LM, Bolan RK, Ostrow DG. Joint effects of alcohol consumption and high-risk sexual behavior on HIV seroconversion among men who have sex with men. AIDS. 2013; 27(5): 815-23. PMCID: PMC Journal - In Process.</li>
 </ol>
-<h3>Submitted for Publication</h3>
+</div>
+
+<h2>
+  <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Submitted for Publication <i class="fa fa-chevron-down"></i></a>
+</h2>
+<div id="collapseSeven" class="panel-collapse collapse">
 <ol>
   <li>Althoff KN, Margolick JB, Reddy S, Mehta SH, Gange SJ, Kingsley L, Detels R, Jacobson LP.  Estimating the proportion of older men who have sex with men who have aged with HIV in the US.</li>
   <li>Brener MI, Ketlogetswe K, Budoff M, Jacobson LP, Li X, Rezaeuab O, Razipour A, Palella FJ, Kingsley L, Witt MD, George RT, Brown T, Post WS.  Epicardial fat is associated with duration of antiretroviral therapy and coronary atherosclerosis in the Multicenter AIDS Cohort Study (MACS).</li>
@@ -386,17 +437,9 @@ Resource.create(
   <li>Wada N, Jacobson LP, Cohen M, French A, Phair J, Munoz A.  Cause-specific mortality among HIV-infected individuals, by CD4 cell count at HAART initiation, compared to HIV-uninfected individuals.</li>
   <li>Wright MJ, Miller EN, Reinhard MJ, Cottingham ME, Cox C, Reynolds S, Martin EM, Becker JT, Selnes OA, Manly J. The role of education level and quality in neuropsychological test performances of ethnic minorities.</li>
 </ol>
+</div>
 
-<h3>Other Links</h3>
-<ul>
-  <li><a href="https://actgnetwork.org/trials_open_enrollment">AIDS Clinical Trials Group</a></li>
-  <li><a href="http://www.cdc.gov/hiv/>CDC HIV Page</a></li>
-  <li><a href="http://www.cityofchicago.org/city/en/depts/cdph/provdrs/sti_hiv_aids/svcs/get_yourself_evaluatedforstihivaids.html">CDPH Testing Sites</a></li>
-  <li><a href="http://www.nmh.org/nm/infectious-disease-overview">NU ID Center Page</a></li>
-  <li><a href="http://www.nmh.org/nm/infectious-disease--clinical-trials">ID Clinical Trials</a></li>
-  <li><a href="http://www.impactprogram.org">Impact Program</a></li>
-  <li><a href="https://actgnetwork.org/clinical-trials/about-trial-process">About Clinical Trials</a></li>
-</ul>
+</div>
 ',
 :site_id => 1)
 
