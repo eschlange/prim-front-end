@@ -238,10 +238,7 @@ Resource.create(
 :title => 'Resources',
 :content =>  '
 <div id="accordion">
-<h2>
-  <a data-toggle="collapse" data-parent="#accordion" href="#collapseZero">Other Links <i class="fa fa-chevron-down"></i></a>
-</h2>
-<div id="collapseZero" class="panel-collapse collapse">
+<h2>Other Links</h2>
 <ul>
   <li><a href="https://actgnetwork.org/trials_open_enrollment">AIDS Clinical Trials Group</a></li>
   <li><a href="http://www.cdc.gov/hiv/>CDC HIV Page</a></li>
@@ -251,7 +248,6 @@ Resource.create(
   <li><a href="http://www.impactprogram.org">Impact Program</a></li>
   <li><a href="https://actgnetwork.org/clinical-trials/about-trial-process">About Clinical Trials</a></li>
 </ul>
-</div>
 
 <h2>
   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Publications for 2009 <i class="fa fa-chevron-down"></i></a>
@@ -446,16 +442,25 @@ Resource.create(
 Eligibility.create(
 :title => 'Eligibility Criteria',
 :content => '
-<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
-<div class="row">
-  <div class="col-sm-5">
-    <p class="subtitle">Male<br /><br /><br />Aged 18-70<br /><br /><br />Evidence of recent HIV infection<br /></p>
+<p class="subtitle">In order to be eligible to take part in MACs, you must meet the following criteria:</p>
+<div class="row text-left">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-8">
+    <p class="subtitle">
+      Male<br /><br />
+      Aged 18-70<br /><br />
+      Evidence of recent HIV infection<br />
+    </p>
   </div>
-  <div class="col-sm-2">
-    <h3 class="title">defined by</h3>
-  </div>
-  <div class="col-sm-5">
-    <p class="subtitle">+ Ag/Ab test<br /><br /><br />+ HIV viral load<br /><br /><br />Indeterminate or negative Western blot<br /></p>
+</div>
+<div class="row text-left">
+  <div class="col-sm-6"></div>
+  <div class="col-sm-6">
+    <p class="subtitle"><strong>evidence of HIV infection may include:</strong><br />
+      + Ag/Ab test<br />
+      + HIV viral load<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
+      Indeterminate or negative Western blot<br /></p>
   </div>
 </div>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>
@@ -537,16 +542,25 @@ Consent.create!(
 :footer =>
   '
 <h2 class="title">Eligibility Criteria</h2>
-<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
-<div class="row">
-  <div class="col-sm-5">
-    <p class="subtitle">Male<br /><br /><br />Aged 18-70<br /><br /><br />Evidence of recent HIV infection<br /></p>
+<p class="subtitle">In order to be eligible to take part in MACs, you must meet the following criteria:</p>
+<div class="row text-left">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-8">
+    <p class="subtitle">
+      <strong>Male</strong><br /><br />
+      <strong>Aged 18-70</strong><br /><br />
+      <strong>Evidence of recent HIV infection</strong><br />
+    </p>
   </div>
-  <div class="col-sm-2">
-    <h3 class="title">defined by</h3>
-  </div>
-  <div class="col-sm-5">
-    <p class="subtitle">+ Ag/Ab test<br /><br /><br />+ HIV viral load<br /><br /><br />Indeterminate or negative Western blot<br /></p>
+</div>
+<div class="row text-left">
+  <div class="col-sm-6"></div>
+  <div class="col-sm-6">
+    <p class="subtitle"><strong>evidence of HIV infection may include:</strong><br />
+      + Ag/Ab test<br />
+      + HIV viral load<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
+      Indeterminate or negative Western blot<br /></p>
   </div>
 </div>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>
