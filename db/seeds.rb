@@ -445,19 +445,21 @@ Resource.create(
 
 Eligibility.create(
 :title => 'Eligibility Criteria',
-:content => '<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
+:content => '
+<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
 <div class="row">
   <div class="col-sm-5">
-    <p class="subtitle">Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
+    <p class="subtitle">Male<br /><br /><br />Aged 18-70<br /><br /><br />Evidence of recent HIV infection<br /></p>
   </div>
   <div class="col-sm-2">
-    <h3 class="title">OR</h3>
+    <h3 class="title">defined by</h3>
   </div>
   <div class="col-sm-5">
-    <p class="subtitle">Documented negative HIV ab test in past year.</p>
+    <p class="subtitle">+ Ag/Ab test<br /><br /><br />+ HIV viral load<br /><br /><br />Indeterminate or negative Western blot<br /></p>
   </div>
 </div>
-<p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>',
+<p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>
+',
 :site_id => 1)
 
 User.create!(
@@ -533,17 +535,20 @@ Consent.create!(
   <p>Authorized members of Northwestern University workforce, however, may need to see your information, such as administrative staff members from the Office of Research, and members of the Institutional review Board (a committee which is responsible for the ethical oversight of the study)</p>
   <div class="divider"></div>',
 :footer =>
-  '<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
-  <div class="row">
-    <div class="col-sm-5">
-      <p class="subtitle"> Persons eligible are males aged 18-70 with evidence of acute or recent HIV infection as defined by positive HIV ag/ab test and positive HIV viral load AND indeterminate or negative Western blot</p>
-    </div>
-    <div class="col-sm-2">
-      <h3 class="title">OR</h3>
-    </div>
-    <div class="col-sm-5">
-      <p class="subtitle">Documented negative HIV ab test in past year.</p>
-    </div>
+  '
+<h2 class="title">Eligibility Criteria</h2>
+<p class="subtitle">In order to be eligible to take part in MACs, you must meet one of the following criteria:</p>
+<div class="row">
+  <div class="col-sm-5">
+    <p class="subtitle">Male<br /><br /><br />Aged 18-70<br /><br /><br />Evidence of recent HIV infection<br /></p>
   </div>
-  <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>'
+  <div class="col-sm-2">
+    <h3 class="title">defined by</h3>
+  </div>
+  <div class="col-sm-5">
+    <p class="subtitle">+ Ag/Ab test<br /><br /><br />+ HIV viral load<br /><br /><br />Indeterminate or negative Western blot<br /></p>
+  </div>
+</div>
+<p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>
+'
 )
