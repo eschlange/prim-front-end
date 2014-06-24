@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: macs_development
+  database: prim_development
   pool: 5
-  username: macs
+  username: prim
   password:
   host: localhost
 
@@ -47,16 +47,16 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: macs_test
+  database: prim_test
   pool: 5
-  username: macs
+  username: prim
   password:
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: macs_production
+  database: prim_production
   pool: 5
-  username: macs
+  username: prim
   password:

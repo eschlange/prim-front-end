@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem "pg"
 gem "rails", ">= 4.0.5"
+gem "sass-rails", '~> 4.0.0'
 gem "bootstrap-sass"
 gem "uglifier"
 gem "jquery-rails"
@@ -11,8 +12,9 @@ gem "cancan"
 gem "font-awesome-sass"
 gem "simple_form"
 gem "thin"
-gem "font-awesome-sass-rails"
+gem "font-awesome-rails"
 gem "best_in_place", github: 'aaronchi/best_in_place'
+gem "prim_engine", github: 'eschlange/prim-engine'
 gem "to_csv-rails", '~> 0.1.5'
 
 # email exceptions
@@ -21,7 +23,7 @@ gem "exception_notification"
 gem "paperclip", "~> 4.1"
 
 group :development, :test do
-  gem "rspec-rails", "~> 3.0.0.beta2"
+  gem "rspec-rails", "~> 3.0.1"
   gem "factory_girl_rails"
 end
 

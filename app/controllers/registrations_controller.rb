@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'active_resource'
+
 # Author::  Eric Schlange (mailto:eric.schlange@northwestern.edu)
 # License:: GPLv2
 
@@ -8,6 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.save
       predefinedUserCreation(resource)
       createConsentRecord(resource)
+      @status = save_prim_participant(sign_up_params)
     else
       clean_up_passwords resource
       respond_with resource
@@ -30,7 +34,7 @@ class RegistrationsController < Devise::RegistrationsController
         consent_header: consent.header,
         consent_body: consent.body,
         consent_footer: consent.footer,
-        irb_acceptance_image_url: consent.irb_acceptance_images.first.image.url)
+        irb_acceptance_image_url: consent.irb_acceptance_images.nil? ? consent.irb_acceptance_images.first.image.url : 'no IRB image exists for this site.')
     consentRecord.save
   end
 
@@ -70,5 +74,15 @@ class RegistrationsController < Devise::RegistrationsController
     if authenticated && (current_user.nil? || !current_user.at_least_a_content_manager?)
       render file: "#{Rails.root}/public/403.html", status: 403, layout: true
     end
+  end
+
+  def save_prim_participant(sign_up_params)
+    PrimEngine::Api::V1::ApiParticipant.create(
+      email: sign_up_params[:email],
+      first_name: sign_up_params[:first_name],
+      last_name: sign_up_params[:last_name],
+      phone: sign_up_params[:phone],
+      date_of_birth: sign_up_params[:date_of_birth]
+    )
   end
 end
