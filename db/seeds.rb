@@ -152,7 +152,7 @@ About.create(
 
 <section id="pricing" class="pricing">
   <div class="container text-left">
-    <h3 class="title">What </h3>
+    <h3 class="title">What is MACS?</h3>
     <p>The Multicenter AIDS Cohort Study is the longest running study of HIV infection and disease among MSM with and without HIV infection.  We often
        are asked "but if this is a study of HIV, why do you want men without HIV to participate?"  It\'s a fair question.  If we want to study the virus
        and how the virus causes disease we should look at people who actually have the virus.  But that only works if we know exactly what we are looking
