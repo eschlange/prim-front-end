@@ -15,13 +15,13 @@ class Site < ActiveRecord::Base
   has_many :user_consents
   
   def create_default_site_content
-    Home.create(site_id: self.id)
-    Resource.create(site_id: self.id)
-    About.create(site_id: self.id)
-    Consent.create(site_id: self.id)
-    ContactUs.create(site_id: self.id)
-    Eligibility.create(site_id: self.id)
-    Funding.create(site_id: self.id)
-    Intervention.create(site_id: self.id)
+    Home.create(site_id: self.id, title: 'Home Title', content: 'Home tag line goes here.')
+    Resource.create(site_id: self.id, title: 'Resources Title', content: 'Resources content goes here.')
+    About.create(site_id: self.id, title: 'About Us Title', content: 'About us content goes here.')
+    Consent.create(site_id: self.id, header: 'Consent Header Content', body: 'Consent body goes here.', footer: 'consent footer goes here.')
+    ContactUs.create(site_id: self.id, title: 'Contact Us Title', content: 'Contact Us content goes here.')
+    Eligibility.create(site_id: self.id, title: 'Eligibility Title', content: 'Eligibility content goes here.')
+    Funding.create(site_id: self.id, title: 'Funding Title', content: 'Funding content goes here.')
+    Intervention.create(site_id: self.id, name: 'Intervention Title', description: 'Intervention description goes here.')
   end
 end
