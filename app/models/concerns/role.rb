@@ -11,7 +11,7 @@ module Role
   PARTICIPANT_ID = 4
 
   def at_least_a_super_user?
-    ADMIN_ID >= role_identifier
+    SUPER_USER_ID >= role_identifier
   end
 
   def at_least_a_admin?

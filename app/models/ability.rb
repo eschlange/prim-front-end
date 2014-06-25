@@ -7,6 +7,9 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
+    can :access, :rails_admin   # grant access to rails_admin
+    can :dashboard              # grant access to the dashboard
+
     if user.at_least_a_super_user?
       can :manage, :all
     elsif user.at_least_a_admin?

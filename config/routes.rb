@@ -1,4 +1,5 @@
 Macs::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :interventions
   resources :sites do
     get "pages/about"
