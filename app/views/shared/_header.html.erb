@@ -60,7 +60,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to @site.intervention.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
+          <%= link_to @site.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navabr-1">
@@ -91,7 +91,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to @site.intervention.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
+          <%= link_to @site.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse single-page-nav" id="navabr-2">
@@ -137,7 +137,7 @@
   <% if 'devise/registrations' == params[:controller] %>
   <div class="container registration-header">
     <div class="header-description pull-left">
-      <h1 class="title"><%= @site.intervention.name %> Enrollment </h1>
+      <h1 class="title"><%= @site.name %> Enrollment </h1>
     </div><!-- /header-description -->
   </div><!-- /container -->
   <% end %>

@@ -11,7 +11,7 @@ Site.create(:id => 1, :name => 'MACs', :content => 'MACs : Multicenter AIDS Coho
 
 Intervention.create(
 :id => 1,
-:name => 'MACS',
+:name => 'Purpose of Research',
 :description =>
   '<p>You are being asked to take part in a research study. This document has important information about the reason for the study, what you will
       do if you choose to be in this research study, and the way we (i.e., Northwestern University) would like to use information about you and
