@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     password == password_confirmation && !password.blank?
   end
 
+  def role_identifier_enum
+    [ ['Super User', '1'], ['Admin', '2'], ['Content Manager', '3'], ['Participant', '4'] ]
+  end
+
   private
 
   def user_params

@@ -56,7 +56,7 @@ RailsAdmin.config do |config|
       field :first_name
       field :last_name
       field :phone
-      field :role_identifier, :enum do
+      field :role_identifier
     end
   end
 
