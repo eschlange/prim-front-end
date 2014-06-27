@@ -28,7 +28,7 @@
 <section id="what" class="steps text-center">
   <div class="container">
     <h3 class="title">What To Do</h3>
-    <p class="subtitle">This site is designed to assist in enrollment and the management of enrolled accounts as well as offer general information about MACs.</p>
+    <p class="subtitle">This site is designed to assist in enrollment and the management of enrolled accounts as well as offer general information about <%= @site.intervention.name %>.</p>
 
     <div class="row text-center">
 
@@ -36,7 +36,7 @@
         <article>
           <i class="fa fa-user"></i>
           <h3><a href="/sites/'<%= @site.id %>'/users/sign_up#sign-up">Enroll</a></h3>
-          <p>Haven't enrolled yet? <a href="/sites/'<%= @site.id %>'/users/sign_up">Start here.</a>Enrollment is the first step of your participation in the MACs study.</p>
+          <p>Haven't enrolled yet? <a href="/sites/'<%= @site.id %>'/users/sign_up">Start here.</a>Enrollment is the first step of your participation in the <%= @site.intervention.name %> study.</p>
         </article>
       </div><!-- /span4 -->
 
