@@ -29,14 +29,14 @@ class ConfirmationsController < Devise::ConfirmationsController
     scope    = Devise::Mapping.find_scope!(resource_or_scope)
     resource = args.last || resource_or_scope
     sign_in(scope, resource, options)
-    redirect_to '/sites/' + @site.id + '/pages/home'
+    redirect_to '/sites/' + @site.id.to_s + '/pages/home'
   end
 
   def after_confirmation_path_for(resource)
-    '/sites/' + @site.id + '/pages/home'
+    '/sites/' + @site.id.to_s + '/pages/home'
   end
 
   def after_resending_confirmation_instructions_path_for(resource)
-    '/sites/' + @site.id + '/pages/home'
+    '/sites/' + @site.id.to_s + '/pages/home'
   end
 end

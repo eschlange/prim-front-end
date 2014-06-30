@@ -9,6 +9,13 @@
 Site.create(:id => 1, :name => 'MACs', :content => 'MACs : Multicenter AIDS Cohort Study Program<br />
   the first and largest study specifically created to examine the natural history of AIDS.')
 
+User.create!(
+  :first_name => 'Eric',
+  :last_name => 'Schlange',
+  :email => 'eric.schlange@northwestern.edu',
+  :role_identifier => 1)
+
+=begin
 Intervention.create(
 :id => 1,
 :name => 'Purpose of Research',
@@ -467,12 +474,6 @@ Eligibility.create(
 ',
 :site_id => 1)
 
-User.create!(
-:first_name => 'Eric',
-:last_name => 'Schlange',
-:email => 'eric.schlange@northwestern.edu',
-:role_identifier => 1)
-
 Consent.create!(
 :site_id => 1,
 :header =>
@@ -564,5 +565,6 @@ Consent.create!(
   </div>
 </div>
 <p class="subtitle">As an observational study no medications are provided, you will receive laboratory and other medical evaluations as part of the study and will be compensated for your time.</p>
-'
-)
+')
+
+=end

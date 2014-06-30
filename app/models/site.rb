@@ -11,6 +11,7 @@ class Site < ActiveRecord::Base
   has_one :resource
   has_one :intervention
   has_one :consent
+  has_one :point_of_contact
   has_many :site_images
   has_many :user_consents
   
@@ -23,5 +24,6 @@ class Site < ActiveRecord::Base
     Eligibility.create(site_id: self.id, title: 'Eligibility Title', content: 'Eligibility content goes here.')
     Funding.create(site_id: self.id, title: 'Funding Title', content: 'Funding content goes here.')
     Intervention.create(site_id: self.id, name: 'Intervention Title', description: 'Intervention description goes here.')
+    PointOfContact.create(site_id: self.id, title: 'title', name: 'name', street_address: 'street address', city: 'city', state: 'state', zip: 'zip', email: 'email')
   end
 end

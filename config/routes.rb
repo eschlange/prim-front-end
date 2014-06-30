@@ -8,6 +8,7 @@ Macs::Application.routes.draw do
     get "pages/eligibility"
     get "pages/funding"
     get "pages/resources"
+    get "pages/point_of_contact_view"
     resources :site_images, param: :position
     resources :irb_acceptance_images
   end
@@ -20,6 +21,7 @@ Macs::Application.routes.draw do
   resources :resources
   resources :intervention
   resources :consent
+  resources :point_of_contacts
 
   devise_for :users,
              :path => "sites/:site_id/users",

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624194618) do
+ActiveRecord::Schema.define(version: 20140630155414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,25 +101,21 @@ ActiveRecord::Schema.define(version: 20140624194618) do
 
   add_index "irb_acceptance_images", ["consent_id"], name: "index_irb_acceptance_images_on_consent_id", using: :btree
 
-  create_table "participants", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "date_of_birth"
+  create_table "point_of_contacts", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
     t.string   "phone"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
-  create_table "prim_engine_participants", force: true do |t|
-    t.string   "email"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "first_name"
-  end
+  add_index "point_of_contacts", ["site_id"], name: "index_point_of_contacts_on_site_id", using: :btree
 
   create_table "resources", force: true do |t|
     t.string   "title"
@@ -157,6 +153,7 @@ ActiveRecord::Schema.define(version: 20140624194618) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "template_name"
   end
 
   create_table "user_consents", force: true do |t|
