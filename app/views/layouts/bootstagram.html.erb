@@ -3,18 +3,206 @@
         @site = Site.find(1)
    end
 %>
-<html lang="en">
+<html class="no-js">
     <head>
-      <title>MACS</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title><%= @site.name %></title>
+      <meta name="viewport" content="width=device-width">
+      <%= stylesheet_link_tag    @site.template_name, media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
+
+      <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
     </head>
 
     <body>
-      <%= render partial: "shared/header" %></div>
-      <%= yield %>
-      <%= render partial: "shared/footer" %>
+      render partial: "shared/header"
+      yield
+      render partial: "shared/footer"
+
+
+      <div class="navbar ">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#home" class="scroll">Home</a></li>
+              <li><a href="#recent" class="scroll">Photos</a></li>
+              <li><a href="#about" class="scroll">About</a></li>
+              <li><a href="#contact" class="scroll">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div><!--/.navbar-collapse -->
+        </div>
+      </div>
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
+
+        <div id="home" class="container">
+          <h1 class="animated fadeIn delay-2" >Hi, I'm Sarah a hobbyist photographer who can't get enough of Instagram</h1>
+          <h2 class="animated fadeIn delay-3"> #VSCO #ILOVEFILTERS #hastag™</h2>
+          <p class="animated fadeInLeft delay-4">This is my personal portfolio, I use Instagram to publish all of my photos, you can see these below. I do photography for all types of events, feel free to <a href="#contact" class="scroll"> contact me </a> to talk about work.</p>
+        </div>
+      </div>
+
+      <div role="main" >
+
+        <div id="recent" class="container animated fadeInDown delay-5" >
+
+          <!-- Use this if you do not want instagam images. remove no-js-images and style -->
+          <div class="row no-js-images alternate-image-portfolio">
+            <div class="col-xs-12 col-sm-3">
+              <img src="img/no-js-1.jpg" alt="portfolio-image">
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <img src="img/no-js-2.jpg" alt="portfolio-image">
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <img src="img/no-js-3.jpg" alt="portfolio-image">
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <img src="img/no-js-4.jpg" alt="portfolio-image">
+            </div>
+          </div><!-- END alternate-image-portfolio-->
+        </div><!-- END #recent -->
+
+
+        <div id="about" class="clearfix ">
+          <div class="container about-primary">
+            <h1 class=" about-title"> I love photography </h1>
+
+            <p class=" about-p1">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur metus a elit commodo, eu bibendum metus lobortis. Nulla facilisi. Sed non arcu ac mauris porttitor varius. Vestibulum aliquet posuere risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dui purus. Quisque semper sollicitudin quam, at lacinia neque posuere eu. In posuere molestie diam nec tempus. Vestibulum at varius elit, non tincidunt nisl.
+            </p>
+            <hr id="hr" class=" about-hr">
+            <p class=" about-p2">
+              Nam ut tellus a enim facilisis venenatis vel eu ligula. Nunc porttitor nulla mattis risus semper, quis vestibulum dui tristique. Aliquam mi orci, mollis eget molestie nec, hendrerit id nulla. Vestibulum faucibus gravida erat, eget posuere diam accumsan ac. Fusce placerat odio at ipsum imperdiet fermentum. Mauris quis urna iaculis, pulvinar tortor eget, facilisis enim.
+            </p>
+            <p class=" about-p3">
+              Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium. Maecenas non ullamcorper risus. Phasellus vel bibendum dolor. Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod. Ut sem justo, dignissim tristique arcu vel, vestibulum gravida enim.
+            </p>
+
+            <p class=" about-p4">
+              . Ut sem justo, dignissim tristique arcu vel, vestibulum gravida enim.
+            </p>
+
+          </div><!-- end of .container -->
+          <div id="quote-block" class="quote" >
+            <blockquote >
+              Photography allows us to capture a moment in time
+            </blockquote>
+          </div>
+
+          <div class="container">
+            <div class="about-secondary">
+
+              <h3>November 17th - Tom's wedding</h3>
+              <p>
+                Boats can tell a wonderful tale.And fishing boats tell one of hardship, fortune, and rust. Bright and colorful, these boats reflect the hope that fishermen have in finding their next big catch.
+                Quisque semper augue vitae facilisis placerat. Nulla bibendum velit et metus ultricies volutpat. Nulla elit diam, dignissim id imperdiet sed, dictum eu eros. Vestibulum malesuada, ipsum eget fermentum suscipit, ligula lorem imperdiet ipsum. <br> <br> A blandit leo arcu ac est. Vivamus porta est ut arcu sagittis elementum. Fusce pulvinar eu augue in porttitor. Nullam rhoncus arcu et tempor rutrum. Duis consequat feugiat nisl sit amet luctus. Curabitur arcu orci, porta vel ultricies sit amet, gravida a lectus. Nulla volutpat bibendum ullamcorper. Praesent ac odio mauris. Aliquam erat volutpat napatura.
+              </p>
+              <span class="see-photo"><a href="#">See the photos<i class="entypo-right-open-mini"></i></a></span>
+            </div>
+          </div><!-- end of .container -->
+        </div><!--about -->
+
+        <div id="contact" class="animated fadeIn dealy-8" >
+          <div class="container">
+            <div class="row">
+              <div class=" col-xs-12 col-sm-6">
+                <div class="form-container clearfix">
+
+                  <form role="form">
+
+                    <div class="form-group clearfix">
+                      <label for="name" class="control-label">Name</label>
+
+                      <div class=" col-sm-8 col-md-9 col-lg-10 input-container">
+                        <input type="text" class="form-control" id="name" >
+                      </div>
+
+                    </div>
+
+                    <div class="form-group clearfix ">
+                      <label for="email" class="control-label">Email</label>
+                      <div class=" col-sm-8 col-md-9  col-lg-10 input-container">
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+
+                      <div class=" input-container col-xs-12">
+                        <textarea class="form-control" rows="5" ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group clearfix">
+                      <button type="submit" class="form-submit-btn"><i class="entypo-mail"></i>Submit</button>
+                    </div>
+                  </form>
+                </div> <!-- form container -->
+              </div><!-- col -->
+
+              <div class="hire-info col-xs-12 col-sm-6">
+                <h3 class="hire-me-title">Hire Me </h3>
+                <p>
+                  Are you looking for an experienced photographer? I would love to here from you, you can send me a message through this contact form even if its just for general photography chat.</p>
+                <p>
+                  Hopefully i'll be seeing you soon.
+
+                </p>
+
+              </div>
+            </div> <!-- END row -->
+
+          </div><!-- END .container -->
+        </div><!-- END ontact -->
+      </div><!-- END  [role="main"] -->
+
+
+      <footer>
+        <div class="social-icons">
+
+          <a href="#"><span class="social-icon social-f"><i class="entypo-facebook"></i></span></a>
+          <a href="#"><span class="social-icon social-t"><i class="entypo-twitter"></i></span></a>
+          <a href="#"><span class="social-icon social-p"><i class="entypo-pinterest"></i></span></a>
+          <a href="#"><span class="social-icon social-g"><i class="entypo-gplus"></i></span></a>
+          <a href="#"><span class="social-icon social-fl"><i class="entypo-flickr"></i></span></a>
+        </div>
+      </footer>
+
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+      <script src="js/vendor/bootstrap.min.js"></script>
+
+      <script src="js/vendor/pongstagr.am.js"></script>
+      <script src="js/vendor/waypoints.min.js"></script>
+      <script src="js/vendor/jquery.stellar.min.js"></script>
+      <script src="js/main.js"></script>
+
     </body>
 </html>

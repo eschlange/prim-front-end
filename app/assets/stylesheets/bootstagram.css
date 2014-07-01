@@ -9,13 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *=
- *= require font-awesome.min
- *= require styles
- *= require timeline
- *= require themes/image
- *= require themes/link
- *= require themes/pill
- *= require themes/tab
+ *= require bootstrap.min
+ *= require css/bootstrap-theme.min
+ *= require css/main
  */
 
 
