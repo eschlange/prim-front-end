@@ -1,0 +1,56 @@
+<div>
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h2>User Consent</h2>
+    <table class="table">
+      <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>phone</th>
+        <th>email</th>
+      </tr>
+      <tr>
+        <td><%= retrieve_user_consent(site_id, user_id).user.first_name %></td>
+        <td><%= retrieve_user_consent(site_id, user_id).user.last_name %></td>
+        <td><%= retrieve_user_consent(site_id, user_id).user.phone %></td>
+        <td><%= retrieve_user_consent(site_id, user_id).user.email %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="modal-body">
+    <div class="divider"></div>
+
+    <section class="intervention">
+      <div class="container text-left">
+        <%= retrieve_user_consent(site_id, user_id).consent_header.html_safe %>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="intervention-long">
+      <div class="container text-left">
+        <%= retrieve_user_consent(site_id, user_id).consent_body.html_safe %>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="eligibility" class="screenshots text-center">
+      <div class="container">
+        <%= retrieve_user_consent(site_id, user_id).consent_footer.html_safe %>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <%= render 'devise/shared/consent_fields' %>
+  </div>
+</div>
+
+<script>
+    $(window).load(function() {
+
+    });
+</script>

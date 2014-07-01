@@ -1,0 +1,84 @@
+<section class="modal custom fade image-upload-div" id="image-update-modal-window" role="dialog"  aria-labelledby="imageUpdateModal" aria-hidden="true" ></section>
+
+<%= render 'pages/' + @site.template_name + '/home_section' %>
+
+<section id="app-shots" class="app-shots app-shots-custom text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <%= render_site_image_edit_link(@site.id, 'picture_1') %>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <%= render_site_image_edit_link(@site.id, 'picture_2') %>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <%= render_site_image_edit_link(@site.id, 'picture_3') %>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <%= render_site_image_edit_link(@site.id, 'picture_4') %>
+      </div>
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section> <!-- /.app-shots -->
+
+<%= render 'pages/' + @site.template_name + '/about' %>
+
+<div class="divider"></div>
+
+<section id="what" class="steps text-center">
+  <div class="container">
+    <h3 class="title">What To Do</h3>
+    <p class="subtitle">This site is designed to assist in enrollment and the management of enrolled accounts as well as offer general information about <%= @site.name %>.</p>
+
+    <div class="row text-center">
+
+      <div class="col-sm-4">
+        <article>
+          <i class="fa fa-user"></i>
+          <h3><a href="/sites/'<%= @site.id %>'/users/sign_up#sign-up">Enroll</a></h3>
+          <p>Haven't enrolled yet? <a href="/sites/'<%= @site.id %>'/users/sign_up">Start here.</a>Enrollment is the first step of your participation in the <%= @site.name %> study.</p>
+        </article>
+      </div><!-- /span4 -->
+
+      <div class="col-sm-4">
+        <article>
+          <i class="fa fa-sign-in"></i>
+          <h3><a href="#" data-toggle="modal" data-target="#loginModal">Sign In</a></h3>
+          <p>Already enrolled? <a href="#" data-toggle="modal" data-target="#loginModal">Sign in here.</a> Update your personal and contact information if you are already enrolled.</p>
+        </article>
+      </div><!-- /span4 -->
+
+      <div class="col-sm-4">
+        <article>
+          <i class="fa fa-cog"></i>
+          <h3><a href="#" data-toggle="modal" data-target="#loginModal">Manage</a></h3>
+          <p>Are you a study manager? <a href="#" data-toggle="modal" data-target="#loginModal">Log in here.</a></p>
+        </article>
+      </div><!-- /span4 -->
+
+    </div><!-- /row -->
+
+  </div><!-- /container -->
+</section>
+
+<div class="divider"></div>
+
+<%= render 'pages/' + @site.template_name + '/eligibility' %>
+
+<div class="divider"></div>
+
+<%= render 'pages/' + @site.template_name + '/resources' %>
+
+<div class="divider-2"></div>
+
+<%= render 'pages/' + @site.template_name + '/funding' %>
+
+<div class="divider"></div>
+
+<%= render 'pages/' + @site.template_name + '/contact_us' %>
+
+<script>
+    $(document).ready(function() {
+        jQuery(".best_in_place").best_in_place();
+    });
+</script>

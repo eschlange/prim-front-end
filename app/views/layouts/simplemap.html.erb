@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<% if @site.nil?
+        @site = Site.find(1)
+   end
+%>
+<html lang="en">
+    <head>
+      <title><%= @site.template_name %></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <%= stylesheet_link_tag    @site.template_name, media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+    </head>
+
+    <body>
+      <%= render partial: "shared/header" %></div>
+      <%= yield %>
+      <%= render partial: "shared/footer" %>
+    </body>
+</html>

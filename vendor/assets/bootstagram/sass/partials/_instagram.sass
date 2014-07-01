@@ -1,0 +1,80 @@
+#recent
+    padding: 50px 15px 25px 15px
+    +transition(all, 400ms)
+    
+.thumbnails
+    padding: 0
+    li
+        list-style: none
+        margin-bottom: 25px
+
+.gram
+    border: solid 0px transparent
+    padding: 0px
+    +box-shadow(0 0 0 #fff)
+    +border-radius(0)
+
+.btn-comments,
+.btn-likes
+    opacity: 0.5
+    bottom: 10px
+    +font-size(24)
+    right: auto
+    border: solid 0px transparent
+
+    &:hover
+        opacity: 0.9
+
+.btn-likes
+    left: 10px
+
+    &:hover
+        color: $salmon
+
+.btn-comments
+    right: 50px
+
+    &:hover
+        color: $navy
+
+.more-btn-container
+    margin-bottom: 50px
+
+.btn-more
+    color: #fff
+    padding: 6px 12px
+    text-align: center
+    text-transform: uppercase
+    background-color: #e67e22
+    letter-spacing: 0.05em
+    font-weight: 600
+    +font-size(12)
+    +transition(all, 400)
+
+    &:hover
+        color: #fff
+        background-color: #f1c40f
+    &:active
+        background-color: #E4BA11
+
+.modal
+    width: 100%
+    overflow: hidden
+    +breakpoint(sm)
+        width: 768px
+        margin-left: -384px
+
+
+    +breakpoint(md)
+        width: 820px
+        margin-left: -410px
+
+    .modal-body
+        overflow: hidden !important
+
+    .media
+        +breakpoint(sm)
+            padding-right: 30px
+
+        +breakpoint(md)
+            padding-right: 10px

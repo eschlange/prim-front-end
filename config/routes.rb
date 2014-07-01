@@ -2,13 +2,7 @@ Macs::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :interventions
   resources :sites do
-    get "pages/about"
     get "pages/home"
-    get "pages/contact_us"
-    get "pages/eligibility"
-    get "pages/funding"
-    get "pages/resources"
-    get "pages/point_of_contact_view"
     resources :site_images, param: :position
     resources :irb_acceptance_images
   end

@@ -1,0 +1,149 @@
+## These are a set of default values for the simplemap template.
+## Author: Eric Schlange
+home: ' <p>
+          This is the header description for your home page. Include any highlights for the study.<br/>
+          You can add multiple lines with line break tags.
+        </p>'
+resource: ' <div id="accordion">
+              <h2>Other Links</h2>
+              <ul>
+                <li><a href="http://www.google.com">Link Example</a></li>
+                <li><a href="http://www.google.com"/>Another Link Example</a></li>
+              </ul>
+
+              <h2>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Publications for 2014 <i class="fa fa-chevron-down"></i></a>
+              </h2>
+              <div id="collapseOne" class="panel-collapse collapse">
+                <ol>
+                  <li>publication information</li>
+                  <li>another publication</li>
+                </ol>
+              </div>
+            </div>'
+about: '<p>This is a section to describe the study and the organization that is running the study.</p>
+        <p>Sections can be divided by paragraph tags.</p>
+
+        <div class="divider"></div>
+
+        <section id="pricing" class="pricing">
+          <div class="container text-left">
+            <h3 class="title">Include additional about information here</h3>
+            <p>Again, seperate multiple paragraphs with paragraph tags.</p>
+          </div>
+        </section>'
+consent:
+  header: ' <table class="table table-short">
+              <tr><td>Consent header</td></tr>
+              <tr><td>PROTOCOL TITLE</td><td>Study title</td></tr>
+              <tr><td>PRINCIPAL INVESTIGATOR</td><td>study principal investigator</td></tr>
+              <tr><td>SUPPORTED BY</td><td>supporting organization</td></tr>
+            </table>'
+  body:   ' <p>Add consent details here.</p>
+            <div class="divider-2"></div>
+            <h3>Include Consent Details</h3>
+            <p>Any consent details can be added here, partition consent details with divider div elements as necessary.</p>
+            <div class="divider-2"></div>
+            <h3>This is another consent section</h3>
+            <p>Add as many consent details as necessary.</p>'
+  footer: ' <h2 class="title">Eligibility Criteria</h2>
+            <p class="subtitle">Add eligibility data here:</p>
+            <div class="row text-left">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                <p class="subtitle">
+                  <strong>Attribute necessary to join study</strong><br /><br />
+                  <strong>Attribute 2</strong><br /><br />
+                  <strong>Attribute 3</strong><br />
+                </p>
+              </div>
+            </div>
+            <div class="row text-left">
+              <div class="col-sm-6"></div>
+              <div class="col-sm-6">
+                <p class="subtitle"><strong>Some additional notes for screening:</strong><br />
+                  note 1<br />
+                  note 2<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
+                  note 3<br /></p>
+              </div>
+            </div>
+            <p class="subtitle">Any notes for eligibility can be added here.</p>'
+
+contact_us: ' <table class="table">
+                <tbody>
+                  <tr>
+                    <th><p class="subtitle">PRINCIPAL INVESTIGATOR</p></th>
+                    <td>
+                      <p class="subtitle">Principal investigator name<br/>
+                      Organization name<br/>
+                      Street address<br/>
+                      City, State Zip<br/>
+                      Phone Number <br/>
+                      Fax (Fax Number)<br/>
+                      email Address<br/>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><p class="subtitle">SUB-INVESTIGATORS</p></th>
+                    <td>
+                      <p class="subtitle">
+                        sub investigator 1<br/>
+                        sub investigator 2<br/>
+                        sub investigator 3<br/>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><p class="subtitle">PARTICIPATING SITES</p></th>
+                    <td>
+                      <p class="subtitle">Northwestern University<br/>
+                      645 N Michigan Ave, Suite 900<br/>
+                      Chicago, IL 60666<br/>
+                      Phone number <br/>
+                      Fax (fax number)<br/></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><p class="subtitle">STATISTICIAN</p></th>
+                    <td><p class="subtitle">Statistician name</p></td>
+                  </tr>
+                </tbody>
+              </table>'
+eligibility: '  <p class="subtitle">Add eligibility data here:</p>
+                <div class="row text-left">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-8">
+                    <p class="subtitle">
+                      <strong>Attribute necessary to join study</strong><br /><br />
+                      <strong>Attribute 2</strong><br /><br />
+                      <strong>Attribute 3</strong><br />
+                    </p>
+                  </div>
+                </div>
+                <div class="row text-left">
+                  <div class="col-sm-6"></div>
+                  <div class="col-sm-6">
+                    <p class="subtitle"><strong>Some additional notes for screening:</strong><br />
+                      note 1<br />
+                      note 2<br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
+                      note 3<br /></p>
+                  </div>
+                </div>
+                <p class="subtitle">Any notes for eligibility can be added here.</p>'
+funding: '  <table class="table">
+              <tbody>
+                <tr><th>FUNDING AGENCY</th><td>Agency name </td></tr>
+                <tr><td></td><td>Study ID/Funding Agency ID</td></tr>
+                <tr><td></td><td>Study name</td></tr>
+              </tbody>
+            </table>'
+intervention: ' <p>Describe the intervention here.</p>
+                <div class="divider-2"></div>
+
+                <h3>Include intervention details.</h3>
+                <p>Include multiple paragraphs and seperate them with paragraph tags.</p>
+                <div class="divider-2"></div>
+                <p>Divide section with divider div tags.</p>'

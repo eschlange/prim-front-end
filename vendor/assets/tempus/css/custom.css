@@ -1,0 +1,672 @@
+/*
+ * Tempus - Modern Landing Page - V.1.0
+ * Author: Shy Design
+ * Author URL: http://wrapbootstrap.com/user/shydesign
+ * All Right Reserved
+ * Credits:
+ * * http://twitter.github.com/bootstrap/
+ * * http://fortawesome.github.com/Font-Awesome/
+ *
+    // STYLES IN ORDER
+    
+    # Google Font                                        
+    # Reset Some Defaults Styles                         
+    # Layout                                             
+    # Header                                            
+    # Grid features                                                        
+    # Pricing table
+    # Testimonials
+    # Join
+    # Contact
+    # Footer
+    # Responive Fixes
+ */
+  
+/* 
+ * Google Font 
+ ******************************************************************************/
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+/* 
+ * Reset some default styles
+ ******************************************************************************/
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+  }
+
+body {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+   background-attachment: fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
+  background-image: none \9; /* IE 8 */
+  background-color: rgb(56, 56, 56) \9; /* IE 8 */
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 400;
+  color: #505050;
+  position: relative;
+  z-index: -101;
+}
+
+a {
+  color: rgb(50, 50, 50);
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+a:hover, a:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  height: 40px;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], 
+input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], 
+input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], 
+.uneditable-input {
+  background-color: #fff; 
+  border: solid 1px #eee;
+  -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,.1); 
+  -moz-box-shadow: inset 0 0 2px rgba(0,0,0,.1); 
+  box-shadow: inset 0 0 2px rgba(0,0,0,.1);
+}
+
+input:placeholder,textarea:placeholder{ font-size: 12px; color: #ccc;}
+input:-moz-placeholder,textarea:-moz-placeholder{ font-size: 12px; color: #ccc;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{ font-size: 12px; color: #ccc;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{ font-size: 12px; color: #ccc;}
+
+.custom-btn {
+  background: rgb(87, 87, 87);
+  border: 1px solid rgb(87, 87, 87);
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.custom-btn:hover {
+  background: rgb(240, 240, 240);
+  background: transparent;
+  border: 1px solid rgb(87, 87, 87);
+  color: rgb(87, 87, 87);
+}
+
+/* 
+ * Layout 
+ ******************************************************************************/
+.header, .grid-features, .pricing-table, .join, .testimonials, .contact {
+  padding: 80px 0;
+}
+ 
+/* 
+ * Header 
+ ******************************************************************************/
+.header {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  z-index: -99;
+}
+
+/* Text */
+.description-texts {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.site-slogan {
+  font-size: 48px;
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgb(80, 80, 80);
+}
+
+.site-slogan span {
+  background: #fff;
+  background: rgba(255, 255, 255, .9);
+  *zoom: 1;
+  display: inline;
+  display: inline-block;
+  line-height: 53px;
+  margin-bottom: 3px;
+  padding: 40px 30px;
+}
+
+.app-description {
+  color: rgb(255, 255, 255);
+}
+
+.app-description span {
+  background: rgb(43, 43, 43);
+  background: rgba(43, 43, 43, 0.9);
+  *zoom: 1;
+  display: inline;
+  display: inline-block;
+  margin-bottom: 2px;
+  padding: 10px 10px;
+}
+
+.header-btn {
+  background: rgb(121, 201, 255);
+  padding: 42px;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgb(163, 214, 243);
+  margin-top: 55px;
+  *zoom: 1;
+  display: inline;
+  display: inline-block;
+  
+  -webkit-box-shadow: 0px 4px 0px rgb(104, 191, 213);
+  -moz-box-shadow: 0px 4px 0px rgb(104, 191, 213);
+  -ms-box-shadow: 0px 4px 0px rgb(104, 191, 213);
+  -o-box-shadow: 0px 4px 0px rgb(104, 191, 213);
+  box-shadow: 0px 4px 0px rgb(104, 191, 213);
+  
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+} 
+
+.header-btn:hover, .header-btn:active {
+  color: #fff;
+  margin-top: 60px;
+  
+  -webkit-box-shadow: 0px 1px 0px rgb(104, 191, 213);
+  -moz-box-shadow: 0px 1px 0px rgb(104, 191, 213);
+  -ms-box-shadow: 0px 1px 0px rgb(104, 191, 213);
+  -o-box-shadow: 0px 1px 0px rgb(104, 191, 213);
+  box-shadow: 0px 1px 0px rgb(104, 191, 213);
+} 
+
+/* App buttons */
+.app-buttons {
+  padding: 20px 0;
+}
+
+.apple-store {
+  background: url(../img/apple-button.png);
+  width: 159px;
+  height: 57px;
+  *zoom: 1;
+  display: inline;
+  display: inline-block;
+}
+
+.google-store {
+  background: url(../img/google-button.png);
+  width: 159px;
+  height: 57px;
+  *zom: 1;
+  display: inline;
+  display: inline-block;
+}
+
+.apple-store:hover, .google-store:hover {
+  opacity: .7;
+  filter: alpha(opacity=70); 
+} 
+
+/* 
+ * Grid features 
+ ******************************************************************************/
+.grid-features {
+  background: #fff;
+  position: relative;
+}
+
+.grid-feature {
+  padding: 50px;
+}
+
+.grid-feature i {
+  font-size: 61px;
+  color: rgb(255, 255, 255);
+  line-height: 170px;
+}
+
+.shape {
+  width: 161px;
+  height: 160px;
+  margin: 0 auto;
+  
+  -webkit-transition: 400ms all;
+  -moz-transition: 400ms all;
+  -ms-transition: 400ms all;
+  -o-transition: 400ms all;
+  transition: 400ms all;
+}
+
+.shape:hover {
+  -webkit-transform: rotate(360deg) scale(1.08);
+  -moz-transform: rotate(360deg) scale(1.08);
+  -ms-transform: rotate(360deg) scale(1.08);
+  -o-transform: rotate(360deg) scale(1.08);
+  transform: rotate(360deg) scale(1.08);
+}
+
+.shape.darkblue {
+  background: url(../img/circle-1.png);
+}
+
+.shape.pink {
+  background: url(../img/circle-2.png);
+}
+
+.shape.lightblue {
+  background: url(../img/circle-3.png);
+}
+
+.grid-feature .title {
+  text-transform: uppercase;
+}
+ 
+ 
+/* 
+ * Pricing table 
+ ******************************************************************************/
+ .pricing-table {
+  position: relative;
+  z-index: 99;
+}
+
+.plan {
+  background: rgb(250, 250, 250);
+  padding: 30px 20px;
+  min-width: 250px;
+  border: 1px solid rgb(238, 238, 238);
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  -webkit-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -moz-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -ms-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -o-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  box-shadow: inset 0 0 4px rgb(231, 231, 231);
+}
+
+.plan-1 {
+  max-width: 300px;
+  margin-bottom: 40px;
+  float: right;
+}
+ 
+.plan-2 {
+  max-width: 300px;
+  min-width: 300px;
+} 
+
+.plan .title-wrapper {
+  background: rgb(250, 250, 250);
+  width: 120px;
+  height: 120px;
+  margin: -10px auto 20px;
+  border: 1px dashed rgb(200, 200, 200);
+  
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.plan:hover .title-wrapper {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.plan.plan-2 .title-wrapper {
+  width: 150px;
+  height: 150px;
+}
+
+.plan .title {
+  background: rgb(94, 121, 133);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 103px;
+  color: rgb(255, 255, 255);
+  margin: 9px auto 0;
+  
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.plan.plan-2 .title {
+  background: rgb(44, 190, 255);
+  width: 130px;
+  height: 130px;
+  font-size: 38px;
+  line-height: 131px;
+}
+
+/* list styles */
+.plan ul li a:hover {
+  color: rgb(255, 82, 82);
+}
+
+/* buy button */
+.pricing-btn {
+  padding-top: 30px;
+  text-align: center;
+}
+ 
+/* 
+ * Testimonials
+ ******************************************************************************/
+.testimonials {
+  background: #f9f9f9;
+  border: 1px solid rgb(243, 243, 243);
+  border-left: 0;
+  border-right: 0;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  border-left: 0;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgb(126, 126, 126);
+}
+
+.testimonail {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.testimonail-text {
+  background: #fff;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  -webkit-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -moz-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -ms-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  -o-box-shadow: inset 0 0 4px rgb(231, 231, 231);
+  box-shadow: inset 0 0 4px rgb(231, 231, 231);
+}
+
+.testimonail-text .title {
+  line-height: 6px;
+  margin-top: 40px;
+  text-align: center;
+}
+.testimonail-text .title a {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(226, 64, 129);
+  text-shadow: 0 1px 0 rgb(255, 255, 255);
+  text-transform: uppercase;
+} 
+
+.testimonail-text .sub-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(163, 54, 111);
+} 
+
+.testimonail-text .sub-title a{
+  color: rgb(163, 54, 111);
+  text-decoration: underline;
+} 
+
+.testimonail-text .sub-title a:hover{
+  color: rgb(163, 154, 111);
+} 
+
+.textimonial-image {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGDwAeItQAwGjDAGNgGwSgwVAFFOAgWfVVqnAAAAAElFTkSuQmCC) repeat;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.textimonial-image img {
+  border: 5px solid rgb(252, 252, 252);
+  background: #fff;
+}
+
+/* 
+ * Join
+ ******************************************************************************/
+.join {
+  background: rgb(82, 82, 82);
+}
+
+.join legend{
+  font-weight: 600;
+}
+
+.join legend, .join .help-block, .join label {
+  color: #fff;
+}
+
+.join textarea, .join input[type="text"], .join input[type="password"], .join input[type="datetime"], .join input[type="datetime-local"], .join input[type="date"], .join input[type="month"], .join input[type="time"], .join input[type="week"], .join input[type="number"], .join input[type="email"], .join input[type="url"], .join input[type="search"], .join input[type="tel"], .join input[type="color"], 
+.uneditable-input {
+  background-color: rgb(134, 134, 134);
+  border: solid 1px rgb(134, 134, 134);
+  height: 55px; 
+  padding-left: 20px;
+  color: #fff;
+  
+  -webkit-box-shadow: 0 0 0;
+  -moz-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+}
+
+.join input:focus:invalid:focus, .join textarea:focus:invalid:focus, .join select:focus:invalid:focus { 
+  -webkit-box-shadow: 0 0 0;
+  -moz-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+}
+
+.join input:placeholder,.join textarea:placeholder{ font-size: 12px; color: #fff;}
+.join input:-moz-placeholder,.join textarea:-moz-placeholder{ font-size: 12px; color: #fff; }
+.join input:-ms-input-placeholder,.join textarea:-ms-input-placeholder{ font-size: 12px; color: #fff;}
+.join input::-webkit-input-placeholder,.join textarea::-webkit-input-placeholder{ font-size: 12px; color: #fff;}
+
+.join .custom-btn {
+  background: rgb(90, 204, 136);
+  padding-top: 11px;
+}
+ 
+ 
+ /* 
+ * Contact 
+ ******************************************************************************/
+.contact {
+  padding-bottom: 80px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=) repeat;
+  background-color: rgba(175, 175, 175,.8);
+  color: #fff;
+}
+
+.contact-form .custom-btn {
+  float: right;
+  padding-bottom: 8px;
+  
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.contact .title {
+  margin-top: -10px;
+}
+
+.address {
+  font-size: 14px;
+}
+
+.social-icons {
+  text-align: center;
+  margin: 65px auto;
+}
+
+.social-icons a{
+  padding: 22px;
+  font-size: 45px;
+  color: #fff;
+  border: 1px solid #fff;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+  background: #fff;
+  color: rgb(80, 80, 80);
+}
+
+/* subscription */
+.subscription-form  .custom-btn{
+  padding: 9px 16px 7px;
+  background: rgb(0, 194, 255);
+  border: 1px solid rgb(0, 194, 255);
+  
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.subscription-form  .custom-btn:hover{
+  background: #fff;
+  background: transparent;
+  color: rgb(0, 194, 255);
+}
+ 
+/* 
+ * Footer 
+ ******************************************************************************/
+.footer {
+  background: rgb(249, 249, 249);
+  border: 1px solid rgb(243, 243, 243);
+}
+
+.footer-title a:hover {
+  color: rgb(125, 213, 230);
+}
+
+.footer-copyright {
+  padding-top: 23px;
+}
+ 
+ 
+ /* 
+ * Responive Fixes
+ ******************************************************************************/
+/* Large desktop */
+@media (min-width: 1200px) { 
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .site-slogan { font-size: 37px; }
+  
+  .grid-feature { padding: 10px; }
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  body { padding: 0; }
+  
+  .container { padding-left: 10px; padding-right: 10px; }
+  
+  .header { min-height: 780px;}
+  
+  .site-slogan { font-size: 38px; }
+  
+  .plan { float: none; margin-right: auto; margin-left: auto;}
+   
+  .contact-form { margin-bottom: 80px;}
+  
+  .subscription-form .custom-btn { display: block; width: 100%; margin-top: 10px; } 
+  
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .site-slogan { font-size: 29px; }
+  
+  .site-slogan span { padding: 12px 10px; }
+  
+  .header-btn { padding: 32px; font-size: 18px;} 
+  
+  .plan-2 { min-width: 260px; }
+  
+  .social-icons a { padding: 17px; font-size: 21px; }
+  
+  .footer { text-align: center;}
+  
+  .footer-title { margin-bottom: -5px;}
+  
+  .footer-copyright, .footer-title { float: none !important;}
+}
+
+/* Portrait phones and down */
+@media (max-width: 320px) {
+  .site-slogan { font-size: 21px; }
+  
+  .app-buttons { text-align: center; }
+  
+  .google-store { float: none !important; margin-top: 15px;}
+  
+  .ib-main { margin-left: 40px;} 
+  
+  .social-icons a { padding: 14px; font-size: 17px; }
+}

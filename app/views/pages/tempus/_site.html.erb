@@ -1,0 +1,9 @@
+<h1 class="title red-ribbon-title">
+  <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                       @site, :content,
+                       :type => :textarea,
+                       :path => site_path(@site.id),
+                       :sanitize => false,
+                       :display_with => lambda { |siteContent| (siteContent).html_safe },
+                       :html_attrs => { style: 'width:100%;' }%>
+</h1>

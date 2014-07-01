@@ -1,0 +1,175 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header.red-ribbon {
+  background-image: image-url('red_ribbon_crop.jpg');
+
+}
+
+.banner .header-description .title.red-ribbon-title {
+  color: #fff;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+  margin-top: 230px;
+}
+
+.container.banner {
+  height: 700px;
+}
+
+.btn-warning.banner-btn {
+  color: #fff;
+  background-image: linear-gradient(to bottom, #f00400 0%, #d10400 100%);
+  background-repeat: repeat-x;
+  border-color: #f00400;
+}
+
+.btn-warning.banner-btn:hover, .btn-warning.banner-btn:focus {
+  background-image: linear-gradient(to bottom, #ea0400 0%, #b90400 100%);
+  background-color: #b90400;
+  background-position: 0 -15px;
+}
+
+.btn-warning.banner-btn:active, .btn-warning.banner-btn.active {
+  background-color: #b90400;
+  border-color: #b90400;
+}
+
+.banner .app-store-button-wrapper.app-store-button-wrapper-custom {
+  margin: 245px 0 0;
+}
+
+.welcome.welcome-blip:before {
+  background: image_url('top-welcome-pattern.png');
+}
+.welcome.welcome-blip:after {
+  background: image_url('bottom-welcome-pattern.png');
+}
+
+.app-shots.app-shots-custom {
+  background: image_url('app-shots-pattern.png') repeat;
+}
+
+a#scrollUp {
+  width: 40px;
+  height: 50px;
+  right: 5px;
+  -webkit-box-shadow: 0 0 0 #a02622;
+  box-shadow: 0 0 0 #a02622;
+  border-radius: 3px;
+  border-color: #b92c28;
+  background-color: #d9534f;
+  color: #fff;
+  background-image: none;
+}
+
+a#scrollUp:hover {
+  background-color: #d9534f;
+}
+
+.registration-header {
+  color: #fff;
+}
+
+.intervention {
+  background-color: #c57dfd;
+  color: #fff;
+}
+.intervention .title {
+  color: #fff;
+}
+.intervention .subtitle {
+  color: #f2e1ff;
+}
+.intervention .row > div {
+  margin-bottom: 70px;
+}
+.intervention .plan {
+  border-radius: 3px;
+  padding: 20px 0 20px;
+  background-color: #af4bfc;
+  border: 4px solid transparent;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.intervention .plan .title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.intervention .plan > ul li {
+  padding-bottom: 10px;
+}
+.intervention .plan.recommended {
+  border-color: #fff;
+}
+.intervention .btn {
+  margin-top: 10px;
+}
+
+section#eligibility h3.title input, section#contact h3.title input, section.intervention .best_in_place textarea {
+  color: #000;
+}
+
+.modal.custom.image-upload-div {
+  padding-bottom: 30px;
+  max-height: 50%;
+  background: rgba(255,255,255,0.90);
+}
+
+.modal.custom.image-upload-div #image_view {
+  text-align: center;
+  width: 100%;
+}
+
+.modal.custom.image-upload-div #image_view img{
+  max-height: 60%;
+  max-width: 60%;
+  margin-bottom: 35px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+#focusedInput:focus {
+  background: red;
+}
+
+#accordion {
+  a:hover {
+    color: #000;
+    background-color: #fff;
+  }
+
+  ul {
+    li {
+      line-height: 2em;
+      font-size: 1.5em;
+    }
+  }
+}

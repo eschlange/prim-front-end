@@ -1,5 +1,7 @@
 # Model for sites.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
+require 'yaml'
+
 class Site < ActiveRecord::Base
   after_create  :create_default_site_content
   
@@ -16,14 +18,20 @@ class Site < ActiveRecord::Base
   has_many :user_consents
   
   def create_default_site_content
-    Home.create(site_id: self.id, title: 'Home Title', content: 'Home tag line goes here.')
-    Resource.create(site_id: self.id, title: 'Resources Title', content: 'Resources content goes here.')
-    About.create(site_id: self.id, title: 'About Us Title', content: 'About us content goes here.')
-    Consent.create(site_id: self.id, header: 'Consent Header Content', body: 'Consent body goes here.', footer: 'consent footer goes here.')
-    ContactUs.create(site_id: self.id, title: 'Contact Us Title', content: 'Contact Us content goes here.')
-    Eligibility.create(site_id: self.id, title: 'Eligibility Title', content: 'Eligibility content goes here.')
-    Funding.create(site_id: self.id, title: 'Funding Title', content: 'Funding content goes here.')
-    Intervention.create(site_id: self.id, name: 'Intervention Title', description: 'Intervention description goes here.')
+    default_hash = YAML.load(File.read(File.expand_path('../../../lib/template_structured_content/' + self.template_name + '_default_content.yml',__FILE__)))
+
+    Home.create(site_id: self.id, title: 'Home Title', content: default_hash['home'])
+    Resource.create(site_id: self.id, title: 'Resources Title', content: default_hash['resource'])
+    About.create(site_id: self.id, title: 'About Us Title', content: default_hash['about'])
+    Consent.create(site_id: self.id, header: default_hash['consent']['header'], body: default_hash['consent']['body'], footer: default_hash['consent']['footer'])
+    ContactUs.create(site_id: self.id, title: 'Contact Us Title', content: default_hash['contact_us'])
+    Eligibility.create(site_id: self.id, title: 'Eligibility Title', content: default_hash['eligibility'])
+    Funding.create(site_id: self.id, title: 'Funding Title', content: default_hash['funding'])
+    Intervention.create(site_id: self.id, name: 'Intervention Title', description: default_hash['intervention'])
     PointOfContact.create(site_id: self.id, title: 'title', name: 'name', street_address: 'street address', city: 'city', state: 'state', zip: 'zip', email: 'email')
+  end
+
+  def template_name_enum
+    [ ['SimpleMap', 'simplemap'], ['Bootstagram', 'bootstagram'], ['Tempus', 'tempus'] ]
   end
 end

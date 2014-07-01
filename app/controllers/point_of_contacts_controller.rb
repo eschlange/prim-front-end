@@ -4,7 +4,7 @@ class PointOfContactsController < ApplicationController
   end
 
   def reload_header
-    render partial: "shared/header"
+    render partial: 'pages/' + @site.template_name + '/shared/header'
   end
 
   # GET /point_of_contacts/1

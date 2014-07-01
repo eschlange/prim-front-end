@@ -1,7 +1,6 @@
 # Handles CRUD functionality for the about page of a site.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class AboutController < ApplicationController
-  layout "application"
 
   PAGE_NAME = "about"
 
@@ -10,7 +9,7 @@ class AboutController < ApplicationController
   end
 
   def reload_header
-    render partial: "shared/header"
+    render partial: 'pages/' + @site.template_name + '/shared/header'
   end
 
   # GET /abouts/1

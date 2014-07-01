@@ -11,7 +11,7 @@ class HomesController < ApplicationController
   end
 
   def reload_header
-    render partial: 'shared/header'
+    render partial: 'pages/' + @site.template_name + '/shared/header'
   end
 
   # GET /homes/1

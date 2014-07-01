@@ -36,6 +36,7 @@ RailsAdmin.config do |config|
     'Home',
     'Intervention',
     'Resource',
+    'PointOfContact',
     'PrimEngine::Participant'
   ]
 
@@ -45,6 +46,9 @@ RailsAdmin.config do |config|
       field :name
       field :content do
         label 'Opening Line'
+      end
+      field :template_name do
+        label 'Template'
       end
     end
   end

@@ -1,0 +1,59 @@
+<strong>
+  <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                       @site.point_of_contact,
+                       :title,
+                       path: point_of_contact_path(@site.point_of_contact.id),
+                       sanitize: false,
+                       display_with: lambda { |pointOfContactTitle| (pointOfContactTitle).html_safe } %>
+</strong><br>
+
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact,
+                     :name,
+                     path: point_of_contact_path(@site.point_of_contact.id),
+                     sanitize: false,
+                     display_with: lambda { |pointOfContactName| (pointOfContactName).html_safe } %><br>
+
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact, :street_address,
+                     :path => point_of_contact_path(@site.point_of_contact.id),
+                     :sanitize => false,
+                     :display_with => lambda { |pointOfContactStreetAddress| (pointOfContactStreetAddress).html_safe } %><br>
+
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact, :city,
+                     :path => point_of_contact_path(@site.point_of_contact.id),
+                     :sanitize => false,
+                     :display_with => lambda { |pointOfContactCity| (pointOfContactCity).html_safe } %>,
+
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact, :state,
+                     :path => point_of_contact_path(@site.point_of_contact.id),
+                     :sanitize => false,
+                     :display_with => lambda { |pointOfContactState| (pointOfContactState).html_safe } %>
+
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact, :zip,
+                     :path => point_of_contact_path(@site.point_of_contact.id),
+                     :sanitize => false,
+                     :display_with => lambda { |pointOfContactZip| (pointOfContactZip).html_safe } %><br>
+
+<abbr title="Phone">P:</abbr>
+<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                     @site.point_of_contact, :phone,
+                     :path => point_of_contact_path(@site.point_of_contact.id),
+                     :sanitize => false,
+                     :display_with => lambda { |pointOfContactPhone| (pointOfContactPhone).html_safe } %><br>
+
+<a href="mailto:<%= @site.point_of_contact.email %>" target="_top">
+  <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                       @site.point_of_contact,
+                       :email,
+                       path: point_of_contact_path(@site.point_of_contact.id),
+                       sanitize: false,
+                       display_with: lambda { |pointOfContactEmail| (pointOfContactEmail).html_safe } %>
+</a>
+
+
+
+

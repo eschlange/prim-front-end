@@ -30,6 +30,9 @@ module Macs
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/javascripts"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/fonts"
 
+    config.assets.paths << "#{Rails.root}/vendor/assets/bootstagram/"
+    config.assets.paths << "#{Rails.root}/vendor/assets/tempus/"
+
     config.generators do |generator|
       generator.test_framework :rspec,
                                :fixtures => true,

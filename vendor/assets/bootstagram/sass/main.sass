@@ -1,0 +1,43 @@
+@import "compass/css3"
+@import "compass/utilities/general/clearfix"
+
+@import "mixins"
+@import "type"
+@import "animate"
+
+@import "partials/postagram"
+
+@import "partials/header"
+@import "partials/nav"
+@import "partials/instagram"
+@import "partials/quote"
+@import "partials/about"
+@import "partials/contact"
+@import "partials/modal"
+
+@import "partials/no-js"
+
+html
+    font-size: 62.5%
+
+body
+    min-height: 1400px
+
++text-highlight
+    background: rgb(0, 0, 0)
+    
+.hidden
+    position: absolute
+    left: -9999px
+    top: -9999px
+
+.jumbotron
+    background: url(../img/hero-blur.jpg) center center no-repeat
+    +background-size(cover)
+
+hr
+    margin: 50px auto
+    width: 150px
+    height: 5px
+    border: solid 0px transparent
+    background-color: $hr-colour

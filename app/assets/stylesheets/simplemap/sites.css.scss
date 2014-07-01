@@ -1,0 +1,211 @@
+// Place all the styles related to the Sites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table-short {
+  width: 80%;
+}
+
+.register form.new_user {
+  padding-left: 50px;
+  margin: 0 auto;
+  max-width: 95%;
+
+  label, p {
+    font-size: 1.25em;
+    line-height: 1.25em;
+  }
+
+  input {
+    line-height: 2em;
+    font-size: 1.5em;
+  }
+
+  #user_phone {
+    width: 20%;
+  }
+
+  #user_email {
+    width: 40%;
+  }
+
+
+}
+
+.register form {
+  color: #fff;
+  line-height: 1.25em;
+
+  h3 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+}
+
+.control-group {
+  margin-top: 15px;
+}
+
+
+/* Register
+/ -------------------------------------------------- */
+.register {
+  background-color: #3ac29c;
+  padding-bottom: 70px;
+}
+.register .title {
+  color: #fff;
+}
+.register .subtitle {
+  color: #aee7d7;
+}
+.register form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.register form .form-control:focus {
+  -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+  border-color: #23735d;
+}
+.register form .btn {
+  padding: 10px 28px;
+}
+.register form .help-block {
+  color: #fff;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.register .social {
+  margin-top: 70px;
+}
+.register .social li {
+  margin-bottom: 10px;
+}
+.register .social li a {
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid #fff;
+  width: 70px;
+  height: 70px;
+  display: block;
+  border-radius: 50%;
+  padding: 23px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.register .social li a:hover,
+.register .social li a:focus {
+  background-color: #fff;
+  color: #3ac29c;
+  -webkit-transform: translate(0, 10px);
+  -ms-transform: translate(0, 10px);
+  transform: translate(0, 10px);
+}
+
+.form-inputs input {
+  color: #000;
+  font-weight: 250;
+}
+
+.confirmations form h3 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.form-inputs {
+  margin-bottom: 10px;
+}
+
+.back-link {
+  color: #fff;
+  font-size: 16px;
+}
+
+.banner .col-sm-3 .app-store-button-wrapper {
+  -webkit-box-shadow: 1px 1px 45px 1px rgba(255, 255, 255, 0.34);
+}
+
+#header .modal-header {
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+#header .register {
+  padding-bottom: 0px;
+}
+
+#header .modal-footer {
+  border-top: none;
+  border-radius: 5px;
+}
+
+#header .modal-body .controls input {
+  color: #000000;
+}
+
+#header .modal-body .controls input#user_password,
+#header .modal-body .controls input#user_email {
+  color: #000000;
+  width: 70%;
+  height: 3em;
+  font-size: 2em;
+  background-color: #fff;
+}
+
+section#intervention form {
+  color: #000;
+}
+
+#header .modal.custom {
+  max-height: 60%;
+  max-width: 70%;
+}
+
+.modal.custom {
+  width:50%;
+  margin:15% auto 0;
+  background: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  border-radius: 15px;
+  max-height: 50%;
+}
+
+.modal.custom.large-modal {
+  margin:15% auto 0;
+  background: rgba(255, 255, 255, 0.90);
+  border-radius: 15px;
+  max-height: 80%;
+  width: 80%;
+  overflow: auto;
+}
+
+#header #loginModal {
+  padding: 0px;
+  background: rgba(255, 255, 255, 0.90);
+
+  h3 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .control-label {
+    font-size: 2em;
+    padding-bottom: 5px;
+  }
+
+  .user_remember_me {
+    font-size: 2em;
+    padding-bottom: 5px;
+  }
+
+  .modal-header .user_email input:-webkit-autofill {
+    background-color: #fff;
+  }
+}
+
