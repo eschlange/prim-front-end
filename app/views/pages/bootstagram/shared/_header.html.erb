@@ -15,19 +15,16 @@
         <li><a href="#eligibility" class="scroll">eligibility</a></li>
         <li><a href="#resources" class="scroll">resources</a></li>
         <li><a href="#contact" class="scroll">contact</a></li>
+        <li><a href="#" class="scroll">login</a></li>
       </ul>
 
     </div><!--/.navbar-collapse -->
   </div>
 </div>
 
-
-
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
-
   <div id="home" class="container">
-
     <h1 class="animated fadeIn delay-2" >
       <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
                            @site, :name,

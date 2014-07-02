@@ -1,1 +1,12 @@
-$("#image-update-modal-window").html("<%= escape_javascript(render partial: 'pages/' + @site.template_name + '/shared/site_image_update', :locals => {position: params[:position]}) %>");
+$("#image-update-modal-window").html(
+        "<%= escape_javascript(
+            render partial: 'pages/' +
+            Site.find(params[:alt_site_id]).template_name +
+            '/shared/site_image_update',
+            locals: {
+                position: params[:position],
+                site_id: params[:alt_site_id]
+                })
+        %>"
+);
+
