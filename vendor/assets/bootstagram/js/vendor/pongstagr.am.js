@@ -203,15 +203,15 @@
   }
 
   $.fn.pongstgrm = function( options ){
-        
+    // !!Edited out instagram functionality!!
     // Plugin Options
-    var option  = $.extend({}, $.fn.pongstgrm.defaults, options);
-    
-    return this.each( function(i, element){
-      if ( accessDetails( option.accessId, option.accessToken ) !== false ){
-        requestData( option.show, option.count, option.accessId, option.accessToken, element, option.pager );
-      }
-    });  //*! end return this.each;
+//    var option  = $.extend({}, $.fn.pongstgrm.defaults, options);
+//
+//    return this.each( function(i, element){
+//      if ( accessDetails( option.accessId, option.accessToken ) !== false ){
+//        requestData( option.show, option.count, option.accessId, option.accessToken, element, option.pager );
+//      }
+//    });  //*! end return this.each;
   };     //*! end $.fn.pongstagrm;
    
   // Pongstagram Default Options

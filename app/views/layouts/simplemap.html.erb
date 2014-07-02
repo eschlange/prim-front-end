@@ -8,7 +8,7 @@
       <title><%= @site.template_name %></title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <%= stylesheet_link_tag    @site.template_name, media: "all", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag @site.template_name, "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
     </head>
 

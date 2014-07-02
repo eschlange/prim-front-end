@@ -1067,7 +1067,7 @@ ol li {
   top: 50%;
   left: 50%;
   z-index: 1;
-  background: url("http://img.cdn.tl/loading2.gif") center center no-repeat;
+  background: url("/assets/loading2.gif") center center no-repeat;
 }
 
 /**

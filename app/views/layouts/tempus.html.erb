@@ -9,7 +9,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <%= stylesheet_link_tag    @site.template_name, media: "all", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag @site.template_name, "data-turbolinks-track" => true %>
 
       <!-- Fav and touch icons -->
       <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png">

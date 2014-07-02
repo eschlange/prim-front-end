@@ -1,139 +1,49 @@
-<header id="header" class="header red-ribbon">
+<div class="navbar" style="z-index: 1000">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
-    <section class="modal custom fade" id="loginModal">
-      <div>
-          <div class="modal-header">
-            <button class="close" data-dismiss="modal">×</button>
-            <h3>Sign In</h3>
-          </div>
-          <div class="modal-body">
-            <%= simple_form_for(:user, url: '/sites/' + @site.id.to_s + '/users/sign_in', :method => 'post') do |f| %>
-            <div class="inputs">
-              <%= f.input :email, :required => false, :autofocus => true %>
-              <%= f.input :password, :required => false %>
-              <%= f.input :remember_me, :as => :boolean,  :label => false, :inline_label => true if devise_mapping.rememberable? %>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <%= f.button :submit, "sign in", :class => 'btn btn-danger btn-lg' %>
-          <% end %>
-      </div>
-      </div>
-    </section>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#home" class="scroll"><%= @site.name %></a></li>
+        <li><a href="#about" class="scroll">about</a></li>
+        <li><a href="#eligibility" class="scroll">eligibility</a></li>
+        <li><a href="#resources" class="scroll">resources</a></li>
+        <li><a href="#contact" class="scroll">contact</a></li>
+      </ul>
 
-  <!-- Modal Danger -->
-  <div class="modal fade modal-hmcf modal-danger" id="modalDanger" tabindex="-1" role="dialog" aria-labelledby="modalDangerLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times-circle-o"></i></button>
-          <div class="row">
-            <div class="col-sm-4">
-              <i class="fa fa-comments icon"></i>
-            </div> <!-- /.col-sm-6 -->
-            <div class="col-sm-8">
-              <h4 class="modal-title" id="modalDangerLabel">Drop us a line</h4>
-              <p>Have any questions or concerns?</p>
-              <address>
-                <%= render 'pages/' + @site.template_name + '/shared/point_of_contact_view' %>
-              </address>
-            </div> <!-- /.col-sm-6 -->
-          </div> <!-- /.row -->
-        </div> <!-- /.modal-header -->
-      </div> <!-- /.modal-content -->
-    </div> <!-- /.modal-dialog -->
-  </div> <!-- /.modal -->
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
 
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navabr-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to @site.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navabr-1">
-          <ul class="nav navbar-nav">
-            <li><%= link_to 'about us', (site_path(@site) + "/pages/home#about") %></li>
-            <li><%= link_to 'eligibility', (site_path(@site) + "/pages/home#eligibility") %></li>
-            <li><%= link_to 'resources', (site_path(@site) + "/pages/home#resources") %></li>
-            <li><%= link_to 'contact us', (site_path(@site) + "/pages/home#contact") %></li>
-            <% if !user_signed_in? %>
-                <%= render "shared/sign_up_navbar" %>
-            <% else %>
-                <%= render "shared/authorized_navbar" %>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
 
-  <% if "pages" == params[:controller] %>
-    <!-- Homepage navabr - it shows up on scroll -->
-    <nav class="navbar navbar-default navbar-scroll navbar-fixed-top hidden" data-top-offset="500" role="navigation">
-      <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navabr-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to @site.name, (site_path(@site) + "/pages/home"), :class => "navbar-brand" %>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse single-page-nav" id="navabr-2">
-          <ul class="nav navbar-nav ">
-            <li><a href="#about">about us</a></li>
-            <li><a href="#eligibility">eligibility</a></li>
-            <li><a href="#resources">resources</a></li>
-            <li><a href="#contact">contact us</a></li>
-            <% if !user_signed_in? %>
-              <%= render "shared/sign_up_navbar" %>
-            <% else %>
-              <%= render "shared/authorized_navbar" %>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-  <% end %>
 
-  <% if "pages" == params[:controller] %>
-  <div class="container banner">
-    <div class="row">
-      <% if current_user.nil? %>
-          <div class="col-sm-9">
-            <div class="header-description">
-              <%= render 'pages/' + @site.template_name + '/site' %>
-            </div><!-- /header-description -->
-          </div><!-- /col-sm-9-->
-          <div class="col-sm-3">
-            <div class="app-store-button-wrapper app-store-button-wrapper-custom">
-              <a class="btn btn-warning btn-large apple-version banner-btn" href="/sites/'<%= @site.id %>'/users/sign_up">Enroll Here</a>
-            </div>
-          </div>
-      <% else %>
-          <div class="header-description">
-            <%= render 'pages/' + @site.template_name + '/site' %>
-          </div><!-- /header-description -->
-      <% end %>
-    </div><!-- /row -->
-  </div><!-- /container -->
-  <% end %>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
 
-  <% if 'devise/registrations' == params[:controller] %>
-  <div class="container registration-header">
-    <div class="header-description pull-left">
-      <h1 class="title"><%= @site.name %> Enrollment </h1>
-    </div><!-- /header-description -->
-  </div><!-- /container -->
-  <% end %>
+  <div id="home" class="container">
 
-</header>
+    <h1 class="animated fadeIn delay-2" >
+      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                           @site, :name,
+                           :path => site_path(@site.id),
+                           :sanitize => false,
+                           :display_with => lambda { |siteTitle| (siteTitle).html_safe } %>
+    </h1>
+    <h2 class="animated fadeIn delay-3"> #<%= @site.name %></h2>
+    <p class="animated fadeInLeft delay-4">
+      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                           @site, :content,
+                           :type => :textarea,
+                           :path => site_path(@site.id),
+                           :sanitize => false,
+                           :display_with => lambda { |siteContent| (siteContent).html_safe },
+                           :html_attrs => { style: 'width:100%;' }%>
+    </p>
+  </div>
+</div>

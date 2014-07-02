@@ -1,0 +1,133 @@
+<section class="modal custom fade image-upload-div" id="image-update-modal-window" role="dialog"  aria-labelledby="imageUpdateModal" aria-hidden="true" ></section>
+
+<div role="main" >
+
+  <div id="recent" class="container animated fadeInDown delay-5" >
+    <div class="row alternate-image-portfolio">
+      <div class="col-xs-12 col-sm-3">
+        <%= render_site_image_edit_link(@site.id, 'picture_1') %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <%= render_site_image_edit_link(@site.id, 'picture_2') %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <%= render_site_image_edit_link(@site.id, 'picture_3') %>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <%= render_site_image_edit_link(@site.id, 'picture_4') %>
+      </div>
+    </div><!-- END alternate-image-portfolio-->
+  </div><!-- END #recent -->
+
+  <div id="about" class="clearfix ">
+    <div class="container about-primary">
+      <h1 class=" about-title">
+        <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+             @site.about, :title,
+             :path => about_path(@site.about.id),
+             :sanitize => false,
+             :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %>
+      </h1>
+      <p class=" about-p1">
+        <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                             @site.about, :content,
+                             :type => :textarea,
+                             :path => about_path(@site.about.id),
+                             :sanitize => false,
+                             :display_with => lambda { |aboutContent| (aboutContent).html_safe },
+                             :html_attrs => { style: 'width:100%;' }%>
+      </p>
+
+      <hr id="hr" class=" about-hr">
+      <p class=" about-p2">
+        Nam ut tellus a enim facilisis venenatis vel eu ligula. Nunc porttitor nulla mattis risus semper, quis vestibulum dui tristique. Aliquam mi orci, mollis eget molestie nec, hendrerit id nulla. Vestibulum faucibus gravida erat, eget posuere diam accumsan ac. Fusce placerat odio at ipsum imperdiet fermentum. Mauris quis urna iaculis, pulvinar tortor eget, facilisis enim.
+      </p>
+
+
+    </div><!-- end of .container -->
+
+    <div id="quote-block" class="quote" >
+      <blockquote >
+        <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                             @site.home,
+                             :content,
+                             :type => :textarea,
+                             :path => home_path(@site.home.id),
+                             :sanitize => false,
+                             :display_with => lambda { |homeContent| (homeContent).html_safe },
+                             :html_attrs => { style: 'width:100%;' } %>
+      </blockquote>
+    </div>
+
+    <%= render 'pages/' + @site.template_name + '/eligibility' %>
+
+    <hr id="hr" class=" about-hr">
+
+    <%= render 'pages/' + @site.template_name + '/resources' %>
+
+    <hr id="hr" class=" about-hr">
+
+    <%= render 'pages/' + @site.template_name + '/funding' %>
+
+  </div><!--about -->
+
+  <div id="contact" class="animated fadeIn dealy-8" >
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 contact-table">
+          <h3 class="contact-table-title"><%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                                   @site.contact_us,
+                                   :title,
+                                   :path => contact_u_path(@site.contact_us.id),
+                                   :sanitize => false,
+                                   :display_with => lambda { |contactTitle| (contactTitle).html_safe } %></h3>
+          <table class="table">
+            <tbody>
+            <tr>
+              <th><p class="subtitle">PRINCIPAL INVESTIGATOR</p></th>
+              <td>
+                <p class="subtitle">Steven Wolinsky, MD<br/>
+                  Division of Infectious Diseases, Feinberg School of Medicine<br/>
+                  645 N Michigan Ave, Suite 900<br/>
+                  Chicago, IL 60666<br/>
+                  312-908-MACS <br/>
+                  Fax 312-695-5088<br/>
+                  macs@northwestern.edu<br/>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th><p class="subtitle">SUB-INVESTIGATORS</p></th>
+              <td>
+                <p class="subtitle">Shannon Galvin, MD<br/>
+                  John Phair, MD<br/>
+                  Frank Palella, MD<br/>
+                  Sudhir Penugonda, MD<br/>
+                  Northwestern University<br/>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th><p class="subtitle">PARTICIPATING SITES</p></th>
+              <td>
+                <p class="subtitle">Northwestern University<br/>
+                  645 N Michigan Ave, Suite 900<br/>
+                  Chicago, IL 60666<br/>
+                  312-908-MACS <br/>
+                  Fax 312-695-5088<br/></p>
+              </td>
+            </tr>
+            <tr>
+              <th><p class="subtitle">STATISTICIAN</p></th>
+              <td><p class="subtitle">Susheel Reddy, MPH</p></td>
+            </tr>
+            </tbody>
+          </table>
+        </table>
+
+        </div>
+      </div> <!-- END row -->
+
+    </div><!-- END .container -->
+  </div><!-- END ontact -->
+</div><!-- END  [role="main"] -->
