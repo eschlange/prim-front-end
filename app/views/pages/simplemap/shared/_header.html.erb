@@ -64,9 +64,9 @@
             <li><%= link_to 'resources', (site_path(@site) + "/pages/home#resources") %></li>
             <li><%= link_to 'contact us', (site_path(@site) + "/pages/home#contact") %></li>
             <% if !user_signed_in? %>
-                <%= render "shared/sign_up_navbar" %>
+                <%= render 'pages/simplemap/shared/sign_up_navbar' %>
             <% else %>
-                <%= render "shared/authorized_navbar" %>
+                <%= render 'pages/simplemap/shared/authorized_navbar' %>
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -95,9 +95,9 @@
             <li><a href="#resources">resources</a></li>
             <li><a href="#contact">contact us</a></li>
             <% if !user_signed_in? %>
-              <%= render "shared/sign_up_navbar" %>
+              <%= render 'pages/simplemap/shared/sign_up_navbar' %>
             <% else %>
-              <%= render "shared/authorized_navbar" %>
+              <%= render 'pages/simplemap/shared/authorized_navbar' %>
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -116,7 +116,7 @@
           </div><!-- /col-sm-9-->
           <div class="col-sm-3">
             <div class="app-store-button-wrapper app-store-button-wrapper-custom">
-              <a class="btn btn-warning btn-large apple-version banner-btn" href="/sites/'<%= @site.id %>'/users/sign_up">Enroll Here</a>
+              <a class="btn btn-warning btn-large apple-version banner-btn" href="/sites/<%= @site.id %>/users/sign_up">Enroll Here</a>
             </div>
           </div>
       <% else %>

@@ -15,6 +15,10 @@ User.create!(
   email: 'eric.schlange@northwestern.edu',
   role_identifier: 1)
 
+SitesUser.create(
+  user_id: 1,
+  site_id:1)
+
 =begin
 Intervention.create(
 :id => 1,

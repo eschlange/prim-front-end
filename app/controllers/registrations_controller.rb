@@ -10,8 +10,9 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     if resource.save
       predefinedUserCreation(resource)
-      createConsentRecord(resource)
+      site_id = createConsentRecord(resource)
       @status = save_prim_participant(sign_up_params)
+      associate_site_with_user(resource, site_id)
     else
       clean_up_passwords resource
       respond_with resource
@@ -26,6 +27,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
+  def associate_site_with_user(resource, site_id)
+    SitesUser.create(user_id: resource.id, site_id: site_id)
+  end
+
   def createConsentRecord(resource)
     consent = Consent.where(site_id: params[:site_id]).first
     consentRecord = UserConsent.new(
@@ -36,6 +41,7 @@ class RegistrationsController < Devise::RegistrationsController
         consent_footer: consent.footer,
         irb_acceptance_image_url: consent.irb_acceptance_images.nil? ? consent.irb_acceptance_images.first.image.url : 'no IRB image exists for this site.')
     consentRecord.save
+    consent.site.id
   end
 
   def predefinedUserCreation(resource)
