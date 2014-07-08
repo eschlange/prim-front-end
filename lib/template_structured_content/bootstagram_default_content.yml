@@ -1,8 +1,7 @@
 ## These are a set of default values for the simplemap template.
 ## Author: Eric Schlange
 home: ' <p>
-          This is the header description for your home page. Include any highlights for the study.<br/>
-          You can add multiple lines with line break tags.
+          This is the header description for your home page. Include any highlights for the study.
         </p>'
 resource: ' <div id="accordion">
               <h2>Other Links</h2>

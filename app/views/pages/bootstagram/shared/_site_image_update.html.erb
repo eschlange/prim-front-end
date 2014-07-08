@@ -4,12 +4,6 @@
     <h2>Update Image</h2>
   </div>
   <div class="modal-body">
-
-
-    <%= puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" %>
-    <%= puts position %>
-    <%= puts site_id %>
-
     <div id="image_view">
       <%= image_tag retrieve_site_image_by_position(site_id, position).image.url(:medium) %>
     </div>

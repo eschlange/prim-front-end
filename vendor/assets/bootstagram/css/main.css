@@ -1082,7 +1082,7 @@ ol li {
 .modal {
   max-height: 466px;
   background-color: #fafafa;
-  display: block !important;
+  /* display: block !important; */
   top: 20%;
   left: 50%;
   z-index: 1050;

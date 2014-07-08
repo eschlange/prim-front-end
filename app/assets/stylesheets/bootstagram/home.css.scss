@@ -74,3 +74,28 @@ input[readonly] {
   font-size: 2rem;
   color: #fafafa;
 }
+
+#header #loginModal {
+  padding: 0px;
+  background: rgba(255, 255, 255, 0.90);
+
+  h3 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .control-label {
+    font-size: 2em;
+    padding-bottom: 5px;
+  }
+
+  .user_remember_me {
+    font-size: 2em;
+    padding-bottom: 5px;
+  }
+
+  .modal-header .user_email input:-webkit-autofill {
+    background-color: #fff;
+  }
+}
