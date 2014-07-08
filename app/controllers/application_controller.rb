@@ -24,6 +24,18 @@ class ApplicationController < ActionController::Base
   #  render file: "#{Rails.root}/public/403.html", status: 403, layout: true, exception: exception
   #end
 
+  # Use to redirect to the correct site after login.
+  def after_sign_in_path_for(resource)
+    site_user = SitesUser.find_by(user_id: resource.id)
+    '/sites/' + site_user.site_id.to_s + '/pages/home'
+  end
+
+  # Use to redirect to the correct site after logout.
+  def after_sign_out_path_for(resource)
+    site_user = SitesUser.find_by(user_id: current_user.id)
+    '/sites/' + site_user.site_id.to_s + '/pages/home'
+  end
+
   protected
 
   def devise_parameter_sanitizer

@@ -22,7 +22,8 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_inactive_sign_up_path_for(resource)
-    '/sites/' + @site.id.to_s + '/pages/home'
+    site_user = SitesUser.find_by(user_id: resource.id)
+    '/sites/' + site_user.site_id.to_s + '/pages/home'
   end
 
   private
