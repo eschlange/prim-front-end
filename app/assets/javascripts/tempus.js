@@ -16,15 +16,9 @@
 //= require bootstrap
 //= require jquery.form.min
 
-//= require ../../../vendor/assets/simplemap/javascripts/html5shiv
-//= require ../../../vendor/assets/simplemap/javascripts/jquery.cbpFWSlider.min
-//= require ../../../vendor/assets/simplemap/javascripts/jquery.fitvids
-//= require ../../../vendor/assets/simplemap/javascripts/jquery.scrollUp.min
-//= require ../../../vendor/assets/simplemap/javascripts/jquery.singlePageNav.min
-//= require ../../../vendor/assets/simplemap/javascripts/modernizr.custom
-//= require ../../../vendor/assets/simplemap/javascripts/respond.min
-//= require ../../../vendor/assets/simplemap/javascripts/script
-//= require ../../../vendor/assets/simplemap/javascripts/script-home
+//= require js/script
+//= require best_in_place
+//= require best_in_place.purr
 
 function reload_header() {
   $('#header-navigation').load('homes/reload_header');

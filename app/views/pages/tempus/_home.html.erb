@@ -4,26 +4,26 @@
 
       <div class="span4 text-center grid-feature">
         <div class="shape darkblue">
-          <i class="icon-html5"></i>
+          <a href="/sites/<%= @site.id %>/users/sign_up#sign-up"><i class="icon-user"></i></a>
         </div>
-        <h3 class="title">html 5</h3>
-        <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu.</p>
+        <h3 class="title"><a href="/sites/<%= @site.id %>/users/sign_up#sign-up">Enroll</a></h3>
+        <p>Haven't enrolled yet? <a href="/sites/<%= @site.id %>/users/sign_up">Start here. </a>Enrollment is the first step of your participation in the <%= @site.name %> study.</p>
       </div><!-- /span4 -->
 
       <div class="span4 text-center grid-feature">
         <div class="shape pink">
-          <i class="icon-tablet"></i>
+          <a href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-signin"></i></a>
         </div>
-        <h3 class="title">responsive</h3>
-        <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu.</p>
+        <h3 class="title"><a href="#" data-toggle="modal" data-target="#loginModal">Sign In</a></h3>
+        <p>Already enrolled? <a href="#" data-toggle="modal" data-target="#loginModal">Sign in here. </a> Update your personal and contact information if you are already enrolled.</p>
       </div><!-- /span4 -->
 
       <div class="span4 text-center grid-feature">
         <div class="shape lightblue">
-          <i class="icon-css3"></i>
+          <a href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-cog"></i></a>
         </div>
-        <h3 class="title">css 3</h3>
-        <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu.</p>
+        <h3><a href="#" data-toggle="modal" data-target="#loginModal">Manage</a></h3>
+        <p>Are you a study manager? <a href="#" data-toggle="modal" data-target="#loginModal">Log in here.</a></p>
       </div><!-- /span4 -->
 
     </div> <!-- /row-fluid -->
@@ -216,20 +216,3 @@
   </div> <!-- /container -->
 
 </div><!-- /contact -->
-
-<div class="footer">
-  <div class="container">
-    <div class="row-fluid">
-      <h3 class="footer-title pull-left"><a href="#"><i class="icon-time"></i> Tempus</a></h3>
-      <p class="pull-right footer-copyright">&copy; All Right Reserved.</p>
-    </div> <!-- /row-fluid -->
-  </div> <!-- /container -->
-</div> <!-- /footer -->
-
-
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>

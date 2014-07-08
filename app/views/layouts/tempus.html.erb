@@ -22,8 +22,14 @@
     </head>
 
     <body>
-      <%= render partial: "pages/tempus/shared/header" %>
+      <%= render partial: 'pages/tempus/shared/header' %>
       <%= yield %>
-      render partial: "shared/footer"
+      <%= render partial: 'pages/tempus/shared/footer' %>
+
+      <script>
+          $(document).ready(function() {
+              jQuery(".best_in_place").best_in_place();
+          });
+      </script>
     </body>
 </html>
