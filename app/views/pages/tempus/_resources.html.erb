@@ -1,18 +1,24 @@
-<section id="resources" class="testimonials text-center">
-  <div class="container text-left">
-    <h3 class="title"><%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                         @site.resource, :title,
-                         :path => resource_path(@site.resource.id),
-                         :sanitize => false,
-                         :display_with => lambda { |resourceTitle| (resourceTitle).html_safe } %>
-    </h3>
-
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                         @site.resource, :content,
-                         :type => :textarea,
-                         :path => resource_path(@site.resource.id),
-                         :sanitize => false,
-                         :display_with => lambda { |resourceContent| (resourceContent).html_safe },
-                         :html_attrs => { style: 'width:100%;' }%>
-  </div>
-</section>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="testimonail wide-testimonial">
+      <div class="testimonail-text">
+        <blockquote class="text-left">
+          <h5 class="title"><a href="#">
+            <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                 @site.resource, :title,
+                 :path => resource_path(@site.resource.id),
+                 :sanitize => false,
+                 :display_with => lambda { |resourceTitle| (resourceTitle).html_safe } %>
+          </a></h5>
+            <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                 @site.resource, :content,
+                 :type => :textarea,
+                 :path => resource_path(@site.resource.id),
+                 :sanitize => false,
+                 :display_with => lambda { |resourceContent| (resourceContent).html_safe },
+                 :html_attrs => { style: 'width:100%;' }%>
+        </blockquote>
+      </div>
+    </div>
+  </div> <!-- /span12 -->
+</div> <!-- /row-fluid -->

@@ -1,73 +1,35 @@
 ## These are a set of default values for the simplemap template.
 ## Author: Eric Schlange
-home: ' <p>
-          This is the header description for your home page. Include any highlights for the study.
-        </p>'
-resource: ' <div id="accordion">
-              <h2>Other Links</h2>
-              <ul>
-                <li><a href="http://www.google.com">Link Example</a></li>
-                <li><a href="http://www.google.com"/>Another Link Example</a></li>
-              </ul>
-
-              <h2>
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Publications for 2014 <i class="fa fa-chevron-down"></i></a>
-              </h2>
-              <div id="collapseOne" class="panel-collapse collapse">
-                <ol>
-                  <li>publication information</li>
-                  <li>another publication</li>
-                </ol>
-              </div>
-            </div>'
-about: '<p>This is a section to describe the study and the organization that is running the study.</p>
-        <p>Sections can be divided by paragraph tags.</p>
-
-        <div class="divider"></div>
-
-        <section id="pricing" class="pricing">
-          <div class="container text-left">
-            <h3 class="title">Include additional about information here</h3>
-            <p>Again, seperate multiple paragraphs with paragraph tags.</p>
-          </div>
-        </section>'
+home: 'This is a tag line for your home page.'
+resource: ' <ul>
+              <li>Suspendisse ante aliquam cursus</li>
+              <li>Diam semper ut aenean duis magna cursus</li>
+              <li>Nostra per metus arcu interdum velit inceptos tortor sodales</li>
+              <li>Eros euismod hac netus hendrerit porta per</li>
+              <li>Etiam at aenean blandit fermentum placerat turpis primis</li>
+              <li>Venenatis habitasse quisque aptent duis rhoncus fames lacus</li>
+              <li>Per augue conubia per id aliquet curabitur justo</li>
+              <li>Eros ad odio duis</li>
+              <li>Facilisis dolor posuere lobortis mauris auctor</li>
+              <li>Faucibus quisque per suscipit magna litora eget turpis</li>
+            </ul>'
+about: 'Quisque semper augue vitae facilisis placerat. Nulla bibendum velit et metus ultricies volutpat. Nulla elit diam, dignissim id imperdiet sed, dictum eu eros.
+        Vestibulum malesuada, ipsum eget fermentum suscipit, ligula lorem imperdiet ipsum. <br> <br> A blandit leo arcu ac est. Vivamus porta est ut arcu sagittis
+        elementum. Fusce pulvinar eu augue in porttitor. Nullam rhoncus arcu et tempor rutrum. Duis consequat feugiat nisl sit amet luctus. Curabitur arcu orci, porta
+        vel ultricies sit amet, gravida a lectus. Nulla volutpat bibendum ullamcorper. Praesent ac odio mauris. Aliquam erat volutpat napatura.'
 consent:
-  header: ' <table class="table table-short">
-              <tr><td>Consent header</td></tr>
-              <tr><td>PROTOCOL TITLE</td><td>Study title</td></tr>
-              <tr><td>PRINCIPAL INVESTIGATOR</td><td>study principal investigator</td></tr>
-              <tr><td>SUPPORTED BY</td><td>supporting organization</td></tr>
-            </table>'
-  body:   ' <p>Add consent details here.</p>
-            <div class="divider-2"></div>
-            <h3>Include Consent Details</h3>
-            <p>Any consent details can be added here, partition consent details with divider div elements as necessary.</p>
-            <div class="divider-2"></div>
-            <h3>This is another consent section</h3>
-            <p>Add as many consent details as necessary.</p>'
-  footer: ' <h2 class="title">Eligibility Criteria</h2>
-            <p class="subtitle">Add eligibility data here:</p>
-            <div class="row text-left">
-              <div class="col-sm-4"></div>
-              <div class="col-sm-8">
-                <p class="subtitle">
-                  <strong>Attribute necessary to join study</strong><br /><br />
-                  <strong>Attribute 2</strong><br /><br />
-                  <strong>Attribute 3</strong><br />
-                </p>
-              </div>
-            </div>
-            <div class="row text-left">
-              <div class="col-sm-6"></div>
-              <div class="col-sm-6">
-                <p class="subtitle"><strong>Some additional notes for screening:</strong><br />
-                  note 1<br />
-                  note 2<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
-                  note 3<br /></p>
-              </div>
-            </div>
-            <p class="subtitle">Any notes for eligibility can be added here.</p>'
+  header: ' Lorem ipsum rhoncus lorem dapibus id tortor, habitant litora ultrices sodales molestie, himenaeos vivamus aenean accumsan sagittis mattis pellentesque
+            eget vestibulum ipsum venenatis etiam non amet viverra cubilia aenean senectus quis. <br/><br/>
+            Ut bibendum nunc ultricies integer orci vestibulum pellentesque posuere est, tristique porta porttitor gravida libero blandit vestibulum facilisis
+            quisque justo est nulla proin auctor ipsum proin eros, fusce interdum lobortis suspendisse ligula elementum convallis.<br/><br/>
+            Sodales ultricies ac eros rutrum hendrerit duis ligula nibh, lectus neque consequat proin elit lorem mauris luctus curabitur, primis auctor fames
+            pulvinar torquent ut aenean.'
+  body:   ' Nam ut tellus a enim facilisis venenatis vel eu ligula. Nunc porttitor nulla mattis risus semper, quis vestibulum dui tristique. Aliquam mi orci,
+            mollis eget molestie nec, hendrerit id nulla. Vestibulum faucibus gravida erat, eget posuere diam accumsan ac. <br /> <br />Fusce placerat odio at ipsum
+            imperdiet fermentum. Mauris quis urna iaculis, pulvinar tortor eget, facilisis enim.'
+  footer: ' Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium. Maecenas non ullamcorper risus.
+            Phasellus vel bibendum dolor. <br /> <br /> Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod. Ut sem justo, dignissim tristique
+            arcu vel, vestibulum gravida enim.'
 
 contact_us: ' <table class="table">
                 <tbody>
@@ -110,28 +72,11 @@ contact_us: ' <table class="table">
                   </tr>
                 </tbody>
               </table>'
-eligibility: '  <p class="subtitle">Add eligibility data here:</p>
-                <div class="row text-left">
-                  <div class="col-sm-4"></div>
-                  <div class="col-sm-8">
-                    <p class="subtitle">
-                      <strong>Attribute necessary to join study</strong><br /><br />
-                      <strong>Attribute 2</strong><br /><br />
-                      <strong>Attribute 3</strong><br />
-                    </p>
-                  </div>
-                </div>
-                <div class="row text-left">
-                  <div class="col-sm-6"></div>
-                  <div class="col-sm-6">
-                    <p class="subtitle"><strong>Some additional notes for screening:</strong><br />
-                      note 1<br />
-                      note 2<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>or</strong><br />
-                      note 3<br /></p>
-                  </div>
-                </div>
-                <p class="subtitle">Any notes for eligibility can be added here.</p>'
+eligibility: 'Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium. Maecenas non ullamcorper risus.
+              Phasellus vel bibendum dolor. Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod. Ut sem justo, dignissim tristique
+              arcu vel, vestibulum gravida enim. Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium.
+              Maecenas non ullamcorper risus. Phasellus vel bibendum dolor. Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod.
+              Ut sem justo, dignissim tristique arcu vel, vestibulum gravida enim.'
 funding: '  <table class="table">
               <tbody>
                 <tr><th>FUNDING AGENCY</th><td>Agency name </td></tr>
@@ -139,10 +84,7 @@ funding: '  <table class="table">
                 <tr><td></td><td>Study name</td></tr>
               </tbody>
             </table>'
-intervention: ' <p>Describe the intervention here.</p>
-                <div class="divider-2"></div>
-
-                <h3>Include intervention details.</h3>
-                <p>Include multiple paragraphs and seperate them with paragraph tags.</p>
-                <div class="divider-2"></div>
-                <p>Divide section with divider div tags.</p>'
+intervention: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur metus a elit commodo, eu bibendum metus lobortis. Nulla facilisi.
+                Sed non arcu ac mauris porttitor varius. <br /> <br /> Vestibulum aliquet posuere risus. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed id dui purus. Quisque semper sollicitudin quam, at lacinia neque posuere eu. In posuere molestie diam nec tempus. Vestibulum at varius elit,
+                non tincidunt nisl.'

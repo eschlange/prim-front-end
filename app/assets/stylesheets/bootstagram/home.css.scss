@@ -75,10 +75,9 @@ input[readonly] {
   color: #fafafa;
 }
 
-#loginModal {
+#loginModal, #image-update-modal-window {
   padding: 0px;
   background: rgba(255, 255, 255, 0.90);
-  display: block;
   max-height: 60% !important;
 
   h3 {

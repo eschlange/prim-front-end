@@ -30,77 +30,17 @@
 </div><!-- /grid-features -->
 <!-- END home navigation -->
 
-<!-- START about section -->
-<div class="pricing-table">
-  <div class="container">
-    <div class="row-fluid">
-
-      <div class="span12">
-        <div class="plan">
-          <h2>this is a very long title</h2>
-          <p>
-            content
-          </p>
-        </div>
-      </div> <!-- /span6 -->
-    </div> <!-- /row-fluid -->
-  </div> <!-- /container -->
-</div><!-- /pricing-table -->
-<!-- END about section -->
+<%= render 'pages/' + @site.template_name + '/about' %>
 
 <div class="testimonials">
   <div class="container">
-    <div class="row-fluid">
 
-      <div class="span4">
-        <div class="testimonail">
-          <div class="testimonail-text">
-            <blockquote>
-              <div class="textimonial-image">
-                <img class="img-circle" src="img/avatar.png" width="100" height="100" alt="avatar image"/>
-              </div>
-              <p><i class="icon-quote-left"></i> Donec aliquet mattis libero, ac porttitor leo ultricies nec. Integer aliquam aliquam tempor. Maecenas congue adipiscing cursus. Pellentesque quis est at justo dignissim iaculis. Vestibulum egestas nibh eu tortor ultrices venenatis. Quisque nulla magna. <i class="icon-quote-right"></i><p>
+    <%= render 'pages/' + @site.template_name + '/eligibility' %>
 
-              <h5 class="title"><a href="#">Loki luck</a></h5>
-              <span class="sub-title">Interface Designer at <a href="#">Cog.com</a></span>
-            </blockquote>
-          </div>
-        </div>
-      </div> <!-- /sapn4 -->
+    <%= render 'pages/' + @site.template_name + '/resources' %>
 
-      <div class="span4">
-        <div class="testimonail">
-          <div class="testimonail-text">
-            <blockquote>
-              <div class="textimonial-image">
-                <img class="img-circle" src="img/avatar.png" width="100" height="100" alt="avatar image"/>
-              </div>
-              <p><i class="icon-quote-left"></i> Donec aliquet mattis libero, ac porttitor leo ultricies nec. Integer aliquam aliquam tempor. Maecenas congue adipiscing cursus. Pellentesque quis est at justo dignissim iaculis. Vestibulum egestas nibh eu tortor ultrices venenatis. Quisque nulla magna. <i class="icon-quote-right"></i><p>
+    <%= render 'pages/' + @site.template_name + '/funding' %>
 
-              <h5 class="title"><a href="#">John bock</a></h5>
-              <span class="sub-title">Interface Designer at <a href="#">Pixell.com</a></span>
-            </blockquote>
-          </div>
-        </div>
-      </div> <!-- /sapn4 -->
-
-      <div class="span4">
-        <div class="testimonail">
-          <div class="testimonail-text">
-            <blockquote>
-              <div class="textimonial-image">
-                <img class="img-circle" src="img/avatar.png" width="100" height="100" alt="avatar image"/>
-              </div>
-              <p><i class="icon-quote-left"></i> Donec aliquet mattis libero, ac porttitor leo ultricies nec. Integer aliquam aliquam tempor. Maecenas congue adipiscing cursus. Pellentesque quis est at justo dignissim iaculis. Vestibulum egestas nibh eu tortor ultrices venenatis. Quisque nulla magna. <i class="icon-quote-right"></i><p>
-
-              <h5 class="title"><a href="#">Jack Robinson</a></h5>
-              <span class="sub-title">Interface Designer at <a href="#">beaker.com</a></span>
-            </blockquote>
-          </div>
-        </div>
-      </div> <!-- /sapn4 -->
-
-    </div> <!-- /row-fluid -->
   </div> <!-- /container -->
 </div><!-- /testimonials -->
 

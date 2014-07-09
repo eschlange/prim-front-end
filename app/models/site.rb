@@ -21,13 +21,13 @@ class Site < ActiveRecord::Base
     default_hash = YAML.load(File.read(File.expand_path('../../../lib/template_structured_content/' + self.template_name + '_default_content.yml',__FILE__)))
 
     Home.create(site_id: self.id, title: 'Home Title', content: default_hash['home'])
-    Resource.create(site_id: self.id, title: 'Resources Title', content: default_hash['resource'])
-    About.create(site_id: self.id, title: 'About Us Title', content: default_hash['about'])
+    Resource.create(site_id: self.id, title: 'Resources', content: default_hash['resource'])
+    About.create(site_id: self.id, title: 'About Us', content: default_hash['about'])
     Consent.create(site_id: self.id, header: default_hash['consent']['header'], body: default_hash['consent']['body'], footer: default_hash['consent']['footer'])
-    ContactUs.create(site_id: self.id, title: 'Contact Us Title', content: default_hash['contact_us'])
-    Eligibility.create(site_id: self.id, title: 'Eligibility Title', content: default_hash['eligibility'])
-    Funding.create(site_id: self.id, title: 'Funding Title', content: default_hash['funding'])
-    Intervention.create(site_id: self.id, name: 'Intervention Title', description: default_hash['intervention'])
+    ContactUs.create(site_id: self.id, title: 'Contact Us', content: default_hash['contact_us'])
+    Eligibility.create(site_id: self.id, title: 'Eligibility', content: default_hash['eligibility'])
+    Funding.create(site_id: self.id, title: 'Funding', content: default_hash['funding'])
+    Intervention.create(site_id: self.id, name: 'Intervention', description: default_hash['intervention'])
     PointOfContact.create(site_id: self.id, title: 'title', name: 'name', street_address: 'street address', city: 'city', state: 'state', zip: 'zip', email: 'email')
   end
 

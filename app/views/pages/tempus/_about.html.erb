@@ -1,18 +1,29 @@
-<section id="about" class="steps text-center">
-  <div class="container text-left">
-    <h3 class="title">
-      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                           @site.about, :title,
-                           :path => about_path(@site.about.id),
-                           :sanitize => false,
-                           :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %>
-    </h3>
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                         @site.about, :content,
-                         :type => :textarea,
-                         :path => about_path(@site.about.id),
-                         :sanitize => false,
-                         :display_with => lambda { |aboutContent| (aboutContent).html_safe },
-                         :html_attrs => { style: 'width:100%;' }%>
-  </div>
-</section>
+<!-- START about section -->
+<div class="pricing-table">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="plan">
+          <h2>
+            <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                                 @site.about, :title,
+                                 :path => about_path(@site.about.id),
+                                 :sanitize => false,
+                                 :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %>
+          </h2>
+          <p>
+            <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                                 @site.about, :content,
+                                 :type => :textarea,
+                                 :path => about_path(@site.about.id),
+                                 :sanitize => false,
+                                 :display_with => lambda { |aboutContent| (aboutContent).html_safe },
+                                 :html_attrs => { style: 'width:100%;' }%>
+
+          </p>
+        </div>
+      </div> <!-- /span6 -->
+    </div> <!-- /row-fluid -->
+  </div> <!-- /container -->
+</div><!-- /pricing-table -->
+<!-- END about section -->

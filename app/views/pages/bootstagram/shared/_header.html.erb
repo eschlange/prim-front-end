@@ -26,6 +26,7 @@
   </div>
 </div>
 
+<% if "pages" == params[:controller] %>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
   <div id="home" class="container">
@@ -36,8 +37,7 @@
                            :sanitize => false,
                            :display_with => lambda { |siteTitle| (siteTitle).html_safe } %>
     </h1>
-    <h2 class="animated fadeIn delay-3"> #<%= @site.name %></h2>
-    <p class="animated fadeInLeft delay-4">
+    <p class="animated fadeInLeft delay-3">
       <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
                            @site, :content,
                            :type => :textarea,
@@ -46,8 +46,12 @@
                            :display_with => lambda { |siteContent| (siteContent).html_safe },
                            :html_attrs => { style: 'width:100%;' }%>
     </p>
+    <div class="animated fadeInLeft delay-4">
+      <h2><a href="#" class="header-btn">Enroll Now</a></h2>
+    </div>
   </div>
 </div>
+<% end %>
 
 <!-- START Login Modal -->
 <div class="modal custom fade" id="loginModal">
