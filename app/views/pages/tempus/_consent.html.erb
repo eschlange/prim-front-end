@@ -1,46 +1,69 @@
-<div class="divider"></div>
-
-<section class="intervention">
-  <div class="container text-left">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-         @site.consent,
-         :header,
-         :type => :textarea,
-         :path => consent_path(@site.consent.id),
-         :sanitize => false,
-         :display_with => lambda { |consentContent| (consentContent).html_safe },
-         :html_attrs => { style: 'width:100%;' } %>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="intervention-long">
-  <div class="container text-left">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-         @site.consent,
-         :body,
-         :type => :textarea,
-         :path => consent_path(@site.consent.id),
-         :sanitize => false,
-         :display_with => lambda { |consentContent| (consentContent).html_safe },
-         :html_attrs => { style: 'width:100%;' } %>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="eligibility" class="screenshots text-center">
+<div class="contact">
   <div class="container">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-         @site.consent,
-         :footer,
-         :type => :textarea,
-         :path => consent_path(@site.consent.id),
-         :sanitize => false,
-         :display_with => lambda { |consentContent| (consentContent).html_safe },
-         :html_attrs => { style: 'width:100%;' } %>
-    </div>
-  </section>
 
-<div class="divider"></div>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="testimonail wide-testimonial">
+          <div class="testimonail-text">
+            <blockquote class="text-left">
+              <p>
+                <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                 @site.consent,
+                 :header,
+                 :type => :textarea,
+                 :path => consent_path(@site.consent.id),
+                 :sanitize => false,
+                 :display_with => lambda { |consentContent| (consentContent).html_safe },
+                 :html_attrs => { style: 'width:100%;' } %>
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="testimonail wide-testimonial">
+          <div class="testimonail-text">
+            <blockquote class="text-left">
+              <p>
+                <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                 @site.consent,
+                 :body,
+                 :type => :textarea,
+                 :path => consent_path(@site.consent.id),
+                 :sanitize => false,
+                 :display_with => lambda { |consentContent| (consentContent).html_safe },
+                 :html_attrs => { style: 'width:100%;' } %>
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="testimonail wide-testimonial">
+          <div class="testimonail-text">
+            <blockquote class="text-left">
+              <p>
+                <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                 @site.consent,
+                 :footer,
+                 :type => :textarea,
+                 :path => consent_path(@site.consent.id),
+                 :sanitize => false,
+                 :display_with => lambda { |consentContent| (consentContent).html_safe },
+                 :html_attrs => { style: 'width:100%;' } %>
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

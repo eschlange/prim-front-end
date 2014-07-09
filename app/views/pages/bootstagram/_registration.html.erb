@@ -1,0 +1,15 @@
+<div id="sign-up" class="container sign-up">
+  <%= render 'pages/' + @site.template_name + '/consent' %>
+
+  <%= render 'devise/shared/consent_fields' %>
+
+  <%= render 'devise/shared/links' %>
+
+  <section class="modal custom fade image-upload-div" id="image-update-modal-window" role="dialog"  aria-labelledby="imageUpdateModal" aria-hidden="true" ></section>
+</div>
+
+<script>
+    $(window).load(function() {
+        setTimeout(function() { $("html, body").animate({scrollTop: "5px"}) }, 200); //delays next call for 30 seconds
+    });
+</script>

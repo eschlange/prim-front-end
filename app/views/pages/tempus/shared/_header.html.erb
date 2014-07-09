@@ -1,3 +1,4 @@
+<% if "pages" == params[:controller] %>
 <div class="header">
   <div class="container">
     <div class="row-fluid">
@@ -5,12 +6,15 @@
       <div class="span12">
         <div class="description-texts">
           <%= render 'pages/tempus/home_section' %>
-          <div class="app-buttons">
-            <a href="#" class="header-btn">Enroll Now</a>
-          </div>
+          <% if !current_user || current_user.at_least_a_content_manager? %>
+              <div class="app-buttons">
+                <a href="/sites/<%= @site.id %>/users/sign_up" class="header-btn">Enroll Now</a>
+              </div>
+          <% end %>
         </div>
       </div> <!-- /span7 -->
 
     </div> <!-- /row-fluid -->
   </div> <!-- /container -->
 </div><!-- /header -->
+<% end %>

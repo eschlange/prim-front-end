@@ -12,18 +12,18 @@
 
       <div class="span4 text-center grid-feature">
         <div class="shape pink">
-          <a href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-signin"></i></a>
+          <a href="#login"><i class="icon-signin"></i></a>
         </div>
-        <h3 class="title"><a href="#" data-toggle="modal" data-target="#loginModal">Sign In</a></h3>
-        <p>Already enrolled? <a href="#" data-toggle="modal" data-target="#loginModal">Sign in here. </a> Update your personal and contact information if you are already enrolled.</p>
+        <h3 class="title"><a href="#login">Sign In</a></h3>
+        <p>Already enrolled? <a href="#login">Sign in here. </a> Update your personal and contact information if you are already enrolled.</p>
       </div><!-- /span4 -->
 
       <div class="span4 text-center grid-feature">
         <div class="shape lightblue">
-          <a href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-cog"></i></a>
+          <a href="#login"><i class="icon-cog"></i></a>
         </div>
-        <h3><a href="#" data-toggle="modal" data-target="#loginModal">Manage</a></h3>
-        <p>Are you a study manager? <a href="#" data-toggle="modal" data-target="#loginModal">Log in here.</a></p>
+        <h3><a href="#login">Manage</a></h3>
+        <p>Are you a study manager? <a href="#login">Log in here.</a></p>
       </div><!-- /span4 -->
     </div> <!-- /row-fluid -->
   </div> <!-- /container -->
@@ -45,83 +45,31 @@
 </div><!-- /testimonials -->
 
 
-<div class="join">
+<div class="join" id="login">
   <div class="container">
     <div class="row-fluid">
 
-      <div class="span6">
+      <div class="span6" style="margin: 0 auto; float: none">
 
-        <form>
-          <fieldset>
-            <legend>Already Registered?</legend>
-            <span class="help-block">Enter your email and password to login to your account.</span>
-            <input class="input-block-level" type="email" placeholder="Your email">
-            <input class="input-block-level" type="text" placeholder="Your password">
-
-            <button type="submit" class="custom-btn pull-right">Sign In</button>
-
-            <label class="checkbox">
-              <input type="checkbox"> Remember me on this computer
-            </label>
-
-          </fieldset>
-        </form>
-
-      </div>
-
-
-      <div class="span6">
-        <form>
-          <fieldset>
-            <legend>Sign up with us</legend>
-            <span class="help-block">Don't you have an account? It is super easy to sign up with us. Fill the following form.</span>
-            <input class="input-block-level" type="text" placeholder="Your full name">
-            <input class="input-block-level" type="email" placeholder="Your email">
-            <input class="input-block-level" type="email" placeholder="Confirm your email">
-            <input class="input-block-level" type="password" placeholder="Choose password">
-            <input class="input-block-level" type="password" placeholder="Conform your password">
-
-            <button type="submit" class="custom-btn pull-right">Sign Up</button>
-          </fieldset>
-        </form>
+        <%= simple_form_for(:user, url: '/sites/' + @site.id.to_s + '/users/sign_in', :method => 'post') do |f| %>
+            <fieldset>
+              <legend>Already Registered?</legend>
+              <span class="help-block">Enter your email and password to login to your account.</span>
+              <div class="inputs">
+                  <%= f.input :email, :required => false, :class => 'input-block-level' %>
+                  <%= f.input :password, :required => false, :class => 'input-block-level' %>
+                  <label class="checkbox">
+                    <%= f.input :remember_me, :as => :boolean,  :label => false, :inline_label => true if devise_mapping.rememberable? %>
+                  </label>
+              </div>
+              <%= f.button :submit, "sign in", :class => 'custom-btn pull-right' %>
+            </fieldset>
+        <% end %>
       </div>
 
     </div> <!-- /row-fluid -->
   </div> <!-- /container -->
 </div><!-- /join -->
 
-<div class="contact">
+<%= render 'pages/' + @site.template_name + '/contact_us' %>
 
-  <div class="container">
-    <div class="row-fluid">
-
-      <div class="span6">
-        <h3 class="title">Any Questions or Feedback</h3>
-        <p>We are here to answer any kind of question donec aliquet mattis libero, ac porttitor leo ultricies nec. Integer aliquam aliquam tempor. Maecenas congue adipiscing cursus. Pellentesque quis est at justo dignissim iaculis. Vestibulum egestas nibh eu tortor ultrices venenatis.</p>
-        <p class="address"><i class="icon-building"></i> 413 Water St. New York, NY 10002 <span class="pull-right"><i class="icon-phone"></i> 555-555-55</span></p>
-        <div class="social-icons">
-          <a href="#"><i class="icon-twitter"></i></a>
-          <a href="#"><i class="icon-facebook"></i></a>
-          <a href="#"><i class="icon-google-plus"></i></a>
-          <a href="#"><i class="icon-linkedin"></i></a>
-          <a href="#"><i class="icon-github"></i></a>
-        </div>
-        <form class="form-inline subscription-form text-center">
-          <input type="email" class="input-large" name="subscriber" placeholder="Email">
-          <button type="submit" class="custom-btn"><i class="icon-envelope"></i> Subscribe</button>
-        </form>
-      </div>
-
-      <div class="span6">
-        <form class="contact-form">
-          <input class="input-block-level" type="text" name="name" placeholder="your name" required />
-          <input class="input-block-level" type="email" name="email" placeholder="your email" required />
-          <textarea class="input-block-level" name="message" placeholder="your message" rows="10" required ></textarea>
-          <button type="submit" class="custom-btn">Send</button>
-        </form>
-      </div>
-
-    </div> <!-- /row-fluid -->
-  </div> <!-- /container -->
-
-</div><!-- /contact -->

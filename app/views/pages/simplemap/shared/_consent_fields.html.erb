@@ -1,0 +1,31 @@
+<section class="register text-left">
+  <div class="container">
+    <%= simple_form_for(resource, :as => resource_name,  :url => user_registration_path(resource, :site_id => @site.id)) do |f| %>
+        <h3>Consent</h3>
+        <p>I have read this consent form. I agree to be in the research study described above. I agree to participate in the research study described above; this is signified by checking the box below and typing my name in the form provided. I will print a copy of this consent form for my records after I complete this authorization.</p>
+
+        <div class="form-inputs">
+          <%= f.error_notification %>
+          <%= hidden_field_tag 'site_id', @site.id %>
+          <%= f.input :first_name, :required => true, :autofocus => true %>
+          <%= f.input :last_name, :required => true %>
+          <%= f.input :phone, :required => false %>
+          <%= f.input :email, :required => false %>
+          <%= f.input :future_contact , :as => :radio_buttons, collection: [['I agree that someone may contact me in the future, after my participation in this study is over, to ask me to be in more research. Agreeing to be contacted increases the risk to my privacy. It will be my responsibility to tell the project if my contact information changes', true]], label:"Please choose one of the following:" %>
+          <%= f.input :future_contact , :as => :radio_buttons, collection: [['I do not agree that someone may contact me in the future, after my participation in this study is over, to ask me to be in more research.', false]], label:"" %>
+        </div>
+
+        <div class="form-actions" style="padding-top: 20px">
+          <%= f.button :submit, "Sign up", :class => "btn btn-danger btn-consent" %>
+        </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-xs-8"></div>
+    <div class="col-sm-4 col-xs-8">
+      <%= render_irb_acceptance_image_edit_link(@site.id) %>
+    </div>
+    <div class="col-sm-4 col-xs-8"></div>
+  </div> <!-- /.row -->
+</section>
