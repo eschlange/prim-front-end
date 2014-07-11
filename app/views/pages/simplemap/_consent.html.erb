@@ -2,7 +2,6 @@
 
 <section class="intervention">
   <div class="container text-left">
-    <p>
       <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
          @site.consent,
          :header,
@@ -11,7 +10,6 @@
          :sanitize => false,
          :display_with => lambda { |consentContent| (consentContent).html_safe },
          :html_attrs => { style: 'width:100%;' } %>
-    </p>
   </div>
 </section>
 

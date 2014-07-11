@@ -1,7 +1,5 @@
-<div class="divider"></div>
-
-<section class="intervention">
-  <div class="container text-left">
+<div class="container about-primary" style="margin-top:50px;">
+  <p class=" about-p1">
     <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
          @site.consent,
          :header,
@@ -10,37 +8,39 @@
          :sanitize => false,
          :display_with => lambda { |consentContent| (consentContent).html_safe },
          :html_attrs => { style: 'width:100%;' } %>
-  </div>
-</section>
+  </p>
+</div>
 
-<div class="divider"></div>
+<hr id="hr" class="about-hr" />
 
-<section class="intervention-long">
-  <div class="container text-left">
+<div id="eligibility" class="container about-primary" style="margin-top:30px;">
+  <p class=" about-p1">
     <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-         @site.consent,
-         :body,
-         :type => :textarea,
-         :path => consent_path(@site.consent.id),
-         :sanitize => false,
-         :display_with => lambda { |consentContent| (consentContent).html_safe },
-         :html_attrs => { style: 'width:100%;' } %>
+      @site.consent,
+      :body,
+      :type => :textarea,
+      :path => consent_path(@site.consent.id),
+      :sanitize => false,
+      :display_with => lambda { |consentContent| (consentContent).html_safe },
+      :html_attrs => { style: 'width:100%;' } %>
+  </p>
+</div>
+
+<hr id="hr" class="about-hr" />
+
+<div id="resources" class="container" style="margin-top:30px;">
+  <div class="about-secondary">
+    <p class=" about-p1">
+      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+        @site.consent,
+        :footer,
+        :type => :textarea,
+        :path => consent_path(@site.consent.id),
+        :sanitize => false,
+        :display_with => lambda { |consentContent| (consentContent).html_safe },
+        :html_attrs => { style: 'width:100%;' } %>
+    </p>
   </div>
-</section>
+</div>
 
-<div class="divider"></div>
-
-<section id="eligibility" class="screenshots text-center">
-  <div class="container">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-         @site.consent,
-         :footer,
-         :type => :textarea,
-         :path => consent_path(@site.consent.id),
-         :sanitize => false,
-         :display_with => lambda { |consentContent| (consentContent).html_safe },
-         :html_attrs => { style: 'width:100%;' } %>
-    </div>
-  </section>
-
-<div class="divider"></div>
+<hr id="hr" class="about-hr" />
