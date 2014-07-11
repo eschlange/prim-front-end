@@ -1,6 +1,8 @@
 ## These are a set of default values for the simplemap template.
 ## Author: Eric Schlange
-home: 'This is a tag line for your home page.'
+home: 'Ut bibendum nunc ultricies integer orci vestibulum pellentesque posuere est, tristique porta porttitor
+       gravida libero blandit vestibulum facilisis quisque justo est nulla proin auctor ipsum proin eros.'
+       
 resource: ' <ul>
               <li>Suspendisse ante aliquam cursus</li>
               <li>Diam semper ut aenean duis magna cursus</li>
@@ -13,10 +15,12 @@ resource: ' <ul>
               <li>Facilisis dolor posuere lobortis mauris auctor</li>
               <li>Faucibus quisque per suscipit magna litora eget turpis</li>
             </ul>'
+
 about: 'Quisque semper augue vitae facilisis placerat. Nulla bibendum velit et metus ultricies volutpat. Nulla elit diam, dignissim id imperdiet sed, dictum eu eros.
         Vestibulum malesuada, ipsum eget fermentum suscipit, ligula lorem imperdiet ipsum. <br> <br> A blandit leo arcu ac est. Vivamus porta est ut arcu sagittis
         elementum. Fusce pulvinar eu augue in porttitor. Nullam rhoncus arcu et tempor rutrum. Duis consequat feugiat nisl sit amet luctus. Curabitur arcu orci, porta
         vel ultricies sit amet, gravida a lectus. Nulla volutpat bibendum ullamcorper. Praesent ac odio mauris. Aliquam erat volutpat napatura.'
+
 consent:
   header: ' Lorem ipsum rhoncus lorem dapibus id tortor, habitant litora ultrices sodales molestie, himenaeos vivamus aenean accumsan sagittis mattis pellentesque
             eget vestibulum ipsum venenatis etiam non amet viverra cubilia aenean senectus quis. <br/><br/>
@@ -72,11 +76,13 @@ contact_us: ' <table class="table">
                   </tr>
                 </tbody>
               </table>'
+
 eligibility: 'Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium. Maecenas non ullamcorper risus.
               Phasellus vel bibendum dolor. Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod. Ut sem justo, dignissim tristique
               arcu vel, vestibulum gravida enim. Ut lorem nibh, euismod sit amet felis sagittis, lacinia tempus nulla. Sed pulvinar odio a eros convallis pretium.
               Maecenas non ullamcorper risus. Phasellus vel bibendum dolor. Nunc tincidunt erat vitae dictum lobortis. Ut lacinia lacus non blandit euismod.
               Ut sem justo, dignissim tristique arcu vel, vestibulum gravida enim.'
+
 funding: '  <table class="table">
               <tbody>
                 <tr><th>FUNDING AGENCY</th><td>Agency name </td></tr>
@@ -84,6 +90,7 @@ funding: '  <table class="table">
                 <tr><td></td><td>Study name</td></tr>
               </tbody>
             </table>'
+
 intervention: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur metus a elit commodo, eu bibendum metus lobortis. Nulla facilisi.
                 Sed non arcu ac mauris porttitor varius. <br /> <br /> Vestibulum aliquet posuere risus. Lorem ipsum dolor sit amet, consectetur adipiscing
                 elit. Sed id dui purus. Quisque semper sollicitudin quam, at lacinia neque posuere eu. In posuere molestie diam nec tempus. Vestibulum at varius elit,

@@ -6,19 +6,19 @@
         <div class="plan">
           <h2>
             <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                                 @site.about, :title,
-                                 :path => about_path(@site.about.id),
-                                 :sanitize => false,
-                                 :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %>
+             @site.about, :title,
+             :path => about_path(@site.about.id),
+             :sanitize => false,
+             :display_with => lambda { |aboutTitle| (aboutTitle).html_safe } %>
           </h2>
           <p>
             <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                                 @site.about, :content,
-                                 :type => :textarea,
-                                 :path => about_path(@site.about.id),
-                                 :sanitize => false,
-                                 :display_with => lambda { |aboutContent| (aboutContent).html_safe },
-                                 :html_attrs => { style: 'width:100%;' }%>
+             @site.about, :content,
+             :type => :textarea,
+             :path => about_path(@site.about.id),
+             :sanitize => false,
+             :display_with => lambda { |aboutContent| (aboutContent).html_safe },
+             :html_attrs => { style: 'width:100%;' }%>
 
           </p>
         </div>

@@ -10,7 +10,8 @@
 </h1>
 
 <p class="app-description">
-  <span><%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+  <span>
+    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
      @site.home,
      :content,
      :type => :textarea,

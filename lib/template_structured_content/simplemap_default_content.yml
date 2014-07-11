@@ -2,25 +2,21 @@
 ## Author: Eric Schlange
 home: ' This is the header description for the home page. Include any highlights for the study.<br/>
         Add multiple lines with line break tags.'
-resource: ' <div id="accordion">
-              <h2>Other Links</h2>
-              <ul>
-                <li><a href="http://www.google.com">Link Example</a></li>
-                <li><a href="http://www.google.com"/>Another Link Example</a></li>
-              </ul>
-
-              <h2>
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Publications for 2014 <i class="fa fa-chevron-down"></i></a>
-              </h2>
-              <div id="collapseOne" class="panel-collapse collapse">
-                <ol>
-                  <li>publication information</li>
-                  <li>another publication</li>
-                </ol>
-              </div>
-            </div>'
-about: 'This is a section to describe the study and the organization that is running the study. <br /><br />
-        Add multiple lines with line break tags.'
+resource: ' <ul>
+              <li>Suspendisse ante aliquam cursus</li>
+              <li>Diam semper ut aenean duis magna cursus</li>
+              <li>Nostra per metus arcu interdum velit inceptos tortor sodales</li>
+              <li>Eros euismod hac netus hendrerit porta per</li>
+              <li>Etiam at aenean blandit fermentum placerat turpis primis</li>
+              <li>Venenatis habitasse quisque aptent duis rhoncus fames lacus</li>
+              <li>Per augue conubia per id aliquet curabitur justo</li>
+              <li>Eros ad odio duis</li>
+              <li>Facilisis dolor posuere lobortis mauris auctor</li>
+              <li>Faucibus quisque per suscipit magna litora eget turpis</li>
+            </ul>'
+about: 'Nam ut tellus a enim facilisis venenatis vel eu ligula. Nunc porttitor nulla mattis risus semper, quis vestibulum dui tristique. Aliquam mi orci,
+        mollis eget molestie nec, hendrerit id nulla. Vestibulum faucibus gravida erat, eget posuere diam accumsan ac. Fusce placerat odio at ipsum
+        imperdiet fermentum. Mauris quis urna iaculis, pulvinar tortor eget, facilisis enim.'
 consent:
   header: ' <table class="table table-short">
               <tr><td>Consent header</td></tr>
