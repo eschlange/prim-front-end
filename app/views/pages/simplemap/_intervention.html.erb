@@ -1,15 +1,19 @@
-<h2><%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                         @site.intervention,
-                         :name,
-                         :path => intervention_path(@site.intervention.id),
-                         :sanitize => false,
-                         :display_with => lambda { |interventionTitle| (interventionTitle).html_safe } %>
+<h2>
+  <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+        @site.intervention,
+        :name,
+        :path => intervention_path(@site.intervention.id),
+        :sanitize => false,
+        :display_with => lambda { |interventionTitle| (interventionTitle).html_safe } %>
 </h2>
-<%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                     @site.intervention,
-                     :description,
-                     :type => :textarea,
-                     :path => intervention_path(@site.intervention.id),
-                     :sanitize => false,
-                     :display_with => lambda { |interventionContent| (interventionContent).html_safe },
-                     :html_attrs => { style: 'width:100%;' } %>
+
+<p>
+    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+         @site.intervention,
+         :description,
+         :type => :textarea,
+         :path => intervention_path(@site.intervention.id),
+         :sanitize => false,
+         :display_with => lambda { |interventionContent| (interventionContent).html_safe },
+         :html_attrs => { style: 'width:100%;' } %>
+</p>

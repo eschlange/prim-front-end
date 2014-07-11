@@ -2,7 +2,8 @@
 
 <section class="intervention">
   <div class="container text-left">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+    <p>
+      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
          @site.consent,
          :header,
          :type => :textarea,
@@ -10,6 +11,7 @@
          :sanitize => false,
          :display_with => lambda { |consentContent| (consentContent).html_safe },
          :html_attrs => { style: 'width:100%;' } %>
+    </p>
   </div>
 </section>
 
@@ -17,7 +19,8 @@
 
 <section class="intervention-long">
   <div class="container text-left">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+    <p>
+        <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
          @site.consent,
          :body,
          :type => :textarea,
@@ -25,6 +28,7 @@
          :sanitize => false,
          :display_with => lambda { |consentContent| (consentContent).html_safe },
          :html_attrs => { style: 'width:100%;' } %>
+    </p>
   </div>
 </section>
 
@@ -32,7 +36,8 @@
 
 <section id="eligibility" class="screenshots text-center">
   <div class="container">
-    <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+    <p class="subtitle">
+        <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
          @site.consent,
          :footer,
          :type => :textarea,
@@ -40,7 +45,8 @@
          :sanitize => false,
          :display_with => lambda { |consentContent| (consentContent).html_safe },
          :html_attrs => { style: 'width:100%;' } %>
-    </div>
-  </section>
+    </p>
+  </div>
+</section>
 
 <div class="divider"></div>
