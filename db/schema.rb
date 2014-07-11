@@ -101,16 +101,6 @@ ActiveRecord::Schema.define(version: 20140708151902) do
 
   add_index "irb_acceptance_images", ["consent_id"], name: "index_irb_acceptance_images_on_consent_id", using: :btree
 
-  create_table "participants", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.string   "phone"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "point_of_contacts", force: true do |t|
     t.string   "title"
     t.string   "name"
@@ -126,16 +116,6 @@ ActiveRecord::Schema.define(version: 20140708151902) do
   end
 
   add_index "point_of_contacts", ["site_id"], name: "index_point_of_contacts_on_site_id", using: :btree
-
-  create_table "prim_engine_participants", force: true do |t|
-    t.string   "email"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "first_name"
-  end
 
   create_table "resources", force: true do |t|
     t.string   "title"

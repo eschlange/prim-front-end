@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Site.create(id: 1, name: 'MACs', content: 'MACs : Multicenter AIDS Cohort Study Program<br />
-  the first and largest study specifically created to examine the natural history of AIDS.', template_name: 'sitemap')
+  the first and largest study specifically created to examine the natural history of AIDS.', template_name: 'simplemap')
 
 User.create!(
   first_name: 'Eric',

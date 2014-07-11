@@ -37,7 +37,8 @@ RailsAdmin.config do |config|
     'Intervention',
     'Resource',
     'PointOfContact',
-    'PrimEngine::Participant'
+    'PrimEngine::Participant',
+    'SitesUser'
   ]
 
   config.model 'Site' do
