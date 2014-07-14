@@ -23,7 +23,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_inactive_sign_up_path_for(resource)
     site_user = SitesUser.find_by(user_id: resource.id)
-    '/sites/' + site_user.site_id.to_s + '/pages/home'
+    '/sites/' + params[:site_id] + '/pages/home'
   end
 
   private
@@ -84,12 +84,22 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def save_prim_participant(sign_up_params)
-    PrimEngine::Api::V1::ApiParticipant.create(
-      email: sign_up_params[:email],
-      first_name: sign_up_params[:first_name],
-      last_name: sign_up_params[:last_name],
-      phone: sign_up_params[:phone],
-      date_of_birth: sign_up_params[:date_of_birth]
+    @apiParticipant = PrimEngine::Api::V1::ApiParticipant.new
+    @email = PrimEngine::Api::V1::Email.create(participant_id: @apiParticipant.id, email: sign_up_params[:email])
+
+
+    # PrimEngine::Api::V1::ApiParticipant.create(
+    #  email: sign_up_params[:email],
+    #  first_name: sign_up_params[:first_name],
+    #  middle_name: sign_up_params[:middle_name],
+    #  last_name: sign_up_params[:last_name],
+    #  phone: sign_up_params[:phone],
+    #  date_of_birth: sign_up_params[:date_of_birth]
+    #)
+
+    PrimEngine::Api::V1::ApiParticipant.save(
+      email: @email
     )
+
   end
 end
