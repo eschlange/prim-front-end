@@ -14,13 +14,15 @@ gem "simple_form"
 gem "thin"
 gem "font-awesome-rails"
 gem "best_in_place", github: 'aaronchi/best_in_place'
-gem "prim_engine", github: 'eschlange/prim-engine'
+
 gem "to_csv-rails", '~> 0.1.5'
 
 # email exceptions
 gem "exception_notification"
 
 gem "paperclip", "~> 4.1"
+
+gem 'activeresource', '~> 4.0.0'
 
 group :development, :test do
   gem "rspec-rails", "~> 3.0.1"

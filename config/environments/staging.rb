@@ -77,4 +77,6 @@ Macs::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.papi_url                                  = 'http://localhost:3001/v1'
 end

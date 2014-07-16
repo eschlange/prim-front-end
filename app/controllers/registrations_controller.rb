@@ -84,22 +84,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def save_prim_participant(sign_up_params)
-    @apiParticipant = PrimEngine::Api::V1::ApiParticipant.new
-    @email = PrimEngine::Api::V1::Email.create(participant_id: @apiParticipant.id, email: sign_up_params[:email])
-
-
-    # PrimEngine::Api::V1::ApiParticipant.create(
-    #  email: sign_up_params[:email],
-    #  first_name: sign_up_params[:first_name],
-    #  middle_name: sign_up_params[:middle_name],
-    #  last_name: sign_up_params[:last_name],
-    #  phone: sign_up_params[:phone],
-    #  date_of_birth: sign_up_params[:date_of_birth]
-    #)
-
-    PrimEngine::Api::V1::ApiParticipant.save(
-      email: @email
-    )
-
+    @participant = Participant.create
+    Email.create(email: sign_up_params[:email], primary: true, participant_id: @participant.id)
   end
 end

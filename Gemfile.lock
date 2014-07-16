@@ -6,14 +6,6 @@ GIT
       jquery-rails
       rails (>= 3.1)
 
-GIT
-  remote: git://github.com/eschlange/prim-engine.git
-  revision: 34975e1042016ed68560952e9009fe0df4719b77
-  specs:
-    prim_engine (0.0.8)
-      activeresource
-      rails (~> 4.1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -107,7 +99,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    faker (1.4.1)
+    faker (1.4.2)
       i18n (~> 0.5)
     ffi (1.9.3)
     font-awesome-rails (4.1.0.0)
@@ -284,6 +276,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeresource (~> 4.0.0)
   best_in_place!
   bootstrap-sass
   cancan
@@ -303,7 +296,6 @@ DEPENDENCIES
   launchy
   paperclip (~> 4.1)
   pg
-  prim_engine!
   rails (>= 4.0.5)
   rails_admin
   rspec-rails (~> 3.0.1)

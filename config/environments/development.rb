@@ -31,4 +31,6 @@ Macs::Application.configure do
   config.serve_static_assets = true
 
   Paperclip.options[:command_path] = "/usr/bin/"
+
+  config.papi_url                                  = 'http://localhost:3001/v1'
 end
