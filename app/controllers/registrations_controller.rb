@@ -85,6 +85,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   def save_prim_participant(sign_up_params)
     @participant = Participant.create
+    @participant.save
     Email.create(email: sign_up_params[:email], primary: true, participant_id: @participant.id)
+    Phone.create(name: '', number: sign_up_params[:phone] , primary: true, participant_id: @participant.id)
   end
 end
