@@ -8,6 +8,21 @@ class UserAdminController < ApplicationController
   def index
     authorize! :manage, current_user.role_identifier
     @users = User.all
+    @users.each do |user|
+
+      # begin
+      if user.external_id && user.id > 46
+        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
+        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
+        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
+        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
+        puts user.id.to_s
+        user.participant = Participant.find(user.external_id)
+        puts user.participant.inspect
+        user.status = Status.find(:one, params: { participant_id: user.participant.id, site_id: self.site_id })
+      end
+
+    end
 
     respond_to do |format|
       format.html

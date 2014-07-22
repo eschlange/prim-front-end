@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708151902) do
+ActiveRecord::Schema.define(version: 20140722181443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20140708151902) do
   end
 
   add_index "abouts", ["site_id"], name: "index_abouts_on_site_id", using: :btree
+
+  create_table "addresses", force: true do |t|
+    t.string   "name"
+    t.string   "street_1"
+    t.string   "street_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "primary"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "addresses", ["participant_id"], name: "index_addresses_on_participant_id", using: :btree
 
   create_table "consents", force: true do |t|
     t.text     "header"
@@ -49,6 +64,15 @@ ActiveRecord::Schema.define(version: 20140708151902) do
 
   add_index "contact_us", ["site_id"], name: "index_contact_us_on_site_id", using: :btree
 
+  create_table "date_of_births", force: true do |t|
+    t.date     "date_of_birth"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "date_of_births", ["participant_id"], name: "index_date_of_births_on_participant_id", using: :btree
+
   create_table "eligibilities", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -59,6 +83,16 @@ ActiveRecord::Schema.define(version: 20140708151902) do
 
   add_index "eligibilities", ["site_id"], name: "index_eligibilities_on_site_id", using: :btree
 
+  create_table "emails", force: true do |t|
+    t.string   "email"
+    t.boolean  "primary"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "emails", ["participant_id"], name: "index_emails_on_participant_id", using: :btree
+
   create_table "fundings", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -68,6 +102,15 @@ ActiveRecord::Schema.define(version: 20140708151902) do
   end
 
   add_index "fundings", ["site_id"], name: "index_fundings_on_site_id", using: :btree
+
+  create_table "health_insurance_beneficiary_numbers", force: true do |t|
+    t.string   "number"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "health_insurance_beneficiary_numbers", ["participant_id"], name: "index_health_insurance_beneficiary_numbers_on_participant_id", using: :btree
 
   create_table "homes", force: true do |t|
     t.string   "title"
@@ -89,6 +132,15 @@ ActiveRecord::Schema.define(version: 20140708151902) do
 
   add_index "interventions", ["site_id"], name: "index_interventions_on_site_id", using: :btree
 
+  create_table "ip_address_numbers", force: true do |t|
+    t.string   "number"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ip_address_numbers", ["participant_id"], name: "index_ip_address_numbers_on_participant_id", using: :btree
+
   create_table "irb_acceptance_images", force: true do |t|
     t.integer  "consent_id"
     t.datetime "created_at"
@@ -100,6 +152,49 @@ ActiveRecord::Schema.define(version: 20140708151902) do
   end
 
   add_index "irb_acceptance_images", ["consent_id"], name: "index_irb_acceptance_images_on_consent_id", using: :btree
+
+  create_table "medical_record_numbers", force: true do |t|
+    t.string   "number"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "medical_record_numbers", ["participant_id"], name: "index_medical_record_numbers_on_participant_id", using: :btree
+
+  create_table "names", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_name"
+    t.string   "prefix"
+    t.string   "suffix"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "names", ["participant_id"], name: "index_names_on_participant_id", using: :btree
+
+  create_table "participants", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "external_id"
+  end
+
+  add_index "participants", ["external_id"], name: "index_participants_on_external_id", using: :btree
+
+  create_table "phones", force: true do |t|
+    t.string   "name"
+    t.string   "number"
+    t.boolean  "primary"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "phones", ["participant_id"], name: "index_phones_on_participant_id", using: :btree
 
   create_table "point_of_contacts", force: true do |t|
     t.string   "title"
@@ -117,6 +212,16 @@ ActiveRecord::Schema.define(version: 20140708151902) do
 
   add_index "point_of_contacts", ["site_id"], name: "index_point_of_contacts_on_site_id", using: :btree
 
+  create_table "prim_engine_participants", force: true do |t|
+    t.string   "email"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name"
+  end
+
   create_table "resources", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -131,6 +236,34 @@ ActiveRecord::Schema.define(version: 20140708151902) do
     t.string "name"
     t.string "description"
   end
+
+  create_table "screening_answers", force: true do |t|
+    t.integer "screening_question_id"
+    t.string  "value"
+    t.integer "position"
+    t.boolean "active"
+  end
+
+  add_index "screening_answers", ["screening_question_id"], name: "index_screening_answers_on_screening_question_id", using: :btree
+
+  create_table "screening_questions", force: true do |t|
+    t.integer "site_id"
+    t.string  "type"
+    t.string  "value"
+    t.integer "position"
+    t.boolean "active"
+  end
+
+  add_index "screening_questions", ["site_id"], name: "index_screening_questions_on_site_id", using: :btree
+
+  create_table "screenings", force: true do |t|
+    t.integer "site_id"
+    t.integer "participant_id"
+    t.string  "question"
+    t.string  "answer"
+  end
+
+  add_index "screenings", ["participant_id"], name: "index_screenings_on_participant_id", using: :btree
 
   create_table "site_images", force: true do |t|
     t.integer  "site_id"
@@ -160,6 +293,15 @@ ActiveRecord::Schema.define(version: 20140708151902) do
     t.integer "user_id", null: false
     t.integer "site_id", null: false
   end
+
+  create_table "social_security_numbers", force: true do |t|
+    t.string   "number"
+    t.integer  "participant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "social_security_numbers", ["participant_id"], name: "index_social_security_numbers_on_participant_id", using: :btree
 
   create_table "user_consents", force: true do |t|
     t.integer  "site_id"
@@ -197,6 +339,7 @@ ActiveRecord::Schema.define(version: 20140708151902) do
     t.boolean  "future_contact",         default: true
     t.string   "phone"
     t.integer  "role_identifier",        default: 4
+    t.string   "external_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

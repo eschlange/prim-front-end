@@ -2,8 +2,9 @@
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class User < ActiveRecord::Base
   include Role
-
   has_many :user_consents
+
+  attr_accessor :participant, :status
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

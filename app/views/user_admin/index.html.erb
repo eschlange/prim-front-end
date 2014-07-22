@@ -12,6 +12,8 @@
           <th class="text-center">Future Contact</th>
           <th>Role</th>
           <th>Consent Version</th>
+          <th>Status</th>
+          <th>Screening</th>
         </tr>
         <% @users.each do |user| %>
           <tr>
@@ -19,7 +21,7 @@
             <td><%= user.last_name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone %></td>
-            <td><%= user.created_at %></td>
+            <td class="text-center"><%= user.created_at.strftime("%m/%d/%Y") %></td>
             <td class="text-center"><% if user.future_contact?  %>
                   <span class="glyphicon glyphicon-check" style="color:green"></span>
                 <% else %>
@@ -30,6 +32,13 @@
             <td class="text-center">
               <% if !user.at_least_a_content_manager? %>
                 <%= render_user_consent_view(@site.id, user.id) %>
+              <% else %>
+                ---
+              <% end %>
+            </td>
+            <td class="text-center">
+              <% if user.status %>
+                  <%= user.status.name %>
               <% else %>
                 ---
               <% end %>

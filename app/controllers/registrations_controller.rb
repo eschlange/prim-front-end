@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.save
       predefinedUserCreation(resource)
       site_id = createConsentRecord(resource)
-      @status = save_prim_participant(sign_up_params)
+      save_prim_participant(sign_up_params, resource, site_id)
       associate_site_with_user(resource, site_id)
     else
       clean_up_passwords resource
@@ -83,10 +83,12 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def save_prim_participant(sign_up_params)
+  def save_prim_participant(sign_up_params, resource, site_id)
     @participant = Participant.create
-    @participant.save
     Email.create(email: sign_up_params[:email], primary: true, participant_id: @participant.id)
     Phone.create(name: '', number: sign_up_params[:phone] , primary: true, participant_id: @participant.id)
+    resource.external_id = @participant.external_id
+    resource.save
+    Status.create(name: 'Screening in Progress', description: '', participant_id: @participant.id, final: false, site_id: site_id)
   end
 end
