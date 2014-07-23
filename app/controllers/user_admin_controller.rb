@@ -9,19 +9,17 @@ class UserAdminController < ApplicationController
     authorize! :manage, current_user.role_identifier
     @users = User.all
     @users.each do |user|
-
       # begin
-      if user.external_id && user.id > 46
-        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
-        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
-        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
-        puts '!!!!!!!!!!!!!!!!!!!!!!!!!'
-        puts user.id.to_s
-        user.participant = Participant.find(user.external_id)
-        puts user.participant.inspect
-        user.status = Status.find(:one, params: { participant_id: user.participant.id, site_id: self.site_id })
+      if user.external_id
+        begin
+          participants = Participant.find(:all, :params => {:external_id => user.external_id})
+          user.participant = participants[0]
+          statuses = Status.find(:all, :params => { :participant_id => user.participant.id })
+          user.status = statuses[0]
+        rescue
+          logger.info 'No status or participant could be associated with user id: ' + user.id.to_s
+        end
       end
-
     end
 
     respond_to do |format|
