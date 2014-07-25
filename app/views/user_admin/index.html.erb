@@ -4,43 +4,57 @@
     <table class="table table-striped table-hover">
       <tbody>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Consent Date</th>
-          <th class="text-center">Future Contact</th>
+          <th>ID</th>
           <th>Role</th>
           <th>Consent Version</th>
           <th>Status</th>
+          <th>PHI</th>
           <th>Screening</th>
         </tr>
         <% @users.each do |user| %>
           <tr>
-            <td><%= user.first_name %></td>
-            <td><%= user.last_name %></td>
-            <td><%= user.email %></td>
-            <td><%= user.phone %></td>
-            <td class="text-center"><%= user.created_at.strftime("%m/%d/%Y") %></td>
-            <td class="text-center"><% if user.future_contact?  %>
-                  <span class="glyphicon glyphicon-check" style="color:green"></span>
-                <% else %>
-                  <span class="glyphicon glyphicon-minus-sign" style="color:red"></span>
-                <% end %>
-            </td>
+            <td><%= user.external_id %></td>
             <td><%= user.role_name %></td>
-            <td class="text-center">
+            <td>
               <% if !user.at_least_a_content_manager? %>
                 <%= render_user_consent_view(@site.id, user.id) %>
+              <% else %>
+                n/a
+              <% end %>
+            </td>
+            <td>
+              <% if user.at_least_a_content_manager? %>
+                n/a
+
+              <% elsif user.status %>
+                  <% if user.status.final%>
+                      <strong>
+                        <%= user.status.name %>
+                        <% if user.status.description && !user.status.description.empty? %>
+                            - <%= user.status.description %>
+                        <% end %>
+                      </strong>
+
+                  <% else %>
+                      <%= render_status_view(user.id, user.status) %>
+                  <% end %>
+
               <% else %>
                 ---
               <% end %>
             </td>
-            <td class="text-center">
-              <% if user.status %>
-                  <%= user.status.name %>
+            <td>
+              <% if !user.at_least_a_content_manager? %>
+                  <%= render_phi_view(user.id) %>
               <% else %>
-                ---
+                  n/a
+              <% end %>
+            </td>
+            <td>
+              <% if !user.at_least_a_content_manager? %>
+                  <%= render_screening_view(user.id) %>
+              <% else %>
+                  n/a
               <% end %>
             </td>
           </tr>
@@ -48,7 +62,10 @@
       </tbody>
     </table>
 
-    <section class="modal fade custom large-modal" id="user-consent-modal-window" role="dialog"  aria-labelledby="userConsentModal" aria-hidden="true" ></section>
+    <section class="modal fade custom large-modal user-consent" id="user-consent-modal-window" role="dialog"  aria-labelledby="userConsentModal" aria-hidden="true" ></section>
+    <section class="modal fade custom small-modal phi" id="phi-modal-window" role="dialog"  aria-labelledby="phiModal" aria-hidden="true" ></section>
+    <section class="modal fade custom small-modal screening" id="screening-modal-window" role="dialog"  aria-labelledby="screeningModal" aria-hidden="true" ></section>
+    <section class="modal fade custom small-modal status" id="status-modal-window" role="dialog"  aria-labelledby="statusModal" aria-hidden="true" ></section>
 
     <button type="button" class="btn btn-danger btn-lg btn-user-export">
       <%= link_to 'Export to CSV', user_admin_path(:format => :csv)%>

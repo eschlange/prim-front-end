@@ -6,6 +6,9 @@ class ScreeningsController < ApplicationController
 
   # GET /screenings/1
   def show
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /screenings/new

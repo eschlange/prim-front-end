@@ -1,19 +1,24 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'macs'
-set :repo_url, "git@github.com:cbitstech/#{ fetch(:application) }.git"
+set :application, 'prim'
+set :application_git_name, 'prim-front-end'
+set :repo_url, "git@github.com:eschlange/#{ fetch(:application_git_name) }.git"
 set :rvm_type, :system
 set :rvm_ruby_version, '2.1.1'
+
+set :whenever_identifier, ->{ "#{ fetch(:application) }_#{ fetch(:stage) }" }
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-if fetch(:stage) == :staging
-  set :deploy_to, "/var/www/apps/#{ fetch(:application) }"
-elsif fetch(:stage) == :production
+if fetch(:stage) == :production
   set :deploy_to, "/var/www/html/src/#{ fetch(:application) }"
+elsif fetch(:stage) == :staging
+  set :deploy_to, "/var/www/apps/#{ fetch(:application) }"
+elsif fetch(:stage) == :qa
+  set :deploy_to, "/var/www/apps/#{ fetch(:application) }_qa"
 end
 
 # Default value for :scm is :git
@@ -36,9 +41,6 @@ set :linked_files, ["config/database.yml",
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
@@ -47,13 +49,14 @@ namespace :deploy_prepare do
   desc 'Configure virtual host'
   task :create_vhost do
     on roles(:web), in: :sequence, wait: 5 do
+
       staging_vhost_config = <<-EOF
 NameVirtualHost *:80
 NameVirtualHost *:443
 
 <VirtualHost *:80>
-  ServerName macs-staging.cbits.northwestern.edu
-  Redirect permanent / https://macs-staging.cbits.northwestern.edu/
+  ServerName prim-staging.cbits.northwestern.edu
+  Redirect permanent / https://prim-staging.cbits.northwestern.edu/
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -61,7 +64,7 @@ NameVirtualHost *:443
   PassengerAppEnv staging
   PassengerRuby /usr/local/rvm/wrappers/ruby-2.1.1/ruby
 
-  ServerName macs-staging.cbits.northwestern.edu
+  ServerName prim-staging.cbits.northwestern.edu
 
   SSLEngine On
 #  SSLCertificateFile /etc/pki/tls/certs/cbits-railsapps.nubic.northwestern.edu.crt
@@ -82,41 +85,15 @@ NameVirtualHost *:443
 </VirtualHost>
       EOF
 
-      production_vhost_config = <<-EOF
-NameVirtualHost *:80
-NameVirtualHost *:443
+      vhost_config = {
+        staging: staging_vhost_config
+      }
 
-<VirtualHost *:80>
-  ServerName macs.northwestern.edu
-  Redirect permanent / https://macs.northwestern.edu/
-</VirtualHost>
-
-<VirtualHost *:443>
-  PassengerFriendlyErrorPages off
-  PassengerAppEnv production
-  PassengerRuby /usr/local/rvm/wrappers/ruby-2.1.1/ruby
-
-  ServerName macs.northwestern.edu
-
-  SSLEngine On
-  SSLCertificateFile /etc/pki/tls/certs/cbits-railsapps.nubic.northwestern.edu.crt
-  SSLCertificateChainFile /etc/pki/tls/certs/komodo_intermediate_ca.crt
-  SSLCertificateKeyFile /etc/pki/tls/private/cbits-railsapps.nubic.northwestern.edu.key
-
-  DocumentRoot #{ fetch(:deploy_to) }/current/public
-  RailsBaseURI /
-  PassengerDebugLogFile /var/log/httpd/passenger.log
-
-  <Directory #{ fetch(:deploy_to) }/current/public >
-    Allow from all
-    Options -MultiViews
-  </Directory>
-</VirtualHost>
-      EOF
-
-      vhost_config = { staging: staging_vhost_config, production: production_vhost_config }
-
-      execute :echo, "\"#{ vhost_config[fetch(:stage)] }\"", ">", "/etc/httpd/conf.d/#{ fetch(:application) }.conf"
+      if fetch(:stage) == :qa
+        execute :echo, "\"#{ vhost_config[:qa] }\"", ">", "/etc/httpd/conf.d/#{ fetch(:application) }_qa.conf"
+      else
+        execute :echo, "\"#{ vhost_config[fetch(:stage)] }\"", ">", "/etc/httpd/conf.d/#{ fetch(:application) }.conf"
+      end
     end
   end
 

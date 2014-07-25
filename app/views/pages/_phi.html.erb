@@ -1,0 +1,34 @@
+<div>
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h2>PHI Information for Participant <%= retrieve_user(user_id).external_id %></h2>
+  </div>
+
+  <div class="modal-body">
+    <div class="divider"></div>
+
+    <table class="table">
+      <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th class="text-center">future contact</th>
+        <th>consent date</th>
+      </tr>
+      <tr>
+        <td><%= retrieve_user(user_id).first_name %></td>
+        <td><%= retrieve_user(user_id).last_name %></td>
+        <td><%= retrieve_user(user_id).email %></td>
+        <td><%= retrieve_user(user_id).phone %></td>
+        <td class="text-center"><% if retrieve_user(user_id).future_contact?  %>
+              <span class="glyphicon glyphicon-check" style="color:green"></span>
+          <% else %>
+              <span class="glyphicon glyphicon-minus-sign" style="color:red"></span>
+          <% end %>
+        </td>
+        <td><%= retrieve_user(user_id).created_at.strftime("%m/%d/%Y") %></td>
+      </tr>
+    </table>
+  </div>
+</div>
