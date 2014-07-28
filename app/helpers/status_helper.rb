@@ -1,10 +1,10 @@
 module StatusHelper
   def retrieve_status(user_id)
-    user = User.find_by(user_id)
+    user = User.find(user_id)
     participants = Participant.find(:all, :params => {:external_id => user.external_id})
     participant = participants[0]
     statuses = Status.find(:all, :params => { :participant_id => participant.id })
-    @status = statuses[0]
+    statuses[0]
   end
 
   def render_status_view(user_id, status)

@@ -31,11 +31,14 @@ Macs::Application.routes.draw do
   get "index/index"
   get "about", to: "about#index"
 
-  ## Modal routes
+  post '/statuses' => 'statuses#update'
+
+  ## START Modal Routes
   get "site_image/update" => 'pages#image_update', :as => :site_image_update
   get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', :as => :irb_acceptance_image_update
   get "user_consent/show" => 'pages#user_consent_view', :as => :user_consent_view
   get "phi/show" => 'pages#phi_view', :as => :phi
   get "screenings/show" => 'pages#screening_view', :as => :screening
   get "statuses/show" => 'pages#status_view', :as => :status
+  ## END Modal Routes
 end
