@@ -11,7 +11,7 @@
         <%= hidden_field_tag(:id, retrieve_status(user_id).id) %>
         <%= hidden_field_tag(:user_id, user_id) %>
         <%= select(:status, :name, [['Enrolled'],['Screening in Progress'],['Not Enrolled']], selected: retrieve_status(user_id).name, id: 'status_name') %>
-        <%= select(:status, :description, [['test'],['test2']], id: 'status_description') %>
+        <%= select(:status, :description, [], id: 'status_description') %>
         <div class="actions">
             <%= submit_tag 'Update', class: 'btn btn-default', :onclick => 'location.reload();' %>
         </div>
@@ -25,41 +25,47 @@
     $('#status_description option').each(function() {
         $(this).remove();
     });
-
-    var descriptions = $('#status_description');
-    switch ($('#status_name').val()) {
-        case 'Enrolled':
-            descriptions.append(new Option('Enrolled in 12 Wk Field Trial: Wave 1'));
-            descriptions.append(new Option('Enrolled in 12 Wk Field Trial: Wave 2'));
-            descriptions.append(new Option('Enrolled in Practice SC'));
-            break;
-        case 'Screening in Progress':
-            descriptions.append(new Option('RA attempting to schedule baseline'));
-            descriptions.append(new Option('RA attempting to schedule telephone screening'));
-            descriptions.append(new Option('RA scheduled telephone screening'));
-            descriptions.append(new Option('Baseline in-progress'));
-            descriptions.append(new Option('Baseline Scheduled'));
-            descriptions.append(new Option('Eligibility review in progress'));
-            descriptions.append(new Option('On hold temporarily'));
-            descriptions.append(new Option('To Be Considered during next recruitment push'));
-            descriptions.append(new Option('Waitlisted'));
-            descriptions.append(new Option('Under Review'));
-            descriptions.append(new Option('Waiting for consent to be signed'));
-            break;
-        case 'Not Enrolled':
-            descriptions.append(new Option('Admin Drop'));
-            descriptions.append(new Option('Could not be contacted'));
-            descriptions.append(new Option('Declined to Participate'));
-            descriptions.append(new Option('Did not complete baseline'));
-            descriptions.append(new Option('Does not meet entry criteria'));
-            descriptions.append(new Option('Not interested in study'));
-            descriptions.append(new Option('Other'));
-            descriptions.append(new Option('Refused to Give Consent'));
-            descriptions.append(new Option('Screen fail'));
-            descriptions.append(new Option('Withdrew Consent'));
-            break;
-    }
-
+    populateDescriptions();
   }
-  $('#status_name').change(updateStatusDescriptions);
+
+  function populateDescriptions() {
+      var descriptions = $('#status_description');
+      switch ($('#status_name').val()) {
+          case 'Enrolled':
+              descriptions.append(new Option('---', ''));
+              descriptions.append(new Option('Enrolled in 12 Wk Field Trial: Wave 1'));
+              descriptions.append(new Option('Enrolled in 12 Wk Field Trial: Wave 2'));
+              descriptions.append(new Option('Enrolled in Practice SC'));
+              break;
+          case 'Screening in Progress':
+              descriptions.append(new Option('---', ''));
+              descriptions.append(new Option('RA attempting to schedule baseline'));
+              descriptions.append(new Option('RA attempting to schedule telephone screening'));
+              descriptions.append(new Option('RA scheduled telephone screening'));
+              descriptions.append(new Option('Baseline in-progress'));
+              descriptions.append(new Option('Baseline Scheduled'));
+              descriptions.append(new Option('Eligibility review in progress'));
+              descriptions.append(new Option('On hold temporarily'));
+              descriptions.append(new Option('To Be Considered during next recruitment push'));
+              descriptions.append(new Option('Waitlisted'));
+              descriptions.append(new Option('Under Review'));
+              descriptions.append(new Option('Waiting for consent to be signed'));
+              break;
+          case 'Not Enrolled':
+              descriptions.append(new Option('---', ''));
+              descriptions.append(new Option('Admin Drop'));
+              descriptions.append(new Option('Could not be contacted'));
+              descriptions.append(new Option('Declined to Participate'));
+              descriptions.append(new Option('Did not complete baseline'));
+              descriptions.append(new Option('Does not meet entry criteria'));
+              descriptions.append(new Option('Not interested in study'));
+              descriptions.append(new Option('Other'));
+              descriptions.append(new Option('Refused to Give Consent'));
+              descriptions.append(new Option('Screen fail'));
+              descriptions.append(new Option('Withdrew Consent'));
+              break;
+      }
+      $('#status_description').val('<%= retrieve_status(user_id).description %>').attr('selected', 'selected');
+  }
+  $(document).ready(populateDescriptions());
 </script>
