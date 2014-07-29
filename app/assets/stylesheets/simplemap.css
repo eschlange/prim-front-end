@@ -21,4 +21,5 @@
  *= require simplemap/scaffolds
  *= require simplemap/sites
  *= require simplemap/user_admin
+ *= require bootstrap-select.min
  */

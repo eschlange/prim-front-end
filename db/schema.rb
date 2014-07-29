@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722181443) do
+ActiveRecord::Schema.define(version: 20140729135358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -281,6 +281,16 @@ ActiveRecord::Schema.define(version: 20140722181443) do
   add_index "site_images", ["site_id"], name: "index_site_images_on_site_id", using: :btree
   add_index "site_images", ["user_id"], name: "index_site_images_on_user_id", using: :btree
 
+  create_table "site_phis", force: true do |t|
+    t.integer "site_id"
+    t.string  "type"
+    t.integer "position"
+    t.boolean "active"
+    t.boolean "required"
+  end
+
+  add_index "site_phis", ["site_id"], name: "index_site_phis_on_site_id", using: :btree
+
   create_table "sites", force: true do |t|
     t.string   "name"
     t.text     "content"
@@ -302,6 +312,16 @@ ActiveRecord::Schema.define(version: 20140722181443) do
   end
 
   add_index "social_security_numbers", ["participant_id"], name: "index_social_security_numbers_on_participant_id", using: :btree
+
+  create_table "statuses", force: true do |t|
+    t.integer "participant_id"
+    t.integer "site_id"
+    t.string  "name"
+    t.string  "description"
+    t.boolean "final"
+  end
+
+  add_index "statuses", ["participant_id"], name: "index_statuses_on_participant_id", using: :btree
 
   create_table "user_consents", force: true do |t|
     t.integer  "site_id"

@@ -90,5 +90,18 @@ class RegistrationsController < Devise::RegistrationsController
     resource.external_id = @participant.external_id
     resource.save
     Status.create(name: 'Screening in Progress', description: '', participant_id: @participant.id, final: false, site_id: site_id)
+    save_prim_participant_phi(sign_up_params, @participant.id)
   end
+
+  def save_prim_participant_phi(sign_up_params, participant_id)
+    puts params.inspect
+    Address.create(
+      street_1: params[:address][:street_1],
+      city: params[:address][:city],
+      state: params[:address][:state],
+      zip: params[:address][:zip],
+      primary: true,
+      participant_id: participant_id)
+  end
+
 end

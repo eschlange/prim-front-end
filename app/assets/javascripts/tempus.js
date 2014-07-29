@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.form.min
+//= require bootstrap-select.min
 
 //= require js/script
 //= require best_in_place

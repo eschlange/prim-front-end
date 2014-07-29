@@ -40,6 +40,12 @@ class User < ActiveRecord::Base
       :email,
       :future_contact,
       :role_identifier,
-      :site_id)
+      :site_id,
+      :dob,
+      :address,
+      :street_1,
+      :city,
+      :state,
+      :zip)
   end
 end

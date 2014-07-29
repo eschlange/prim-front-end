@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.form.min
+//= require bootstrap-select.min
 
 // = require js/vendor/bootstrap.min
 // = require js/vendor/modernizr-2.6.2-respond-1.1.0.min

@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :id
+    devise_parameter_sanitizer.for(:sign_up).push(:id, :address, :dob, :street_1, :city, :state, :zip)
   end
 
   private

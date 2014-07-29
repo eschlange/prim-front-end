@@ -4,13 +4,33 @@
         <h3>Consent</h3>
         <p>I have read this consent form. I agree to be in the research study described above. I agree to participate in the research study described above; this is signified by checking the box below and typing my name in the form provided. I will print a copy of this consent form for my records after I complete this authorization.</p>
 
-        <div class="form-inputs">
+        <div class="form-inputs standard">
           <%= f.error_notification %>
           <%= hidden_field_tag 'site_id', @site.id %>
           <%= f.input :first_name, :required => true, :autofocus => true %>
           <%= f.input :last_name, :required => true %>
-          <%= f.input :phone, :required => false %>
-          <%= f.input :email, :required => false %>
+          <%= f.input :email, :required => true %>
+          <%= f.input :phone, :required => true %>
+        </div>
+
+        <div id="dob" class="phi dob">
+          <label><abbr title="required">*</abbr>&nbsp;</label><%= label_tag(:dob, "Date of Birth") %><br>
+          <%= date_select :dob, 'dob', {start_year: 1900}, {class: "selectpicker"} %>
+        </div>
+
+        <div id="address" class="phi address">
+          <%= label_tag("Address") %><br><br>
+          <%= label_tag(:street, "Street") %><br>
+          <%= text_field :address, :street_1  %><br>
+          <%= label_tag(:city, "City") %><br>
+          <%= text_field :address, :city  %><br>
+          <%= label_tag(:state, "State") %><br>
+          <%= text_field :address, :state  %><br>
+          <%= label_tag(:zip, "Zip Code") %><br>
+          <%= text_field :address, :zip  %><br>
+        </div>
+
+        <div class="form-inputs standard">
           <%= f.input :future_contact , :as => :radio_buttons, collection: [['I agree that someone may contact me in the future, after my participation in this study is over, to ask me to be in more research. Agreeing to be contacted increases the risk to my privacy. It will be my responsibility to tell the project if my contact information changes', true]], label:"Please choose one of the following:" %>
           <%= f.input :future_contact , :as => :radio_buttons, collection: [['I do not agree that someone may contact me in the future, after my participation in this study is over, to ask me to be in more research.', false]], label:"" %>
         </div>
@@ -29,3 +49,5 @@
     <div class="col-sm-4 col-xs-8"></div>
   </div> <!-- /.row -->
 </section>
+
+<script>$('.selectpicker').selectpicker();</script>
