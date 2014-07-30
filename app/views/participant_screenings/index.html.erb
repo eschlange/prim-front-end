@@ -1,0 +1,20 @@
+<section id="screening" class="screening">
+  <div class="container text-left">
+    <h1>Participant Screening</h1>
+
+    <%= form_tag('/sites/' + @site.id.to_s + '/participant_screenings', method: 'post') do %>
+        <% @questions.each do |question| %>
+          <div class="screening-question-container">
+            <div class="screening-question-value">
+              <%= question.question_value %>
+            </div>
+            <div class="screening-answer-field">
+              <%= text_field_tag  question.id %>
+            </div>
+          </div>
+        <% end %>
+        <%= submit_tag('Submit') %>
+    <% end %>
+
+  </div>
+</section>

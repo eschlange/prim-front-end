@@ -1,6 +1,11 @@
 module ScreeningHelper
-  def retrieve_user(user_id)
-    User.where(id: user_id).first
+  def retrieve_screenings(user_id)
+    user = User.find(user_id)
+    participants = Participant.find(:all, :params => {:external_id => user.external_id})
+    participant = participants[0]
+    @screenings = Screening.find(:all, :params => {:participant_id => participant.id})
+    puts @screenings.inspect
+    @screenings
   end
 
   def render_screening_view(user_id)

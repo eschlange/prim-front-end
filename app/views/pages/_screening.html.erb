@@ -6,6 +6,22 @@
 
   <div class="modal-body">
     <div class="divider"></div>
-    Screening info goes here
+    <div class="screening-question-answer">
+      <table class="table">
+        <tbody>
+        <tr>
+          <th>Question</th>
+          <th>Response</th>
+        </tr>
+
+        <% retrieve_screenings(user_id).each do |screening| %>
+          <tr>
+            <td><%= screening.question %></td>
+            <td><%= screening.answer %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

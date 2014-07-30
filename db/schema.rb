@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729135358) do
+ActiveRecord::Schema.define(version: 20140730152327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -239,7 +239,7 @@ ActiveRecord::Schema.define(version: 20140729135358) do
 
   create_table "screening_answers", force: true do |t|
     t.integer "screening_question_id"
-    t.string  "value"
+    t.string  "answer_value"
     t.integer "position"
     t.boolean "active"
   end
@@ -248,8 +248,8 @@ ActiveRecord::Schema.define(version: 20140729135358) do
 
   create_table "screening_questions", force: true do |t|
     t.integer "site_id"
-    t.string  "type"
-    t.string  "value"
+    t.string  "question_type"
+    t.string  "question_value"
     t.integer "position"
     t.boolean "active"
   end

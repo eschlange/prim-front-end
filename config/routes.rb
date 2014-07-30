@@ -1,5 +1,7 @@
 Macs::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  ## START Resources
   resources :interventions
   resources :sites do
     get "pages/home"
@@ -16,29 +18,34 @@ Macs::Application.routes.draw do
   resources :intervention
   resources :consent
   resources :point_of_contacts
+  ## END Resources
 
+  ## START Devise routes configuration
   devise_for :users,
              :path => "sites/:site_id/users",
              :controllers => { confirmations: "confirmations", registrations: "registrations" }
-
   devise_scope :user do
     put "/confirm" => "confirmations#confirm"
   end
+  ## END Devise routes configuration
 
+  ## START Single page routes
   root "pages#home"
   get "user_admin", to: "user_admin#index"
   get "homes/index"
   get "index/index"
   get "about", to: "about#index"
-
+  get "sites/:site_id/participant_screenings", to: "participant_screenings#index"
+  post "sites/:site_id/participant_screenings", to: "participant_screenings#create"
   post '/statuses' => 'statuses#update'
+  ## END Single page routes
 
-  ## START Modal Routes
+  ## START Modal routes
   get "site_image/update" => 'pages#image_update', :as => :site_image_update
   get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', :as => :irb_acceptance_image_update
   get "user_consent/show" => 'pages#user_consent_view', :as => :user_consent_view
   get "phi/show" => 'pages#phi_view', :as => :phi
   get "screenings/show" => 'pages#screening_view', :as => :screening
   get "statuses/show" => 'pages#status_view', :as => :status
-  ## END Modal Routes
+  ## END Modal routes
 end
