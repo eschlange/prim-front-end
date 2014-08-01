@@ -25,8 +25,11 @@ class UserAdminController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        filename = "participants-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
-        send_admin_csv(filename)
+        if user_admin_params[:export_data] == 'phi'
+          send_phi_csv
+        elsif user_admin_params[:export_data] == 'screening'
+          send_screening_csv
+        end
       end
 
     end
@@ -34,10 +37,18 @@ class UserAdminController < ApplicationController
 
   private
 
-  def send_admin_csv(filename)
+  def send_phi_csv
     send_data(
       @users.to_csv(only: [:first_name, :last_name, :email, :phone, :created_at, :future_contact, :role_identifier]),
       type: 'text/csv; charset=utf-8; header=present',
-      filename: filename)
+      filename: "participants-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv")
+  end
+
+  def send_screening_csv
+    puts 'screening upload'
+  end
+
+  def user_admin_params
+    params.permit(:export_data)
   end
 end

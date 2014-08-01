@@ -29,6 +29,7 @@
   }
 
   function populateDescriptions() {
+      alert('test')
       var descriptions = $('#status_description');
       switch ($('#status_name').val()) {
           case 'Enrolled':
@@ -67,5 +68,7 @@
       }
       $('#status_description').val('<%= retrieve_status(user_id).description %>').attr('selected', 'selected');
   }
+
   $(document).ready(populateDescriptions());
+  $('#status_name').change(updateStatusDescriptions);
 </script>

@@ -6,6 +6,10 @@
         <tr>
           <th>ID</th>
           <th>Role</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>Consent Version</th>
           <th>Status</th>
           <th>PHI</th>
@@ -15,6 +19,11 @@
           <tr>
             <td><%= user.external_id %></td>
             <td><%= user.role_name %></td>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td style="white-space: nowrap;"><%= user.phone %></td>
+
             <td>
               <% if !user.at_least_a_content_manager? %>
                 <%= render_user_consent_view(@site.id, user.id) %>
@@ -68,7 +77,11 @@
     <section class="modal fade custom small-modal status" id="status-modal-window" role="dialog"  aria-labelledby="statusModal" aria-hidden="true" ></section>
 
     <button type="button" class="btn btn-danger btn-lg btn-user-export">
-      <%= link_to 'Export to CSV', user_admin_path(:format => :csv)%>
+      <%= link_to 'PHI to CSV', user_admin_path(format: :csv, export_data: 'phi')%>
+    </button>
+
+    <button type="button" class="btn btn-danger btn-lg btn-user-export">
+      <%= link_to 'Screening to CSV', user_admin_path(format: :csv, export_data: 'screening')%>
     </button>
 
   </div>

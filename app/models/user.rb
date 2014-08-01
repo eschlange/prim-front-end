@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :participant, :status
 
+  validates_with CustomUserRegistrationValidator
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
