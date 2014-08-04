@@ -7,7 +7,7 @@ module ScreeningHelper
     puts @screenings.inspect
     @screenings
   end
-
+``
   def render_screening_view(user_id)
     if current_user && (current_user.at_least_a_admin?)
       link_to 'screening',

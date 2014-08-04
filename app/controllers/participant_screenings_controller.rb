@@ -9,10 +9,6 @@ class ParticipantScreeningsController < ApplicationController
   # GET /sites/1/participant_screenings
   def index
     ##TODO Check that current user needs to be screened.
-    @questions.each do |question|
-      question.screening_answers = ScreeningAnswer.where(screening_question_id: question.id).order(position: :asc)
-    end
-
     respond_to do |format|
       format.html
     end
@@ -24,11 +20,20 @@ class ParticipantScreeningsController < ApplicationController
     participants = Participant.find(:all, :params => {:external_id => user.external_id})
     participant = participants[0]
 
-    puts participant_screening_params.inspect
-    puts participant_screening_params["1"]
-
     @questions.each do |question|
-      Screening.create(question: question.question_value, answer: participant_screening_params[question.id.to_s], site_id: @site.id, participant_id: participant.id)
+
+      if question.question_type == "CHECK_BOX"
+        answers = ''
+        question.screening_answers.each do |answer|
+          if participant_screening_params[question.id.to_s][answer.id.to_s]
+            puts participant_screening_params[question.id.to_s][answer.id.to_s].inspect
+            answers += ' |' + participant_screening_params[question.id.to_s][answer.id.to_s][0] + '| '
+          end
+        end
+      else
+        answers = participant_screening_params[question.id.to_s]
+      end
+      Screening.create(question: question.question_value, answer: answers, site_id: @site.id, participant_id: participant.id)
     end
 
     redirect_to('/sites/' + params[:site_id] + '/pages/home')
@@ -42,5 +47,8 @@ class ParticipantScreeningsController < ApplicationController
 
   def set_questions
     @questions = ScreeningQuestion.where(site_id: @site.id.to_s).order(position: :asc)
+    @questions.each do |question|
+      question.screening_answers = ScreeningAnswer.where(screening_question_id: question.id).order(position: :asc)
+    end
   end
 end

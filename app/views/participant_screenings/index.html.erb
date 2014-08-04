@@ -1,17 +1,62 @@
 <section id="screening" class="screening">
+
   <div class="container text-left">
-    <h1>Participant Screening</h1>
+
+    <div class="page-header">
+        <h1>Participant Screening</h1>
+    </div>
 
     <%= form_tag('/sites/' + @site.id.to_s + '/participant_screenings', method: 'post') do %>
         <% @questions.each do |question| %>
-          <div class="screening-question-container">
-            <div class="screening-question-value">
-              <%= question.question_value %>
+
+          <% if question.question_type == 'TEXT_FIELD' %>
+              <div class="panel panel-info screening-question-container">
+                <div class="panel-heading screening-question-value">
+                  <h3 class="panel-title"><%= question.question_value %></h3>
+                </div>
+                <div class="panel-body screening-answer-field">
+                  <%= text_field_tag  question.id %>
+                </div>
+              </div>
+          <% elsif question.question_type == 'RADIO_BUTTON' %>
+            <div class="panel panel-info screening-question-container">
+              <div class="panel-heading screening-question-value">
+                <h3 class="panel-title"><%= question.question_value %></h3>
+              </div>
+              <div class="panel-body radio-fields">
+                <% question.screening_answers.each do |answer| %>
+                    <div class="screening-answer-field">
+                      <%= radio_button_tag question.id, answer.answer_value %>
+                      <%= label question.id.to_s+"_"+answer.answer_value, answer.answer_value %>
+                    </div>
+                <% end %>
+              </div>
             </div>
-            <div class="screening-answer-field">
-              <%= text_field_tag  question.id %>
+          <% elsif question.question_type == 'TEXT_AREA' %>
+            <div class="panel panel-info screening-question-container">
+              <div class="panel-heading screening-question-value">
+                <h3 class="panel-title"><%= question.question_value %></h3>
+              </div>
+              <div class="panel-body screening-answer-field">
+                <%= text_area_tag  question.id %>
+              </div>
             </div>
-          </div>
+          <% elsif question.question_type == 'CHECK_BOX' %>
+            <div class="panel panel-info screening-question-container">
+              <div class="panel-heading screening-question-value">
+                <h3 class="panel-title"><%= question.question_value %></h3>
+              </div>
+              <div class="panel-body check-box-fields">
+                <% question.screening_answers.each do |answer| %>
+                    <div class="screening-answer-field">
+                      <%= check_box question.id.to_s, answer.id, { :multiple => true }, answer.answer_value, nil %>
+                      <%= label question.id.to_s+"_"+answer.answer_value, answer.answer_value %>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
         <% end %>
         <%= submit_tag('Submit') %>
     <% end %>

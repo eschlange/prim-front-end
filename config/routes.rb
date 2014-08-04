@@ -29,14 +29,15 @@ Macs::Application.routes.draw do
   end
   ## END Devise routes configuration
 
-  ## START Single page routes
+  ## START Single page or ajax routes
   root "pages#home"
   get "user_admin", to: "user_admin#index"
   get "homes/index"
   get "index/index"
   get "about", to: "about#index"
   get "sites/:site_id/participant_screenings", to: "participant_screenings#index"
-  post "sites/:site_id/participant_screenings", to: "participant_screenings#create"
+  get '/sites/:sites_id/user/:user_id/toggle_screening', to: 'user_screeening_flags#update'
+  post 'sites/:site_id/participant_screenings', to: 'participant_screenings#create'
   post '/statuses' => 'statuses#update'
   ## END Single page routes
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730152327) do
+ActiveRecord::Schema.define(version: 20140804193919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -336,6 +336,15 @@ ActiveRecord::Schema.define(version: 20140730152327) do
 
   add_index "user_consents", ["site_id"], name: "index_user_consents_on_site_id", using: :btree
   add_index "user_consents", ["user_id"], name: "index_user_consents_on_user_id", using: :btree
+
+  create_table "user_screening_flags", force: true do |t|
+    t.integer "user_id"
+    t.integer "site_id"
+    t.boolean "active"
+  end
+
+  add_index "user_screening_flags", ["site_id"], name: "index_user_screening_flags_on_site_id", using: :btree
+  add_index "user_screening_flags", ["user_id"], name: "index_user_screening_flags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false

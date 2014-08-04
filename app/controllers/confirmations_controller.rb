@@ -39,7 +39,6 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_resending_confirmation_instructions_path_for(resource)
-    site_user = SitesUser.find_by(user_id: resource.id)
-    '/sites/' + site_user.site_id.to_s + '/pages/home'
+    '/sites/' + params[:site_id] + '/pages/home'
   end
 end
