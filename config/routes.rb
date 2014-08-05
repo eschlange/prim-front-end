@@ -36,17 +36,17 @@ Macs::Application.routes.draw do
   get "index/index"
   get "about", to: "about#index"
   get "sites/:site_id/participant_screenings", to: "participant_screenings#index"
-  get '/sites/:sites_id/user/:user_id/toggle_screening', to: 'user_screeening_flags#update'
+  get '/sites/:sites_id/user/:user_id/toggle_screening', to: 'user_screening_flags#update', as: 'toggle_screening'
   post 'sites/:site_id/participant_screenings', to: 'participant_screenings#create'
   post '/statuses' => 'statuses#update'
   ## END Single page routes
 
   ## START Modal routes
-  get "site_image/update" => 'pages#image_update', :as => :site_image_update
-  get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', :as => :irb_acceptance_image_update
-  get "user_consent/show" => 'pages#user_consent_view', :as => :user_consent_view
-  get "phi/show" => 'pages#phi_view', :as => :phi
-  get "screenings/show" => 'pages#screening_view', :as => :screening
-  get "statuses/show" => 'pages#status_view', :as => :status
+  get "site_image/update" => 'pages#image_update', as: :site_image_update
+  get "irb_acceptance_image/update" => 'pages#irb_acceptance_image_update', as: :irb_acceptance_image_update
+  get "user_consent/show" => 'pages#user_consent_view', as: :user_consent_view
+  get "phi/show" => 'pages#phi_view', as: :phi
+  get "screenings/show" => 'pages#screening_view', as: :screening
+  get "statuses/show" => 'pages#status_view', as: :status
   ## END Modal routes
 end

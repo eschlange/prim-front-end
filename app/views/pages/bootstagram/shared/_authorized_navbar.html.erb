@@ -3,4 +3,7 @@
     <li><a href="/sites/<%= @site.id %>/users/sign_up">enroll</a></li>
     <li><a href="/user_admin">users</a></li>
 <% end %>
+<% if user_screening_flag(current_user, @site) && user_screening_flag(current_user, @site).active  %>
+    <li><a href="/sites/<%= @site.id %>/participant_screenings">screening</a></li>
+<% end %>
 <li><%= link_to "logout", destroy_user_session_path(:site_id => @site.id), :method => :delete %></li>

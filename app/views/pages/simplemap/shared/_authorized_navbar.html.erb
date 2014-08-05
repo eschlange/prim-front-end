@@ -3,4 +3,7 @@
     <li><a href="#" onclick="window.location = '/sites/' + <%= @site.id %> + '/users/sign_up'" style="cursor: pointer;">edit enrollment</a></li>
     <li><a href="#" onclick="window.location = '/user_admin'" style="cursor: pointer;">user admin</a></li>
 <% end %>
+<% if user_screening_flag(current_user, @site) && user_screening_flag(current_user, @site).active  %>
+    <li><a href="/sites/<%= @site.id %>/participant_screenings">screening</a></li>
+<% end %>
 <li><%= link_to "sign out", destroy_user_session_path(:site_id => @site.id), :method => :delete %></li>

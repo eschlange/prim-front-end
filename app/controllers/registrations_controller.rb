@@ -14,6 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
       save_prim_participant(sign_up_params, resource, site_id)
       associate_site_with_user(resource, site_id)
       SitesUser.create(site_id: site_id, user_id: resource.id)
+      UserScreeningFlag.create(site_id: site_id, user_id: resource.id, active: false)
     else
       clean_up_passwords resource
       respond_with resource

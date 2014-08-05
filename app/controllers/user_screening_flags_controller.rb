@@ -1,7 +1,7 @@
 # Handles toggling of user screening status.
 # @author Eric Schlange <eric.schlange@northwestern.edu>
 class UserScreeningFlagsController < ApplicationController
-  before_action :set_user
+  before_action :set_user_screening_flag
 
   # GET /statuses/new
   def new
@@ -15,7 +15,7 @@ class UserScreeningFlagsController < ApplicationController
   # POST /statuses
   def create
     @user_screening_flag = UserScreeningFlag.new(user_screening_flag_params)
-    if @status.save
+    if @user_screening_flag.save
       redirect_to @status, notice: 'Status was successfully created.'
     else
       render action: 'new'
@@ -24,7 +24,7 @@ class UserScreeningFlagsController < ApplicationController
 
   # PATCH/PUT /statuses/1
   def update
-    @user_screening_flag = UserScreeningFlag.find_or_create_by(user_screening_flag_params)
+    @user_screening_flag = UserScreeningFlag.find_or_create_by(user_id: params[:user_id], site_id: params[:site_id])
     @user_screening_flag.active = !@user_screening_flag.active
     @user_screening_flag.save
     render nothing: true
@@ -38,6 +38,6 @@ class UserScreeningFlagsController < ApplicationController
   end
 
   def set_user_screening_flag
-    user = UserScreeningFlag.where(user_id: params[:user_id], site_id: params[:site_id])
+    flag = UserScreeningFlag.where(user_id: params[:user_id], site_id: params[:site_id])
   end
 end

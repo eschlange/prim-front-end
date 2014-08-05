@@ -14,9 +14,10 @@
           <th>Status</th>
           <th>PHI</th>
           <th>Screening</th>
+          <th></th>
         </tr>
         <% @users.each do |user| %>
-          <tr>
+          <tr id="user_<%= user.id %>">
             <td><%= user.external_id %></td>
             <td><%= user.role_name %></td>
             <td><%= user.first_name %></td>
@@ -66,7 +67,18 @@
                   n/a
               <% end %>
             </td>
+            <td><%= link_to user_screening_link_text(user, @site), toggle_screening_path(sites_id: @site.id, user_id: user.id), remote: true, id: "toggle_screening_#{user.id}" %></td>
           </tr>
+          <script>
+              $("#toggle_screening_<%= user.id %>").click( function() {
+                  if ($("#toggle_screening_<%= user.id %>").text() == 'Screening Enabled')
+                    $("#toggle_screening_<%= user.id %>").text('Screening Disabled');
+                  else
+                    $("#toggle_screening_<%= user.id %>").text('Screening Enabled');
+                  $("#user_<%= user.id %>").effect("highlight", {}, 1500);
+                });
+
+          </script>
         <% end %>
       </tbody>
     </table>

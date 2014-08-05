@@ -3,6 +3,7 @@
 class User < ActiveRecord::Base
   include Role
   has_many :user_consents
+  has_one :user_screening_flag
 
   attr_accessor :participant, :status
 
