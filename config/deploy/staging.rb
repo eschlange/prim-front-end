@@ -15,7 +15,7 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'macs-staging.cbits.northwestern.edu', user: 'deploy', roles: %w{web db}, primary: true
+server 'prim-staging.cbits.northwestern.edu', user: 'deploy', roles: %w{web db}, primary: true
 
 
 # Custom SSH Options
