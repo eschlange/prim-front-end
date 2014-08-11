@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Macs::Application.config.secret_key_base = '40beaf47d02b56dc8f862263f0f388f4a4ce36b386ed1984bfc7a57490d09d78702ea4b09c81a4e9a18de368f807b85eb3694477a8ed053cd31e2a668b1cb6de'
+PrimFrontEnd::Application.config.secret_key_base = '40beaf47d02b56dc8f862263f0f388f4a4ce36b386ed1984bfc7a57490d09d78702ea4b09c81a4e9a18de368f807b85eb3694477a8ed053cd31e2a668b1cb6de'

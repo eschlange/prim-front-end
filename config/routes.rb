@@ -1,4 +1,4 @@
-Macs::Application.routes.draw do
+PrimFrontEnd::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   ## START Resources
