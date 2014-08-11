@@ -14,6 +14,7 @@ gem "simple_form"
 gem "thin"
 gem "font-awesome-rails"
 gem "best_in_place", github: 'aaronchi/best_in_place'
+gem 'whenever'
 
 gem "to_csv-rails", '~> 0.1.5'
 
