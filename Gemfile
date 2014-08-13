@@ -3,6 +3,7 @@ gem "pg"
 gem "rails", ">= 4.0.5"
 gem "sass-rails", '~> 4.0.0'
 gem "less-rails"
+gem "therubyracer"
 gem "bootstrap-sass"
 gem "uglifier"
 gem "jquery-rails"

@@ -138,6 +138,7 @@ GEM
     less-rails (2.5.0)
       actionpack (>= 3.1)
       less (~> 2.5.0)
+    libv8 (3.16.14.3)
     listen (2.7.9)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -210,6 +211,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    ref (1.0.5)
     remotipart (1.2.1)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -255,6 +257,9 @@ GEM
       colorize
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
     thin (1.6.2)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -312,6 +317,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0.1)
   sass-rails (~> 4.0.0)
   simple_form
+  therubyracer
   thin
   to_csv-rails (~> 0.1.5)
   turbolinks
