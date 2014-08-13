@@ -4,6 +4,12 @@
     -ms-border-radius: $radius
     border-radius: $radius
 
+@mixin box-shadow($shadow...)
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow
+
+
 @import "mixins"
 @import "type"
 @import "animate"
