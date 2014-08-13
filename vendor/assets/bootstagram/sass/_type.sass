@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Merienda+One)
 @import url(http://weloveiconfonts.com/api/?family=entypo)
 
+@mixin font-size($value)
+  font-size: $value + px
+  font-size: ($value / 10) + rem
+
 $cyan: #1ABC9C
 $salmon: #e74c3c
 $orange: #e67e22
