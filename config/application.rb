@@ -13,7 +13,7 @@ require 'csv'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module PrimFrontEnd
+module Macs
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -29,8 +29,6 @@ module PrimFrontEnd
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/stylesheets"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/javascripts"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/fonts"
-
-    config.assets.paths << "#{Rails.root}/vendor/assets/bootstagram/img"
     config.assets.paths << "#{Rails.root}/vendor/assets/bootstagram/"
     config.assets.paths << "#{Rails.root}/vendor/assets/tempus/"
 
