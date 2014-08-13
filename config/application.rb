@@ -30,6 +30,7 @@ module PrimFrontEnd
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/javascripts"
     config.assets.paths << "#{Rails.root}/vendor/assets/simplemap/fonts"
 
+    config.assets.paths << "#{Rails.root}/vendor/assets/bootstagram/img"
     config.assets.paths << "#{Rails.root}/vendor/assets/bootstagram/"
     config.assets.paths << "#{Rails.root}/vendor/assets/tempus/"
 
