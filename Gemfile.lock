@@ -106,8 +106,6 @@ GEM
     ffi (1.9.3)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    font-awesome-sass (4.1.0)
-      sass (~> 3.2)
     formatador (0.2.5)
     guard (2.6.1)
       formatador (>= 0.2.4)
@@ -305,7 +303,6 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
-  font-awesome-sass
   guard-rspec
   jquery-rails
   launchy
