@@ -16,15 +16,15 @@
     background-size: $size
 
 @mixin experimental($property, $value, $moz: $experimental-support-for-mozilla, $webkit: $experimental-support-for-webkit, $o: $experimental-support-for-opera, $ms: $experimental-support-for-microsoft, $khtml: $experimental-support-for-khtml, $official: true)
-    @if $webkit and $experimental-support-for-webkit
+    @if $webkit
         -webkit-#{$property}: $value
-    @if $khtml and $experimental-support-for-khtml
+    @if $khtml
         -khtml-#{$property}: $value
-    @if $moz and $experimental-support-for-mozilla
+    @if $moz
         -moz-#{$property}: $value
-    @if $ms and $experimental-support-for-microsoft
+    @if $ms
         -ms-#{$property}: $value
-    @if $o and $experimental-support-for-opera
+    @if $o
         -o-#{$property}: $value
     @if $official
         #{$property}: $value
