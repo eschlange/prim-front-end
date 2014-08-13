@@ -1639,7 +1639,7 @@ ol li {
 
 /* line 2, ../sass/partials/_quote.sass */
 .quote {
-  background: url(../img/hero-2.jpg) center center fixed no-repeat;
+  background: url(../assets/img/hero-2.jpg) center center fixed no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
