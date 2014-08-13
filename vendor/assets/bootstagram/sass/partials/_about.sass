@@ -23,6 +23,22 @@
     -webkit-transition: $transition
     transition: $timing
 
+@mixin experimental($property, $value, $moz: $experimental-support-for-mozilla, $webkit: $experimental-support-for-webkit, $o: $experimental-support-for-opera, $ms: $experimental-support-for-microsoft, $khtml: $experimental-support-for-khtml, $official: true)
+    @if $webkit
+        -webkit-#{$property}: $value
+    @if $khtml
+        -khtml-#{$property}: $value
+    @if $moz
+        -moz-#{$property}: $value
+    @if $ms
+        -ms-#{$property}: $value
+    @if $o
+        -o-#{$property}: $value
+    @if $official
+        #{$property}: $value
+
+@mixin columns($width-and-count)
+    @include experimental(columns, $width-and-count, -moz, -webkit, -o, -ms, not -khtml, official)
 
 $cursive: 'Merienda One', cursive
 $orange: #e67e22
