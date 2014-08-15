@@ -38,7 +38,8 @@ RailsAdmin.config do |config|
     'Resource',
     'PointOfContact',
     'PrimEngine::Participant',
-    'SitesUser'
+    'SitesUser',
+    'UserScreeningFlags'
   ]
 
   config.model 'Site' do
@@ -62,6 +63,17 @@ RailsAdmin.config do |config|
       field :last_name
       field :phone
       field :role_identifier
+    end
+  end
+
+  config.model 'ScreeningQuestion' do
+    edit do
+      field :question_type do
+        label 'Question Type'
+      end
+      field :question_value
+      field :position
+      field :active
     end
   end
 
