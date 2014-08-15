@@ -39,7 +39,7 @@ RailsAdmin.config do |config|
     'PointOfContact',
     'PrimEngine::Participant',
     'SitesUser',
-    'UserScreeningFlags'
+    'UserScreeningFlag'
   ]
 
   config.model 'Site' do
