@@ -12,7 +12,8 @@ module UserConsentHelper
               'data-controls-modal' => 'modal-window',
               'data-target' => '#user-consent-modal-window',
               'data-backdrop' => true,
-              'data-keyboard' => true
+              'data-keyboard' => true,
+              class: 'user-admin-link'
     else
       '#'
     end

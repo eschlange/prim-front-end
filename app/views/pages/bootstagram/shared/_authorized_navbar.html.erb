@@ -1,7 +1,7 @@
 <li><a href="/sites/<%= @site.id %>/users/edit#header">update</a></li>
 <% if current_user.at_least_a_content_manager? %>
     <li><a href="/sites/<%= @site.id %>/users/sign_up">enroll</a></li>
-    <li><a href="/user_admin">users</a></li>
+    <li><a href="/user_admin?site_id=<%= @site.id %>">users</a></li>
 <% end %>
 <% if user_screening_flag(current_user, @site) && user_screening_flag(current_user, @site).active  %>
     <li><a href="/sites/<%= @site.id %>/participant_screenings">screening</a></li>

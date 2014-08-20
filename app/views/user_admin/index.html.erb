@@ -25,14 +25,14 @@
             <td><%= user.email %></td>
             <td style="white-space: nowrap;"><%= user.phone %></td>
 
-            <td>
+            <td class="user-admin-link">
               <% if !user.at_least_a_content_manager? %>
                 <%= render_user_consent_view(@site.id, user.id) %>
               <% else %>
                 n/a
               <% end %>
             </td>
-            <td>
+            <td class="user-admin-link">
               <% if user.at_least_a_content_manager? %>
                 n/a
 
@@ -53,14 +53,14 @@
                 ---
               <% end %>
             </td>
-            <td>
+            <td class="user-admin-link">
               <% if !user.at_least_a_content_manager? %>
                   <%= render_phi_view(user.id) %>
               <% else %>
                   n/a
               <% end %>
             </td>
-            <td>
+            <td class="user-admin-link">
               <% if !user.at_least_a_content_manager? %>
                   <%= render_screening_view(user.id) %>
               <% else %>
