@@ -33,11 +33,12 @@ class StatusesController < ApplicationController
 
   # PATCH/PUT /statuses/1
   def update
-    statuses = Status.find(:all, params => { id: params[:id] })
+    puts 'PARAMS::::' + params.inspect
+    statuses = Status.find(:all, :params => { :id => params[:id] })
     puts '&&&' + statuses.inspect
     @status = statuses[0]
-    @status.name = params[:name]
-    @status.description = params[:description]
+    @status.name = status_params[:name]
+    @status.description = status_params[:description]
 
     respond_to do |format|
       puts params.inspect
