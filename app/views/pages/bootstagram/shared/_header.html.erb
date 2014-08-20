@@ -1,79 +1,109 @@
-<div class="navbar" style="z-index: 1000">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-
-    <div class="navbar-fixed-top">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#home" class="scroll"><%= @site.name %></a></li>
-        <li><a href="#about" class="scroll">about</a></li>
-        <li><a href="#eligibility" class="scroll">eligibility</a></li>
-        <li><a href="#resources" class="scroll">resources</a></li>
-        <li><a href="#contact" class="scroll">contact</a></li>
-        <% if !user_signed_in? %>
-            <%= render 'pages/' + @site.template_name + '/shared/sign_up_navbar' %>
-        <% else %>
-            <%= render 'pages/' + @site.template_name + '/shared/authorized_navbar' %>
-        <% end %>
-      </ul>
-
-    </div><!--/.navbar-collapse -->
-  </div>
-</div>
-
 <% if "pages" == params[:controller] %>
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
-  <div id="home" class="container">
-    <h1 class="animated fadeIn delay-2" >
-      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                           @site, :name,
-                           :path => site_path(@site.id),
-                           :sanitize => false,
-                           :display_with => lambda { |siteTitle| (siteTitle).html_safe } %>
-    </h1>
-    <p class="animated fadeInLeft delay-3">
-      <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
-                           @site, :content,
-                           :type => :textarea,
-                           :path => site_path(@site.id),
-                           :sanitize => false,
-                           :display_with => lambda { |siteContent| (siteContent).html_safe },
-                           :html_attrs => { style: 'width:100%;' }%>
-    </p>
-    <% if !current_user || current_user.at_least_a_content_manager? %>
-        <div class="animated fadeInLeft delay-4">
-          <h2><a href="/sites/<%= @site.id %>/users/sign_up" class="header-btn">Enroll Now</a></h2>
+    <div class="navbar" style="z-index: 1000">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
 
-<!-- START Login Modal -->
-<div class="modal custom fade" id="loginModal">
-  <div>
-    <div class="modal-header">
-      <button class="close" data-dismiss="modal">×</button>
-      <h3>Sign In</h3>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#home" class="scroll"><%= @site.name %></a></li>
+            <li><a href="#about" class="scroll">about</a></li>
+            <li><a href="#eligibility" class="scroll">eligibility</a></li>
+            <li><a href="#resources" class="scroll">resources</a></li>
+            <li><a href="#contact" class="scroll">contact</a></li>
+            <% if !user_signed_in? %>
+                <%= render 'pages/' + @site.template_name + '/shared/sign_up_navbar' %>
+            <% else %>
+                <%= render 'pages/' + @site.template_name + '/shared/authorized_navbar' %>
+            <% end %>
+          </ul>
+
+        </div><!--/.navbar-collapse -->
+      </div>
     </div>
-    <div class="modal-body">
-      <%= simple_form_for(:user, url: '/sites/' + @site.id.to_s + '/users/sign_in', :method => 'post') do |f| %>
-          <div class="inputs">
-            <%= f.input :email, :required => false, :autofocus => true %>
-            <%= f.input :password, :required => false %>
-            <%= f.input :remember_me, :as => :boolean,  :label => false, :inline_label => true if devise_mapping.rememberable? %>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron animated fadeIn delay-1" data-stellar-background-ratio="0.3" >
+      <div id="home" class="container">
+        <h1 class="animated fadeIn delay-2" >
+          <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                               @site, :name,
+                               :path => site_path(@site.id),
+                               :sanitize => false,
+                               :display_with => lambda { |siteTitle| (siteTitle).html_safe } %>
+        </h1>
+        <p class="animated fadeInLeft delay-3">
+          <%= best_in_place_if (user_signed_in? and current_user.at_least_a_content_manager?),
+                               @site, :content,
+                               :type => :textarea,
+                               :path => site_path(@site.id),
+                               :sanitize => false,
+                               :display_with => lambda { |siteContent| (siteContent).html_safe },
+                               :html_attrs => { style: 'width:100%;' }%>
+        </p>
+        <% if !current_user %>
+            <div class="animated fadeInLeft delay-4">
+              <h2><a href="/sites/<%= @site.id %>/users/sign_up" class="header-btn">Enroll Now</a></h2>
+            </div>
+            <div class="animated fadeInLeft delay-5">
+              <h2><a href="/sites/<%= @site.id %>/users/sign_in" class="header-btn">Sign In</a></h2>
+            </div>
+        <% end %>
+        <% if current_user && current_user.at_least_a_content_manager? %>
+            <div class="animated fadeInLeft delay-4">
+              <h2><a href="/user_admin?site_id=<%= @site.id %>" class="header-btn">User Admin Dashboard</a></h2>
+            </div>
+            <div class="animated fadeInLeft delay-5">
+              <h2><a href="/sites/<%= @site.id %>/users/sign_up" class="header-btn">Edit Enrollment Form</a></h2>
+            </div>
+            <div class="animated fadeInLeft delay-6">
+              <h2><a href="/sites/<%= @site.id %>/users/sign_out" class="header-btn">Sign Out</a></h2>
+            </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- START Login Modal -->
+    <div class="modal custom fade" id="loginModal">
+      <div>
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">×</button>
+          <h3>Sign In</h3>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(:user, url: '/sites/' + @site.id.to_s + '/users/sign_in', :method => 'post') do |f| %>
+              <div class="inputs">
+                <%= f.input :email, :required => false, :autofocus => true %>
+                <%= f.input :password, :required => false %>
+                <%= f.input :remember_me, :as => :boolean,  :label => false, :inline_label => true if devise_mapping.rememberable? %>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <%= f.button :submit, "sign in", :class => 'btn btn-danger btn-lg' %>
+          <% end %>
+          </div>
           </div>
     </div>
-      <div class="modal-footer">
-        <%= f.button :submit, "sign in", :class => 'btn btn-danger btn-lg' %>
-      <% end %>
+    <!-- END Login Modal -->
+<% else %>
+    <div class="navbar" style="z-index: 1000">
+      <div class="container">
+        <div class="navbar-fixed-top">
+          <ul class="nav navbar-nav">
+            <li><a href="/sites/<%= @site.id %>/pages/home"><%= @site.name %></a></li>
+            <% if !user_signed_in? %>
+                <%= render 'pages/' + @site.template_name + '/shared/sign_up_navbar' %>
+            <% else %>
+                <%= render 'pages/' + @site.template_name + '/shared/authorized_navbar' %>
+            <% end %>
+          </ul>
+
+        </div><!--/.navbar-collapse -->
+      </div>
     </div>
-  </div>
-</div>
-<!-- END Login Modal -->
+<% end %>
