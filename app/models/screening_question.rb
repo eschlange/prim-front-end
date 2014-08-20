@@ -4,7 +4,7 @@ class ScreeningQuestion < ActiveRecord::Base
   belongs_to :site
   has_many :screening_answers
 
-  def self.question_types
+  def question_type_enum
     [
       ['Text Field',    'TEXT_FIELD'],
       ['Text Area',     'TEXT_AREA'],
