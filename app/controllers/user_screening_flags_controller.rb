@@ -24,7 +24,7 @@ class UserScreeningFlagsController < ApplicationController
 
   # PATCH/PUT /statuses/1
   def update
-    @user_screening_flag = UserScreeningFlag.find_or_create_by(user_id: params[:user_id], site_id: params[:site_id])
+    @user_screening_flag = UserScreeningFlag.find_or_create_by(user_id: params[:user_id], site_id: params[:sites_id])
     @user_screening_flag.active = !@user_screening_flag.active
     @user_screening_flag.save
     render nothing: true
@@ -34,7 +34,7 @@ class UserScreeningFlagsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_screening_flag_params
-    params.permit(:site_id, :user_id)
+    params.permit(:sites_id, :user_id)
   end
 
   def set_user_screening_flag
