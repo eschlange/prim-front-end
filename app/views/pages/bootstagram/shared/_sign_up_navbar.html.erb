@@ -1,4 +1,6 @@
 <% if "pages" == params[:controller] %>
 <li><a href="/sites/<%= @site.id %>/users/sign_up">enroll</a></li>
-<% end %>
 <li><a href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
+<% else %>
+<li><a href="/sites/<%= @site.id %>/users/sign_in">login</a></li>
+<% end %>
