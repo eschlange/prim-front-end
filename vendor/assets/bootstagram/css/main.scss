@@ -1296,7 +1296,7 @@ ol li {
 .jumbotron {
   margin-bottom: 0;
   padding: 15px;
-  height: 350px;
+  height: 400px;
 }
 @media (min-width: 768px) {
   /* line 1, ../sass/partials/_header.sass */
@@ -1395,13 +1395,13 @@ ol li {
   margin-bottom: 0;
   width: 100%;
   position: fixed;
-  top: -100px;
+  /* top: -100px; */
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   border-bottom: solid 4px rgba(250, 250, 250, 0.3);
   background-image: none;
-  background-color: #fafafa;
+  background-color: rgba(250, 250, 250, 0.4);
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -2033,16 +2033,6 @@ html {
 /* line 23, ../sass/main.sass */
 body {
   min-height: 1400px;
-}
-
-/* line 29, ../sass/_mixins.sass */
-::-moz-selection {
-  background: black;
-}
-
-/* line 31, ../sass/_mixins.sass */
-::selection {
-  background: black;
 }
 
 /* line 29, ../sass/main.sass */

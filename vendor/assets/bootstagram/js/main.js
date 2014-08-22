@@ -15,7 +15,8 @@ $(document).ready(function(){
     /*============================================
     =            Navigation dropdown on scroll            =
     ============================================*/
-    
+
+    /*
     var navbarActive = false;
 
     $( window ).on('scroll', function() {
@@ -56,14 +57,15 @@ $(document).ready(function(){
 
         }
     });
-    
+    */
     
     /*-----  End of Navigation dropdown on scroll  ------*/
     
     /*============================================
     =            Scrolling navigation            =
     ============================================*/
-    
+
+    /*
     $(".scroll").click(function(event){
 
         $(this.hash).children().removeClass("hidden");
@@ -100,6 +102,7 @@ $(document).ready(function(){
         }, 600,'swing');
 
     });
+    */
     
     /*==========  removes hidden classes to allow scroll to from top  ==========*/
     
