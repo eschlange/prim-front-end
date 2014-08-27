@@ -3,11 +3,16 @@ module ScreeningHelper
     user = User.find(user_id)
     participants = Participant.find(:all, :params => {:external_id => user.external_id})
     participant = participants[0]
-    @screenings = Screening.find(:all, :params => {:participant_id => participant.id})
+    if participant
+      @screenings = Screening.find(:all, :params => {:participant_id => participant.id})
+    else
+      nil
+    end
   end
 
   def render_screening_view(user_id)
-    if current_user && (current_user.at_least_a_admin?)
+    screening = retrieve_screenings(user_id)
+    if current_user && (current_user.at_least_a_admin?) && screening && screening.size > 0
       link_to 'screening',
         screening_path(user_id: user_id),
         remote: true,
@@ -18,7 +23,7 @@ module ScreeningHelper
         'data-keyboard' => true,
         class: 'user-admin-link'
     else
-      '#'
+      '---'
     end
   end
 end
