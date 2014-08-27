@@ -1,19 +1,21 @@
-<div>
+<div class="container-fluid" style="height: 100%;">
   <div class="modal-header">
     <button class="close" data-dismiss="modal">×</button>
     <h2>Status of participant <%= retrieve_user(user_id).external_id %></h2>
   </div>
 
-  <div class="modal-body">
+  <div class="modal-body" style="height: 100%;">
     <div class="divider"></div>
 
     <%= form_tag('statuses', {action: :post, remote: true, id: 'status_update_form'}) do %>
         <%= hidden_field_tag(:id, retrieve_status(user_id).id) %>
         <%= hidden_field_tag(:user_id, user_id) %>
-        <%= select(:status, :name, [['Enrolled'],['Screening in Progress'],['Not Enrolled']], selected: retrieve_status(user_id).name, id: 'status_name') %>
-        <%= select(:status, :description, [], id: 'status_description') %>
+        <%= label(:status, :name) %><br>
+        <%= select(:status, :name, [['Enrolled'],['Screening in Progress'],['Not Enrolled']], {selected: retrieve_status(user_id).name, id: 'status_name'}, {:class => "selectpicker1"}) %><br>
+        <%= label(:status, :description) %><br>
+        <%= select(:status, :description, [], {id: 'status_description'}, {:class => "selectpicker2"}) %><br>
         <div class="actions">
-            <%= submit_tag 'Update', class: 'btn btn-default', :onclick => 'location.reload();' %>
+            <%= submit_tag 'Update', class: 'btn btn-primary', :onclick => 'location.reload();' %>
         </div>
     <% end %>
 
@@ -70,4 +72,6 @@
 
   $(document).ready(populateDescriptions());
   $('#status_name').change(updateStatusDescriptions);
+  $('.selectpicker1').selectpicker();
+  $('.selectpicker2').selectpicker();
 </script>

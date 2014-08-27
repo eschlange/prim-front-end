@@ -75,10 +75,10 @@ input[readonly] {
   color: #fafafa;
 }
 
-#loginModal, #image-update-modal-window {
+#loginModal, #image-update-modal-window, #user-consent-modal-window, #phi-modal-window, #screening-modal-window, #status-modal-window {
   padding: 0px;
   background: rgba(255, 255, 255, 0.90);
-  max-height: 60% !important;
+  max-height: 540px !important;
 
   h3 {
     font-size: 2.5em;
@@ -150,6 +150,15 @@ input[readonly] {
     margin: 0px 20px;
   }
 
+  .modal {
+    overflow: scroll;
+  }
+}
+
+#user-consent-modal-window, #phi-modal-window, #screening-modal-window, #status-modal-window {
+  .modal-body {
+    overflow: scroll;
+  }
 }
 
 .user-admin table {
