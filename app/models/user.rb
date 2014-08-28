@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 
   attr_accessor :participant, :status
 
-  validates_with CustomUserRegistrationValidator
+  validates :first_name, presence: true, allow_blank: false, allow_nil: false
+  validates :last_name, presence: true, allow_blank: false, allow_nil: false
+  validate :phone_format_validator
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -35,20 +37,11 @@ class User < ActiveRecord::Base
 
   private
 
-  def user_params
-    params.require(:user).permit(
-      :first_name,
-      :last_name,
-      :phone,
-      :email,
-      :future_contact,
-      :role_identifier,
-      :site_id,
-      :dob,
-      :address,
-      :street_1,
-      :city,
-      :state,
-      :zip)
+  def phone_format_validator
+    number = self.phone.tr('^0-9','' )
+    if number.length < 10 || number.length > 11
+      errors.add(:phone, "Phone number is not valid. Please include area code and seven digit number: (xxx-xxx-xxxx)")
+    end
   end
+
 end
