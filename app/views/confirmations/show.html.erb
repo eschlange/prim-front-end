@@ -5,6 +5,10 @@
     <section class="register text-left">
       <div class="container">
         <%= simple_form_for(resource, :as => resource_name, :url => confirm_url, :method => :put, :class => 'confirmations') do |form| %>
+            <div class="animated fadeInLeft delay-3">
+              <p class="notice fadeIn animated"><%= notice %></p>
+              <p class="alert fadeIn animated"><%= alert %></p>
+            </div>
             <h3>You're almost done! Now create a password to securely access your account.</h3>
             <%= devise_error_messages! %>
             <div class="form-inputs">
