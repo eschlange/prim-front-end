@@ -45,7 +45,20 @@ class UserAdminController < ApplicationController
   end
 
   def send_screening_csv
-    puts 'screening upload'
+    screenings = Screening.all
+    column_names = ["site_id", "question", "answer", "external_id"]
+
+    send_data(CSV.generate do |csv|
+      csv << [column_names]
+      screenings.each do |screening|
+        if screening.participant_id && !screening.participant_id.blank?
+          participant = Participant.find(:all, :params => {:participant_id => screening.participant_id})
+          screening_answer_map = screening.attributes.values_at(*column_names)
+          screening_answer_map[3] = participant[0].external_id
+          csv << screening_answer_map
+        end
+      end
+    end)
   end
 
   def user_admin_params

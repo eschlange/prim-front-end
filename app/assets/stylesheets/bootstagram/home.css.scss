@@ -184,3 +184,17 @@ a.user-admin-link {
 .register {
   padding-top: 50px;
 }
+
+section#about {
+  padding-bottom: 80px;
+}
+
+.notice, .alert {
+  color: #ff0000;
+  font-size: 2em;
+}
+
+.jumbotron .notice, .jumbotron .alert {
+  color: #59D3D3;
+  font-weight: bolder;
+}
