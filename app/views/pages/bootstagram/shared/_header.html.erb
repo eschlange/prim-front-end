@@ -71,7 +71,7 @@
             <div class="animated fadeInLeft delay-6">
               <h2><a href="/sites/<%= @site.id %>/users/sign_out" class="header-btn">Sign Out</a></h2>
             </div>
-        <% elsif current_user && !current_user.at_least_a_content_manager? %>
+        <% elsif current_user && !current_user.at_least_a_content_manager? && user_screening_flag(current_user, @site) && user_screening_flag(current_user, @site).active   %>
             <div class="animated fadeInLeft delay-4">
                 <h2><a href="/sites/<%= @site.id %>/participant_screenings">screening</a></h2>
             </div>
