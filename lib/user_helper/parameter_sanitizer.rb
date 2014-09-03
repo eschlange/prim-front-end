@@ -21,7 +21,8 @@ module UserHelper
         :street_1,
         :city,
         :state,
-        :zip)
+        :zip,
+        :site_id)
     end
 
     def sign_up
@@ -40,7 +41,8 @@ module UserHelper
         :street_1,
         :city,
         :state,
-        :zip)
+        :zip,
+        :site_id)
     end
   end
 end

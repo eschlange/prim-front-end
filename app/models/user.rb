@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :user_consents
   has_one :user_screening_flag
 
-  attr_accessor :participant, :status
+  attr_accessor :participant, :status, :site_id
 
   validates :first_name, presence: true, allow_blank: false, allow_nil: false
   validates :last_name, presence: true, allow_blank: false, allow_nil: false

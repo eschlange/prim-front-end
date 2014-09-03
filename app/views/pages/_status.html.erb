@@ -11,10 +11,10 @@
         <%= hidden_field_tag(:id, retrieve_status(user_id).id) %>
         <%= hidden_field_tag(:user_id, user_id) %>
         <%= label(:status, :name) %><br>
-        <%= select(:status, :name, [['Enrolled'],['Screening in Progress'],['Not Enrolled']], {selected: retrieve_status(user_id).name, id: 'status_name'}, {:class => "selectpicker1"}) %><br>
+        <%= select(:status, :name, [['Enrolled'],['Screening in Progress'],['Not Enrolled']], {selected: retrieve_status(user_id).name, id: 'status_name'}) %><br><br>
         <%= label(:status, :description) %><br>
-        <%= select(:status, :description, [], {id: 'status_description'}, {:class => "selectpicker2"}) %><br>
-        <div class="actions">
+        <%= select(:status, :description, [], {id: 'status_description'}) %><br>
+        <div class="actions" style="padding-top: 20px">
             <%= submit_tag 'Update', class: 'btn btn-primary', :onclick => 'location.reload();' %>
         </div>
     <% end %>
@@ -72,6 +72,4 @@
 
   $(document).ready(populateDescriptions());
   $('#status_name').change(updateStatusDescriptions);
-  $('.selectpicker1').selectpicker();
-  $('.selectpicker2').selectpicker();
 </script>

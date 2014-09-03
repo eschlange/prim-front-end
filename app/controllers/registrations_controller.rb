@@ -6,14 +6,16 @@ require 'active_resource'
 
 # Registrations controller overwrites default Devise registration methods.
 class RegistrationsController < Devise::RegistrationsController
+  before_action :set_site
+
   def create
     build_resource(sign_up_params)
+    resource.site_id = @site.id
     if resource.save
-      predefinedUserCreation(resource)
       site_id = createConsentRecord(resource)
-      save_prim_participant(sign_up_params, resource, site_id)
       associate_site_with_user(resource, site_id)
-      SitesUser.create(site_id: site_id, user_id: resource.id)
+      predefinedUserCreation(resource)
+      save_prim_participant(sign_up_params, resource, site_id)
       UserScreeningFlag.create(site_id: site_id, user_id: resource.id, active: false)
     else
       clean_up_passwords resource

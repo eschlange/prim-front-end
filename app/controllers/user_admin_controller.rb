@@ -7,7 +7,7 @@ class UserAdminController < ApplicationController
   # GET /sites
   def index
     authorize! :manage, current_user.role_identifier
-    @users = User.all
+    @users = User.all.order('created_at DESC')
     @users.each do |user|
       # begin
       if user.external_id

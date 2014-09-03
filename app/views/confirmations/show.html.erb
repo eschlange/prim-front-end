@@ -16,7 +16,7 @@
                 <%= form.input :password_confirmation %>
                 <%= form.input :confirmation_token, :as => :hidden, :input_html => { value: @original_token } %>
             </div>
-            <%= form.button :submit, "Confirm Account", :class => "btn btn-default" %>
+            <%= form.button :submit, "Confirm Account", :class => "btn btn-default pass-confirm-button" %>
         <% end %>
       </div>
     </section>
