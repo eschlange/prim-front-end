@@ -163,6 +163,17 @@ input[readonly] {
 
 .user-admin table {
   margin-top: 40px;
+  th {
+    white-space: nowrap;
+
+    i {
+      color: #0000ff;
+    }
+
+    a {
+      color: #000;
+    }
+  }
 }
 
 #resources a {
@@ -217,6 +228,15 @@ section#about {
   padding-left: 20px;
 }
 
-.sign-in-button-group a {
+.sign-in-button-group a, .pagination a {
   color: #000;
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+}
+
+.pagination .current {
+  font-weight: bolder;
 }

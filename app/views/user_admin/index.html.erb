@@ -4,13 +4,13 @@
     <table class="table table-striped table-hover">
       <tbody>
         <tr>
-          <th>ID</th>
-          <th>Role</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Creation Date</th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=id">        ID           </a><% if @sort_column == 'id' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=role">      Role         </a><% if @sort_column == 'role' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=first_name">First Name   </a><% if @sort_column == 'first_name' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=last_name"> Last Name    </a><% if @sort_column == 'last_name' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=email">     Email        </a><% if @sort_column == 'email' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=phone">     Phone        </a><% if @sort_column == 'phone' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=created_at">Creation Date</a><% if !@sort_column || @sort_column == 'created_at' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
           <th>Consent Version</th>
           <th>Status</th>
           <th>PHI</th>
@@ -84,6 +84,8 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= will_paginate @users %>
 
     <section class="modal fade custom large-modal user-consent" id="user-consent-modal-window" role="dialog"  aria-labelledby="userConsentModal" aria-hidden="true" ></section>
     <section class="modal fade custom small-modal phi" id="phi-modal-window" role="dialog"  aria-labelledby="phiModal" aria-hidden="true" ></section>

@@ -7,9 +7,10 @@ class UserAdminController < ApplicationController
   # GET /sites
   def index
     authorize! :manage, current_user.role_identifier
-    @users = User.all.order('created_at DESC')
+    # @users = User.all.order('created_at DESC')
+    @users = User.all.order(column_sort()).paginate(:page => params[:page], :per_page => 25)
     @users.each do |user|
-      # begin
+      # BEGIN
       if user.external_id
         begin
           participants = Participant.find(:all, :params => {:external_id => user.external_id})
@@ -37,6 +38,24 @@ class UserAdminController < ApplicationController
 
   private
 
+  def column_sort
+    @sort_column = params['sort']
+    case params['sort']
+      when 'id'
+        'external_id ASC'
+      when 'first_name'
+        'first_name ASC'
+      when 'phone'
+        'phone ASC'
+      when 'email'
+        'email ASC'
+      when 'last_name'
+        'last_name ASC'
+      else
+        'created_at DESC'
+    end
+  end
+
   def send_phi_csv
     send_data(
       @users.to_csv(only: [:first_name, :last_name, :email, :phone, :created_at, :future_contact, :role_identifier]),
@@ -62,6 +81,6 @@ class UserAdminController < ApplicationController
   end
 
   def user_admin_params
-    params.permit(:export_data)
+    params.permit(:export_data, :page, :order, :sort)
   end
 end
