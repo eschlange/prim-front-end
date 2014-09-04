@@ -36,6 +36,12 @@ class ParticipantScreeningsController < ApplicationController
       Screening.create(question: question.question_value, answer: answers, site_id: @site.id, participant_id: participant.id)
     end
 
+    @flag = UserScreeningFlag.find_by(site_id: @site.id, user_id: user.id)
+    puts '$$$$'
+    puts @flag.inspect
+    @flag.active = false
+    @flag.save
+
     redirect_to('/sites/' + params[:site_id] + '/pages/home')
   end
 
