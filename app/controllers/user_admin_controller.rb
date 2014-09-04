@@ -8,7 +8,7 @@ class UserAdminController < ApplicationController
   def index
     authorize! :manage, current_user.role_identifier
     # @users = User.all.order('created_at DESC')
-    @users = User.all.order(column_sort()).paginate(:page => params[:page], :per_page => 25)
+    @users = User.all.order(column_sort()).paginate(:page => params[:page], :per_page => 5)
     @users.each do |user|
       # BEGIN
       if user.external_id
