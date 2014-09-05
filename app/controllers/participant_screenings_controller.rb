@@ -25,7 +25,7 @@ class ParticipantScreeningsController < ApplicationController
       if question.question_type == "CHECK_BOX"
         answers = ''
         question.screening_answers.each do |answer|
-          if participant_screening_params[question.id.to_s][answer.id.to_s]
+          if participant_screening_params[question.id.to_s] && participant_screening_params[question.id.to_s][answer.id.to_s]
             puts participant_screening_params[question.id.to_s][answer.id.to_s].inspect
             answers += ' |' + participant_screening_params[question.id.to_s][answer.id.to_s][0] + '| '
           end
