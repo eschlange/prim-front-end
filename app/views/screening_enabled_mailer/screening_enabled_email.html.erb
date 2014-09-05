@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Welcome <%= @site.name %>, <%= @user.first_name %></h1>
+<p>
+  You were chosen to continue the screening process for <%= @site.name %>.<br>
+  Please visit the <%= @site.name %> site and complete the screening questions by following <a href="<%= @url_screener %>">this link.</a>
+</p>
+<p>
+  If you have not yet confirmed your account, receive another confirmation email link by entering your email address <a href="<%= @url_confirmation_email %>">here</a>.
+</p>
+<p>Thanks for joining and have a great day!</p>
+</body>
+</html>

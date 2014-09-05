@@ -33,4 +33,9 @@ PrimFrontEnd::Application.configure do
   Paperclip.options[:command_path] = "/usr/bin/"
 
   config.papi_url                                  = 'http://localhost:3001/v1'
+
+  config.action_mailer.default_url_options = {
+    :host => "localhost",
+    :port => 3000
+  }
 end

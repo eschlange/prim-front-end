@@ -27,6 +27,11 @@ class UserScreeningFlagsController < ApplicationController
     @user_screening_flag = UserScreeningFlag.find_or_create_by(user_id: params[:user_id], site_id: params[:sites_id])
     @user_screening_flag.active = !@user_screening_flag.active
     @user_screening_flag.save
+
+    if @user_screening_flag
+      ScreeningEnabledMailer.screening_enabled_email(User.find(params[:user_id]), Site.find(params[:sites_id]), request).deliver
+    end
+
     render nothing: true
   end
 
