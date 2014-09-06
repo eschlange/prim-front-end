@@ -85,8 +85,41 @@ NameVirtualHost *:443
 </VirtualHost>
       EOF
 
+      production_vhost_config = <<-EOF
+NameVirtualHost *:80
+NameVirtualHost *:443
+
+<VirtualHost *:80>
+  ServerName prim.northwestern.edu
+  Redirect permanent / https://prim.northwestern.edu/
+</VirtualHost>
+
+<VirtualHost *:443>
+  PassengerFriendlyErrorPages off
+  PassengerAppEnv production
+  PassengerRuby /usr/local/rvm/wrappers/ruby-2.1.1/ruby
+
+  ServerName prim.northwestern.edu
+
+  SSLEngine On
+  SSLCertificateFile /etc/pki/tls/certs/cbits-railsapps.nubic.northwestern.edu.crt
+  SSLCertificateChainFile /etc/pki/tls/certs/komodo_intermediate_ca.crt
+  SSLCertificateKeyFile /etc/pki/tls/private/cbits-railsapps.nubic.northwestern.edu.key
+
+  DocumentRoot #{ fetch(:deploy_to) }/current/public
+  RailsBaseURI /
+  PassengerDebugLogFile /var/log/httpd/passenger.log
+
+  <Directory #{ fetch(:deploy_to) }/current/public >
+    Allow from all
+    Options -MultiViews
+  </Directory>
+</VirtualHost>
+      EOF
+
       vhost_config = {
-        staging: staging_vhost_config
+        staging: staging_vhost_config,
+        production: production_vhost_config
       }
 
       if fetch(:stage) == :qa

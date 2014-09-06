@@ -38,9 +38,11 @@ class User < ActiveRecord::Base
   private
 
   def phone_format_validator
-    number = self.phone.tr('^0-9','' )
-    if number.length < 10 || number.length > 11
-      errors.add(:phone, "Phone number is not valid. Please include area code and seven digit number: (xxx-xxx-xxxx)")
+    if self.phone
+      number = self.phone.tr('^0-9','' )
+      if number.length < 10 || number.length > 11
+        errors.add(:phone, "Phone number is not valid. Please include area code and seven digit number: (xxx-xxx-xxxx)")
+      end
     end
   end
 
