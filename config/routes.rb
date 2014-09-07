@@ -26,6 +26,7 @@ PrimFrontEnd::Application.routes.draw do
              :controllers => { confirmations: "confirmations", registrations: "registrations" }
   devise_scope :user do
     put "/confirm" => "confirmations#confirm"
+    post "/confirm" => "confirmations#create" 
   end
   ## END Devise routes configuration
 
