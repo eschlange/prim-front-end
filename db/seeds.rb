@@ -13,8 +13,7 @@ User.create!(
   first_name: 'Eric',
   last_name: 'Schlange',
   email: 'eric.schlange@northwestern.edu',
-  role_identifier: 1,
-  site_id: 1)
+  role_identifier: 1)
 
 SitesUser.create(
   user_id: 1,

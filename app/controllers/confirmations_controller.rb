@@ -40,7 +40,11 @@ class ConfirmationsController < Devise::ConfirmationsController
       confirmable = resource_class.find_or_initialize_with_errors(resource_class.confirmation_keys, attributes, :not_found)
     end
 
-    confirmable.site_id = params[:site_id]
+    if !params[:site_id].nil? && !params[:site_id].blank?
+      confirmable.site_id = params[:site_id]
+    else
+      confirmable.site_id = 1;
+    end
 
     confirmable.resend_confirmation_instructions if confirmable.persisted?
     confirmable
