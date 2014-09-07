@@ -23,7 +23,6 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def create
-
     self.resource = send_confirmation_instructions(resource_params)
     yield resource if block_given?
 

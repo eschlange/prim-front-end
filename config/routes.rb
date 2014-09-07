@@ -23,10 +23,10 @@ PrimFrontEnd::Application.routes.draw do
   ## START Devise routes configuration
   devise_for :users,
              :path => "sites/:site_id/users",
-             :controllers => { confirmations: "confirmations", registrations: "registrations" }
+             :controllers => { confirmations: "confirmations", registrations: "registrations"},
+             :defaults => {site_id: 1}
   devise_scope :user do
     put "/confirm" => "confirmations#confirm"
-    post "/confirm" => "confirmations#create" 
   end
   ## END Devise routes configuration
 
