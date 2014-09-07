@@ -68,6 +68,7 @@ RailsAdmin.config do |config|
 
   config.model 'ScreeningQuestion' do
     edit do
+      field :site
       field :question_type do
         label 'Question Type'
       end
