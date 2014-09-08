@@ -69,7 +69,13 @@
                   n/a
               <% end %>
             </td>
-            <td><%= link_to user_screening_link_text(user, @site), toggle_screening_path(sites_id: @site.id, user_id: user.id), remote: true, id: "toggle_screening_#{user.id}", class: "user-admin-link" %></td>
+            <td>
+              <% if !user.at_least_a_content_manager? %>
+                  <%= link_to user_screening_link_text(user, @site), toggle_screening_path(sites_id: @site.id, user_id: user.id), remote: true, id: "toggle_screening_#{user.id}", class: "user-admin-link" %>
+              <% else %>
+                  n/a
+              <% end %>
+            </td>
           </tr>
           <script>
               $("#toggle_screening_<%= user.id %>").click( function() {
