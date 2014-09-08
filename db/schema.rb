@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804193919) do
+ActiveRecord::Schema.define(version: 20140908183221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -322,6 +322,17 @@ ActiveRecord::Schema.define(version: 20140804193919) do
   end
 
   add_index "statuses", ["participant_id"], name: "index_statuses_on_participant_id", using: :btree
+
+  create_table "user_admin_audits", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "site_id"
+    t.string   "action"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_admin_audits", ["site_id"], name: "index_user_admin_audits_on_site_id", using: :btree
+  add_index "user_admin_audits", ["user_id"], name: "index_user_admin_audits_on_user_id", using: :btree
 
   create_table "user_consents", force: true do |t|
     t.integer  "site_id"

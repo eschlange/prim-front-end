@@ -93,11 +93,11 @@
     <section class="modal fade custom small-modal status" id="status-modal-window" role="dialog"  aria-labelledby="statusModal" aria-hidden="true" ></section>
 
     <button type="button" class="btn btn-danger btn-lg btn-user-export">
-      <%= link_to 'PHI to CSV', user_admin_path(format: :csv, export_data: 'phi')%>
+      <%= link_to 'PHI to CSV', user_admin_path(format: :csv, export_data: 'phi', site_id: @site.id)%>
     </button>
 
     <button type="button" class="btn btn-danger btn-lg btn-user-export">
-      <%= link_to 'Screening to CSV', user_admin_path(format: :csv, export_data: 'screening')%>
+      <%= link_to 'Screening to CSV', user_admin_path(format: :csv, export_data: 'screening', site_id: @site.id)%>
     </button>
 
   </div>

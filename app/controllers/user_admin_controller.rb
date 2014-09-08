@@ -4,11 +4,13 @@
 # UserAdminController handles requests to update users, should only be accessible to super user or admins.
 class UserAdminController < ApplicationController
   before_action :set_site, :authenticate_user!
+
   # GET /sites
   def index
     authorize! :manage, current_user.role_identifier
     # @users = User.all.order('created_at DESC')
-    @users = User.all.order(column_sort()).paginate(:page => params[:page], :per_page => 25)
+    SitesUser.where("site_id: #{@site.id}")
+    @users = User.joins(:sites_users).order(column_sort()).paginate(:page => params[:page], :per_page => 25)
     @users.each do |user|
       # BEGIN
       if user.external_id
@@ -22,6 +24,8 @@ class UserAdminController < ApplicationController
         end
       end
     end
+
+    UserAdminAudit.create(user: current_user, site: @site, action: 'view user admin page')
 
     respond_to do |format|
       format.html
@@ -57,6 +61,8 @@ class UserAdminController < ApplicationController
   end
 
   def send_phi_csv
+    UserAdminAudit.create(user: current_user, site: @site, action: "PHI CSV export")
+
     send_data(
       @users.to_csv(only: [:first_name, :last_name, :email, :phone, :created_at, :future_contact, :role_identifier]),
       type: 'text/csv; charset=utf-8; header=present',
@@ -64,6 +70,8 @@ class UserAdminController < ApplicationController
   end
 
   def send_screening_csv
+    UserAdminAudit.create(user: current_user, site: @site, action: "screening data CSV export")
+
     screenings = Screening.all
     column_names = ["site_id", "question", "answer", "external_id"]
 
