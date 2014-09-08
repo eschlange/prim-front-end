@@ -37,8 +37,6 @@ class ParticipantScreeningsController < ApplicationController
     end
 
     @flag = UserScreeningFlag.find_by(site_id: @site.id, user_id: user.id)
-    puts '$$$$'
-    puts @flag.inspect
     @flag.active = false
     @flag.save
 
