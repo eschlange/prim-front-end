@@ -7,7 +7,7 @@
         <div class="form-inputs standard">
           <%= f.error_notification %>
           <%= hidden_field_tag 'site_id', @site.id %>
-          <%= f.input :first_name, :required => true, :autofocus => true %>
+          <%= f.input :first_name, :required => true %>
           <%= f.input :last_name, :required => true %>
           <%= f.input :email, :required => true %>
           <%= f.input :phone, :required => true %>
