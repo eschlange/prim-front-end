@@ -78,7 +78,7 @@ input[readonly] {
 #loginModal, #image-update-modal-window, #user-consent-modal-window, #phi-modal-window, #screening-modal-window, #status-modal-window {
   padding: 0px;
   background: rgba(255, 255, 255, 0.90);
-  max-height: 540px !important;
+  max-height: 600px !important;
 
   h3 {
     font-size: 2.5em;
@@ -148,6 +148,10 @@ input[readonly] {
 
   .inputs {
     margin: 0px 20px;
+
+    a {
+      color: #000;
+    }
   }
 
   .modal {
