@@ -18,6 +18,7 @@ class IrbAcceptanceImagesController < ApplicationController
       irb_acceptance_image = IrbAcceptanceImage.new(irb_acceptance_image_params)
       irb_acceptance_image.image_file_name = Time.now.strftime('%Y_%m_%d_%H%M%S') + irb_acceptance_image.image_file_name
       irb_acceptance_image.save
+      SiteConsentFormVersion.create(site: irb_acceptance_image.site)
 
       format.html { redirect_to :back }
       format.js

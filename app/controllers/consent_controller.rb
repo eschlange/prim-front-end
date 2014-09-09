@@ -37,6 +37,7 @@ class ConsentController < ApplicationController
 
     respond_to do |format|
       if @consent.update_attributes(consent_params)
+        SiteConsentFormVersion.create(site: @consent.site)
         format.html { redirect_to(@consent, notice: 'About page was successfully updated.') }
         format.json { respond_with_bip @consent }
       else

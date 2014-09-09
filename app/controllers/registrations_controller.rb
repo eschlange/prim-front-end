@@ -44,7 +44,9 @@ class RegistrationsController < Devise::RegistrationsController
         consent_header: consent.header,
         consent_body: consent.body,
         consent_footer: consent.footer,
-        irb_acceptance_image_url: consent.irb_acceptance_images.nil? ? consent.irb_acceptance_images.first.image.url : 'no IRB image exists for this site.')
+        irb_acceptance_image_url: consent.irb_acceptance_images.nil? ? consent.irb_acceptance_images.first.image.url : 'no IRB image exists for this site.',
+        site_consent_form_version_id: SiteConsentFormVersion.where(site_id: consent.site.id).order('created_at desc').first.id
+    )
     consentRecord.save
     consent.site.id
   end
