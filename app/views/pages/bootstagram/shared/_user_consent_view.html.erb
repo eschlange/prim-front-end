@@ -21,8 +21,8 @@
   <div class="modal-body">
     <div class="divider"></div>
 
-    <section class="intervention-long">
-      <div class="container text-left">
+    <section class="intervention">
+      <div class="text-left">
         <%= retrieve_user_consent(site_id, user_id).consent_body.html_safe %>
       </div>
     </section>
@@ -30,7 +30,7 @@
     <div class="divider"></div>
 
     <section id="eligibility" class="screenshots text-center">
-      <div class="container">
+      <div>
         <%= retrieve_user_consent(site_id, user_id).consent_footer.html_safe %>
       </div>
     </section>
