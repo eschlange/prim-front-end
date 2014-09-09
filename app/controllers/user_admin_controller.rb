@@ -44,20 +44,56 @@ class UserAdminController < ApplicationController
 
   def column_sort
     @sort_column = params['sort']
+    @sort_order = ''
+    if sort_param_found
+      @sort_order = params['order']
+    else
+      @sort_order = 'ASC'
+    end
+
     case params['sort']
       when 'id'
-        'external_id ASC'
+        ordering = 'external_id ' + @sort_order
       when 'first_name'
-        'first_name ASC'
+        ordering = 'first_name ' + @sort_order
       when 'phone'
-        'phone ASC'
+        ordering = 'phone ' + @sort_order
       when 'email'
-        'email ASC'
+        ordering = 'email ' + @sort_order
       when 'last_name'
-        'last_name ASC'
+        ordering = 'last_name ' + @sort_order
       else
-        'created_at DESC'
+        @sort_column = 'created_at'
+        if sort_param_found
+          ordering = 'created_at ' + @sort_order
+        else
+          @sort_order = 'DESC'
+          ordering = 'created_at DESC'
+        end
     end
+    @sort_order = reverse_sort_order @sort_order
+    @sort_icon = icon_classes @sort_order
+    ordering
+  end
+
+  def icon_classes order
+    if order == 'ASC'
+      'fa fa-arrow-down'
+    else
+      'fa fa-arrow-up'
+    end
+  end
+
+  def reverse_sort_order sort_order
+    if sort_order == 'ASC'
+      'DESC'
+    else
+      'ASC'
+    end
+  end
+
+  def sort_param_found
+    'ASC' == params['order'] || 'DESC' == params['order']
   end
 
   def send_phi_csv

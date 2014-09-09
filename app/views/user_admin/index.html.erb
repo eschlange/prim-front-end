@@ -4,13 +4,33 @@
     <table class="table table-striped table-hover">
       <tbody>
         <tr>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=id">        ID           </a><% if @sort_column == 'id' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=role">      Role         </a><% if @sort_column == 'role' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=first_name">First Name   </a><% if @sort_column == 'first_name' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=last_name"> Last Name    </a><% if @sort_column == 'last_name' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=email">     Email        </a><% if @sort_column == 'email' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=phone">     Phone        </a><% if @sort_column == 'phone' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
-          <th><a href="/user_admin?site_id=<%= @site.id %>&sort=created_at">Creation Date</a><% if !@sort_column || @sort_column == 'created_at' %>&nbsp;<i class="fa fa-arrow-down"></i><% end %></th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=id<% if (@sort_column == 'id') %>&order=<%= @sort_order %><% end %>">ID</a>
+            <% if @sort_column == 'id' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=role<% if (@sort_column == 'role') %>&order=<%= @sort_order %><% end %>">Role</a>
+            <% if @sort_column == 'role' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=first_name<% if (@sort_column == 'first_name') %>&order=<%= @sort_order %><% end %>">First Name</a>
+            <% if @sort_column == 'first_name' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %></th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=last_name<% if (@sort_column == 'last_name') %>&order=<%= @sort_order %><% end %>">Last Name</a>
+            <% if @sort_column == 'last_name' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=email<% if (@sort_column == 'email') %>&order=<%= @sort_order %><% end %>">Email</a>
+            <% if @sort_column == 'email' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=phone<% if (@sort_column == 'phone') %>&order=<%= @sort_order %><% end %>">Phone</a>
+            <% if @sort_column == 'phone' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
+          <th>
+            <a href="/user_admin?site_id=<%= @site.id %>&sort=created_at<% if (@sort_column == 'created_at' || @sort_column == '') %>&order=<%= @sort_order %><% end %>">Creation Date</a>
+            <% if !@sort_column || @sort_column == 'created_at' %>&nbsp;<i class="<%= @sort_icon %>"></i><% end %>
+          </th>
           <th>Consent Version</th>
           <th>Status</th>
           <th>PHI</th>
