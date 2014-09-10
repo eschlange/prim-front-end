@@ -33,7 +33,7 @@ class ParticipantScreeningsController < ApplicationController
       else
         answers = participant_screening_params[question.id.to_s]
       end
-      Screening.create(question: question.question_value, answer: answers, site_id: @site.id, participant_id: participant.id)
+      Screening.create(question: question.question_value, answer: answers, site_id: @site.id, participant_id: participant.id, position: question.position)
     end
 
     @flag = UserScreeningFlag.find_by(site_id: @site.id, user_id: user.id)

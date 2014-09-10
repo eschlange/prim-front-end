@@ -5,6 +5,13 @@ module ScreeningHelper
     participant = participants[0]
     if participant
       @screenings = Screening.find(:all, :params => {:participant_id => participant.id})
+      @screenings.elements.sort_by{ |screening|
+        if screening.position
+          screening.position
+        else
+          0
+        end
+      }
     else
       nil
     end
