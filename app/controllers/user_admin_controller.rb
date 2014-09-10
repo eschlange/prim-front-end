@@ -114,7 +114,7 @@ class UserAdminController < ApplicationController
     column_names = ["site_id", "question", "answer", "external_id"]
 
     send_data(CSV.generate do |csv|
-      csv << [column_names]
+      csv << column_names
       screenings.each do |screening|
         if screening.participant_id && !screening.participant_id.blank?
           participant = Participant.find(:all, :params => {:participant_id => screening.participant_id})
