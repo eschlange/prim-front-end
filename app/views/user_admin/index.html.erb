@@ -40,7 +40,7 @@
         <% @users.each do |user| %>
           <tr id="user_<%= user.id %>">
             <td><%= user.external_id %></td>
-            <td><%= user.role_name %></td>
+            <td>(<%= user.role_identifier %>)&nbsp;<%= user.role_name %></td>
             <td><%= user.first_name %></td>
             <td><%= user.last_name %></td>
             <td><%= user.email %></td>

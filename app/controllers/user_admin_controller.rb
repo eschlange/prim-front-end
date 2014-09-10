@@ -62,6 +62,8 @@ class UserAdminController < ApplicationController
         ordering = 'email ' + @sort_order
       when 'last_name'
         ordering = 'last_name ' + @sort_order
+      when 'role'
+        ordering = 'role_identifier ' + @sort_order
       else
         @sort_column = 'created_at'
         if sort_param_found
