@@ -7,6 +7,11 @@ class ConfirmationsController < Devise::ConfirmationsController
     @original_token = params[:confirmation_token]
     digested_token = Devise.token_generator.digest(self, :confirmation_token, params[:confirmation_token])
     self.resource = resource_class.find_by_confirmation_token(digested_token) if params[:confirmation_token].present?
+
+    if params[:err] == 'true'
+      set_flash_message :notice, :password_create
+    end
+
     super if resource.nil? || resource.confirmed?
   end
 
@@ -18,7 +23,8 @@ class ConfirmationsController < Devise::ConfirmationsController
       set_flash_message :notice, :confirmed
       sign_in_and_redirect(resource_name, resource)
     else
-      render action: 'show'
+      site_user = SitesUser.find_by(user_id: resource.id)
+      redirect_to '/sites/' + site_user.site_id.to_s + '/users/confirmation?err=true&confirmation_token=' + params[resource_name][:confirmation_token]
     end
   end
 
@@ -68,4 +74,5 @@ class ConfirmationsController < Devise::ConfirmationsController
   def after_resending_confirmation_instructions_path_for(resource)
     '/sites/' + params[:site_id] + '/pages/home'
   end
+
 end
